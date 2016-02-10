@@ -3,12 +3,17 @@ using System.Collections;
 
 public class CentralPlayerController : MonoBehaviour {
 
-    public GameObject warrior;
-    public GameObject archer;
+    public GameObject playerPair;
     public static CentralPlayerController instance = null;
+
+    //The offset to place the top player above the bottom player
+    private float topOffset;
 
     //The boolean determining who is on bottom.  If it's not the warrior, it's the archer.
     private bool warriorBottom = true;
+
+    private GameObject warrior;
+    private GameObject archer;
 
 
 	// Use this for initialization
@@ -24,6 +29,10 @@ public class CentralPlayerController : MonoBehaviour {
         }
 
         DontDestroyOnLoad(gameObject);
+
+        warrior = GameObject.Find("CompletePlayer/Player1");
+        archer = GameObject.Find("CompletePlayer/Player2");
+        topOffset = archer.transform.localScale.y * 1.5f;
     }
 
     /*Flip the players by disabling movement for the top player and changing the interactable objects */
@@ -35,13 +44,20 @@ public class CentralPlayerController : MonoBehaviour {
         //Set the movement controller scripts
         if (warriorBottom)
         {
-            warrior.GetComponent<WarriorBottomController>().enabled = true;
-            archer.GetComponent<ArcherBottomController>().enabled = false;
+            playerPair.GetComponent<WarriorBottomController>().enabled = true;
+            playerPair.GetComponent<ArcherBottomController>().enabled = false;
+            //Physically switch the players
+            warrior.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
+            archer.transform.localPosition = new Vector3(0.0f, topOffset, 0.0f);
         } else
         {
-            archer.GetComponent<ArcherBottomController>().enabled = true;
-            warrior.GetComponent<WarriorBottomController>().enabled = false;
+            playerPair.GetComponent<ArcherBottomController>().enabled = true;
+            playerPair.GetComponent<WarriorBottomController>().enabled = false;
+            //Physically switch the players
+            archer.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
+            warrior.transform.localPosition = new Vector3(0.0f, topOffset, 0.0f);
         }
+
         //Enable/disable the colliders on the elemental objects
         foreach (GameObject obstacle in iceObstacles)
         {

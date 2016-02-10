@@ -40,9 +40,7 @@ public class ArcherBottomController : MonoBehaviour {
         RaycastHit hit;
         if (Physics.Raycast(gameObject.transform.position, -Vector3.up, out hit, rayLength, jumpable))
         {
-            Debug.Log("Raycast hit");
-            Debug.Log(hit.distance);
-            if (hit.distance - gameObject.transform.localScale.y <= 0.0001)
+            if (hit.distance - (gameObject.transform.localScale.y / 2) <= 0.0001)
             {
                 Debug.Log(hit.distance);
                 rb.velocity = new Vector3(0f, jumpSpeed, 0f);
