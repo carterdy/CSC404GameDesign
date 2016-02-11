@@ -16,7 +16,7 @@ public class EnemyAIController : MonoBehaviour
 		agent = GetComponent<NavMeshAgent> ();
 		agent.speed = 1;
 		radius = 2;
-		distThreshold = 3;
+		distThreshold = 4;
 		player1 = GameObject.Find ("CompletePlayer");
 	}
 	
