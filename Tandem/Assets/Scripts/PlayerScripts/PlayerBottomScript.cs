@@ -52,10 +52,9 @@ public abstract class PlayerBottomScript : MonoBehaviour {
     }
 
     /* Move the player based off the given horizontal and vertical inputs */
-    protected void Move(float horizontal, float vertical)
+    protected void Move(float vertical)
     {
-        movement.Set(horizontal, 0f, vertical);
-        movement = movement.normalized * speed * Time.deltaTime;
+        movement = transform.forward * vertical * speed * Time.deltaTime;
         rb.MovePosition(transform.position + movement);
     }
 
