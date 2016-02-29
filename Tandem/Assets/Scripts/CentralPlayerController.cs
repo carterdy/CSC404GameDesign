@@ -83,7 +83,7 @@ public class CentralPlayerController : MonoBehaviour {
 
     void FixedUpdate ()
     {
-        if (Input.GetButtonUp("Fire1"))
+        if (Input.GetButtonDown("Fire1"))
         {
             FlipPlayers();
         }
