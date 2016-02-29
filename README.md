@@ -8,6 +8,11 @@ What works (as of my initial commit):
 * The active player can be toggled with the Y button on an Xbox controller (triangle on ps4 assuming it goes by position?)
 * If the active player is blue (player 1), they can jump on the blue (ice) blocks.  Similarly, orange (player 2) can jump on the orange (fire) blocks when they're active
 
+As of 29/02/16:
+
+* Players share movement with steering from the top player.
+* Can no longer switch while in mid-air
+
 
 ## PlayerSwitching branch
 
