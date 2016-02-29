@@ -45,14 +45,18 @@ public class CentralPlayerController : MonoBehaviour {
         if (warriorBottom)
         {
             playerPair.GetComponent<WarriorBottomController>().enabled = true;
+            playerPair.GetComponent<WarriorTopController>().enabled = false;
             playerPair.GetComponent<ArcherBottomController>().enabled = false;
+            playerPair.GetComponent<ArcherTopController>().enabled = true;
             //Physically switch the players
             warrior.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
             archer.transform.localPosition = new Vector3(0.0f, topOffset, 0.0f);
         } else
         {
             playerPair.GetComponent<ArcherBottomController>().enabled = true;
+            playerPair.GetComponent<ArcherTopController>().enabled = false;
             playerPair.GetComponent<WarriorBottomController>().enabled = false;
+            playerPair.GetComponent<WarriorTopController>().enabled = true;
             //Physically switch the players
             archer.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
             warrior.transform.localPosition = new Vector3(0.0f, topOffset, 0.0f);
@@ -83,7 +87,7 @@ public class CentralPlayerController : MonoBehaviour {
 
     void FixedUpdate ()
     {
-        if (Input.GetButtonUp("Fire1"))
+        if (Input.GetButtonDown("Fire1") && playerPair.GetComponent<WarriorBottomController>().isGrounded())
         {
             FlipPlayers();
         }
