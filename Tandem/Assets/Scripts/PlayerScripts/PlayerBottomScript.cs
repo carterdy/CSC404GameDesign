@@ -6,8 +6,8 @@ public abstract class PlayerBottomScript : MonoBehaviour {
     public float speed = 4f;
     public float jumpSpeed = 5f;
 
-    private Rigidbody rb;
-    private Vector3 movement;
+    protected Rigidbody rb;
+    protected Vector3 movement;
     private float rayLength = 100f;
     private int jumpable;
 
@@ -54,10 +54,9 @@ public abstract class PlayerBottomScript : MonoBehaviour {
     /* Move the player based off the given horizontal and vertical inputs */
     protected virtual void Move(float vertical)
     {
-        // movement = transform.forward * vertical * speed * Time.deltaTime;
-        movement = transform.forward * vertical * speed;
-        //rb.MovePosition(transform.position + movement);
-        rb.AddForce(movement);
+        movement = transform.forward * vertical * speed * Time.deltaTime;
+        rb.MovePosition(transform.position + movement);
+
     }
 
 }
