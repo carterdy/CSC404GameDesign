@@ -8,6 +8,7 @@ public class ArcherTopController : PlayerTopScript {
 	GameObject player;
 	GameObject arrow;
 
+	private float stickDir;
 	private Vector2 stickInput;
 	private float deadzone = 0.2f;
 
@@ -26,6 +27,7 @@ public class ArcherTopController : PlayerTopScript {
 		/* Shoot Arrow on Fire */
 		float aimX = Input.GetAxis("AimX");
 		float aimY = Input.GetAxis ("AimY");
+		stickDir = Mathf.Atan2 (aimX, aimY) * Mathf.Rad2Deg;
 		stickInput = new Vector2(aimX, aimY);
 
 		// Debug.Log ("aimX: "+ aimX);
@@ -53,12 +55,27 @@ public class ArcherTopController : PlayerTopScript {
 
 	void CreateArrow() {
 		arrow = Instantiate (arrowPrefab) as GameObject;
-		// Set Arrow shooting position
-		arrow.transform.position = player.transform.position + 
-			// In front of the player
-			player.transform.forward * transform.GetComponent<CapsuleCollider>().radius +
-			// Height level of top player
-			player.transform.up * transform.GetComponent<CapsuleCollider>().height / 2;
+	}
+
+	void UpdatePosition(float angle) {
+		// Arrow Should Rotate Around Player
+		Vector3 playerPos = player.transform.position;
+		float rads = angle * Mathf.Deg2Rad;
+
+		// Math here...
+		// Rotation around Origin with Vector [0, 0, 0.5]
+		float newX = Mathf.Sin(rads) / 2;
+		float newZ = Mathf.Cos(rads) / 2;
+
+		// Make new vector for the arrow position
+		Vector3 newPos = new Vector3 (newX, 0, newZ);
+
+		// Move the arrow into place
+		arrow.transform.position = newPos + 
+			// Center Origin at the player
+			playerPos + 
+			// Move Arrow up to proper height
+			Vector3.up * transform.GetComponent<CapsuleCollider>().height / 2;
 	}
 
 	void Shoot(GameObject arrow)
@@ -80,11 +97,10 @@ public class ArcherTopController : PlayerTopScript {
 		// Arrow exist, now aim the arrow
 		else {
 			// Rotate Arrow in the direction of the Joystick
-			float angle = Mathf.Atan2 (aimX, aimY) * Mathf.Rad2Deg;
-			arrow.transform.rotation = Quaternion.Euler (new Vector3 (90, angle, 0));
+			arrow.transform.rotation = Quaternion.Euler (new Vector3 (90, stickDir, 0));
+			UpdatePosition(arrow.transform.eulerAngles.y);
 		}
 	}
-
 	/*
 	 * Arrow Related Code End
 	 */
