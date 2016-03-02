@@ -11,11 +11,11 @@ public class mine_explosion : MonoBehaviour {
     void OnCollisionEnter(Collision col)
     {
         transform.localScale += new Vector3(3, 3, 3);
-        StartCoroutine(Example());
+        StartCoroutine(waiting());
         
     }
 
-    IEnumerator Example()
+    IEnumerator waiting()
     {
         yield return new WaitForSeconds(3);
         Destroy(this.gameObject);
