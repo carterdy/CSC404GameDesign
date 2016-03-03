@@ -141,7 +141,21 @@ public class CentralPlayerController : MonoBehaviour {
 			gameObject.transform.position = respawn.transform.position;
 			gameObject.SetActive(true);
 		}
-	}
+
+        //damage from mine exploding
+        if (other.gameObject.tag == "Mine")
+        {
+            takeDamage(35);
+        }
+
+        //damage from shooting obstacles
+        if (other.gameObject.tag == "Pebble")
+        {
+            takeDamage(5);
+        }
+
+    }
+
 
     void OnTriggerEnter(Collider other)
     {
@@ -168,4 +182,7 @@ public class CentralPlayerController : MonoBehaviour {
 	void Update () {
         playerHealthBar.GetComponent<RectTransform>().localScale = new Vector3(playerHealth / 100f, 0.33f, 0f);
 	}
+
+    
+
 }
