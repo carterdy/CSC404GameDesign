@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class CentralPlayerController : MonoBehaviour {
@@ -119,6 +120,14 @@ public class CentralPlayerController : MonoBehaviour {
         if (warriorBottom)
         {
             takeDamage(5 * Time.deltaTime);
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "End Zone")
+        {
+            SceneManager.LoadScene("Victory");
         }
     }
 
