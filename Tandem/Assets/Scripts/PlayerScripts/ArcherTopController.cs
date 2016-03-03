@@ -103,7 +103,9 @@ public class ArcherTopController : PlayerTopScript {
 		else {
 			// Rotate Arrow in the direction of the Joystick
 			arrow.transform.rotation = Quaternion.Euler (new Vector3 (90, stickDir, 0));
+
 			// TODO: Fix Range Limit
+
 			UpdatePosition(arrow.transform.eulerAngles.y);
 			// LimitAimCone();
 		}
