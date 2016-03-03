@@ -1,8 +1,15 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: cad732e2276172644874429bbc6e30f4
 folderAsset: yes
 timeCreated: 1456791406
 licenseType: Free
+=======
+guid: 5fe3dbb1b336c1c4c890927717614667
+folderAsset: yes
+timeCreated: 1456770543
+licenseType: Pro
+>>>>>>> refs/remotes/origin/master
 DefaultImporter:
   userData: 
   assetBundleName: 
