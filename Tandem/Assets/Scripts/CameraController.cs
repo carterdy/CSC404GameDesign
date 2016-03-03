@@ -7,12 +7,11 @@ public class CameraController : MonoBehaviour {
     public Transform player;
     public float smoothing = 5f;
 
-    public Vector3 offset;
+    public Vector3 offset = new Vector3(0f, 7f, -7f);
 
-	// Use this for initialization
-	void Start () {
-        //offset = transform.position - player.position;
-        offset = new Vector3(0f, 7f, -7f);
+    // Use this for initialization
+    void Start () {
+
 	}
 	
 	void FixedUpdate () {
