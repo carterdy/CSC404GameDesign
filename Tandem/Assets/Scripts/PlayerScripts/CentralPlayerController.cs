@@ -34,8 +34,6 @@ public class CentralPlayerController : MonoBehaviour {
             Destroy(gameObject);
         }
 
-        DontDestroyOnLoad(gameObject);
-
         warrior = GameObject.Find("CompletePlayer/Player1");
         archer = GameObject.Find("CompletePlayer/Player2");
         topOffset = archer.transform.localScale.y * 1.5f;
@@ -113,10 +111,6 @@ public class CentralPlayerController : MonoBehaviour {
     public void takeDamage(float damage)
     {
         playerHealth -= damage;
-        if (playerHealth <= 0f)
-        {
-            gameObject.SetActive(false);
-        }
     }
 
     /* Called while the player is standing in fire */
@@ -124,7 +118,7 @@ public class CentralPlayerController : MonoBehaviour {
     {
         if (warriorBottom)
         {
-            takeDamage(2 * Time.deltaTime);
+            takeDamage(5 * Time.deltaTime);
         }
     }
 

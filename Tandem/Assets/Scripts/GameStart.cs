@@ -13,7 +13,6 @@ public class GameStart : MonoBehaviour {
 	void Update () {
 	    if (Input.GetButton("Start"))
         {
-            Debug.Log("Well we got here");
             SceneManager.LoadScene("AlphaLevel1");
         }
 	}
