@@ -1,0 +1,388 @@
+fileFormatVersion: 2
+guid: 2fa727d6340c27347b57824ddb2ef7d6
+timeCreated: 1456958935
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: ' Box588'
+    100002: ' Box606'
+    100004: Box001
+    100006: Box205
+    100008: Box211
+    100010: Box212
+    100012: Box240
+    100014: Box242
+    100016: Box284
+    100018: Box285
+    100020: Box374
+    100022: Box375
+    100024: Box518
+    100026: Box528
+    100028: Bridge 1
+    100030: //RootNode
+    100032: Frozen Ground
+    100034: Ice mounds
+    100036: Lava Ground
+    100038: MountainC
+    100040: MountainCornerR
+    100042: MountainL004
+    100044: MountainL1
+    100046: MountainL2
+    100048: MountainL3
+    100050: MountainR004
+    100052: MountainR1
+    100054: MountainR2
+    100056: MountainR3
+    100058: MountainTC
+    100060: MountainTL
+    100062: MountainTR
+    100064: Neutral Ground
+    100066: Platform1
+    100068: Platform2
+    100070: Platform3
+    100072: Platform4
+    100074: Platform5
+    100076: Platform6
+    100078: Platform7
+    100080: Platform8
+    100082: Tree Leaves 002
+    100084: Tree Leaves 003
+    100086: Tree Leaves 004
+    100088: Tree Leaves 005
+    100090: Tree Leaves 1
+    100092: Tree Trunk 002
+    100094: Tree Trunk 003
+    100096: Tree Trunk 004
+    100098: Tree Trunk 005
+    100100: Tree Trunk 1
+    100102: Volcano
+    100104: Water
+    100106: Waterfall 1
+    400000: ' Box588'
+    400002: ' Box606'
+    400004: Box001
+    400006: Box205
+    400008: Box211
+    400010: Box212
+    400012: Box240
+    400014: Box242
+    400016: Box284
+    400018: Box285
+    400020: Box374
+    400022: Box375
+    400024: Box518
+    400026: Box528
+    400028: Bridge 1
+    400030: //RootNode
+    400032: Frozen Ground
+    400034: Ice mounds
+    400036: Lava Ground
+    400038: MountainC
+    400040: MountainCornerR
+    400042: MountainL004
+    400044: MountainL1
+    400046: MountainL2
+    400048: MountainL3
+    400050: MountainR004
+    400052: MountainR1
+    400054: MountainR2
+    400056: MountainR3
+    400058: MountainTC
+    400060: MountainTL
+    400062: MountainTR
+    400064: Neutral Ground
+    400066: Platform1
+    400068: Platform2
+    400070: Platform3
+    400072: Platform4
+    400074: Platform5
+    400076: Platform6
+    400078: Platform7
+    400080: Platform8
+    400082: Tree Leaves 002
+    400084: Tree Leaves 003
+    400086: Tree Leaves 004
+    400088: Tree Leaves 005
+    400090: Tree Leaves 1
+    400092: Tree Trunk 002
+    400094: Tree Trunk 003
+    400096: Tree Trunk 004
+    400098: Tree Trunk 005
+    400100: Tree Trunk 1
+    400102: Volcano
+    400104: Water
+    400106: Waterfall 1
+    2300000: ' Box588'
+    2300002: ' Box606'
+    2300004: Box205
+    2300006: Box211
+    2300008: Box212
+    2300010: Box240
+    2300012: Box242
+    2300014: Box284
+    2300016: Box285
+    2300018: Box374
+    2300020: Box375
+    2300022: Box518
+    2300024: Box528
+    2300026: Bridge 1
+    2300028: Frozen Ground
+    2300030: Ice mounds
+    2300032: Lava Ground
+    2300034: MountainC
+    2300036: MountainCornerR
+    2300038: MountainL004
+    2300040: MountainL1
+    2300042: MountainL2
+    2300044: MountainL3
+    2300046: MountainR004
+    2300048: MountainR1
+    2300050: MountainR2
+    2300052: MountainR3
+    2300054: MountainTC
+    2300056: MountainTL
+    2300058: MountainTR
+    2300060: Neutral Ground
+    2300062: Platform1
+    2300064: Platform2
+    2300066: Platform3
+    2300068: Platform4
+    2300070: Platform5
+    2300072: Platform6
+    2300074: Platform7
+    2300076: Platform8
+    2300078: Tree Leaves 002
+    2300080: Tree Leaves 003
+    2300082: Tree Leaves 004
+    2300084: Tree Leaves 005
+    2300086: Tree Leaves 1
+    2300088: Tree Trunk 002
+    2300090: Tree Trunk 003
+    2300092: Tree Trunk 004
+    2300094: Tree Trunk 005
+    2300096: Tree Trunk 1
+    2300098: Volcano
+    2300100: Water
+    2300102: Waterfall 1
+    3300000: ' Box588'
+    3300002: ' Box606'
+    3300004: Box205
+    3300006: Box211
+    3300008: Box212
+    3300010: Box240
+    3300012: Box242
+    3300014: Box284
+    3300016: Box285
+    3300018: Box374
+    3300020: Box375
+    3300022: Box518
+    3300024: Box528
+    3300026: Bridge 1
+    3300028: Frozen Ground
+    3300030: Ice mounds
+    3300032: Lava Ground
+    3300034: MountainC
+    3300036: MountainCornerR
+    3300038: MountainL004
+    3300040: MountainL1
+    3300042: MountainL2
+    3300044: MountainL3
+    3300046: MountainR004
+    3300048: MountainR1
+    3300050: MountainR2
+    3300052: MountainR3
+    3300054: MountainTC
+    3300056: MountainTL
+    3300058: MountainTR
+    3300060: Neutral Ground
+    3300062: Platform1
+    3300064: Platform2
+    3300066: Platform3
+    3300068: Platform4
+    3300070: Platform5
+    3300072: Platform6
+    3300074: Platform7
+    3300076: Platform8
+    3300078: Tree Leaves 002
+    3300080: Tree Leaves 003
+    3300082: Tree Leaves 004
+    3300084: Tree Leaves 005
+    3300086: Tree Leaves 1
+    3300088: Tree Trunk 002
+    3300090: Tree Trunk 003
+    3300092: Tree Trunk 004
+    3300094: Tree Trunk 005
+    3300096: Tree Trunk 1
+    3300098: Volcano
+    3300100: Water
+    3300102: Waterfall 1
+    4300000: Neutral Ground
+    4300002: Ice mounds
+    4300004: MountainTR
+    4300006: MountainR1
+    4300008: MountainCornerR
+    4300010: MountainTC
+    4300012: MountainR2
+    4300014: MountainTL
+    4300016: Volcano
+    4300018: Water
+    4300020: MountainL1
+    4300022: Frozen Ground
+    4300024: Box205
+    4300026: Box211
+    4300028: Box212
+    4300030: Box240
+    4300032: Box242
+    4300034: MountainC
+    4300036: Box284
+    4300038: Box285
+    4300040: Lava Ground
+    4300042: Waterfall 1
+    4300044: Box374
+    4300046: Box375
+    4300048: Bridge 1
+    4300050: MountainR3
+    4300052: MountainL2
+    4300054: Tree Trunk 1
+    4300056: Tree Leaves 1
+    4300058: Box518
+    4300060: ' Box588'
+    4300062: ' Box606'
+    4300064: Box528
+    4300066: MountainL3
+    4300068: MountainL004
+    4300070: MountainR004
+    4300072: Platform2
+    4300074: Platform3
+    4300076: Platform4
+    4300078: Platform1
+    4300080: Platform7
+    4300082: Platform6
+    4300084: Platform5
+    4300086: Platform8
+    4300088: Tree Trunk 002
+    4300090: Tree Leaves 002
+    4300092: Tree Trunk 003
+    4300094: Tree Leaves 003
+    4300096: Tree Trunk 004
+    4300098: Tree Leaves 004
+    4300100: Tree Trunk 005
+    4300102: Tree Leaves 005
+    6400000: ' Box588'
+    6400002: ' Box606'
+    6400004: Box205
+    6400006: Box211
+    6400008: Box212
+    6400010: Box240
+    6400012: Box242
+    6400014: Box284
+    6400016: Box285
+    6400018: Box374
+    6400020: Box375
+    6400022: Box518
+    6400024: Box528
+    6400026: Bridge 1
+    6400028: Frozen Ground
+    6400030: Ice mounds
+    6400032: Lava Ground
+    6400034: MountainC
+    6400036: MountainCornerR
+    6400038: MountainL004
+    6400040: MountainL1
+    6400042: MountainL2
+    6400044: MountainL3
+    6400046: MountainR004
+    6400048: MountainR1
+    6400050: MountainR2
+    6400052: MountainR3
+    6400054: MountainTC
+    6400056: MountainTL
+    6400058: MountainTR
+    6400060: Neutral Ground
+    6400062: Platform1
+    6400064: Platform2
+    6400066: Platform3
+    6400068: Platform4
+    6400070: Platform5
+    6400072: Platform6
+    6400074: Platform7
+    6400076: Platform8
+    6400078: Tree Leaves 002
+    6400080: Tree Leaves 003
+    6400082: Tree Leaves 004
+    6400084: Tree Leaves 005
+    6400086: Tree Leaves 1
+    6400088: Tree Trunk 002
+    6400090: Tree Trunk 003
+    6400092: Tree Trunk 004
+    6400094: Tree Trunk 005
+    6400096: Tree Trunk 1
+    6400098: Volcano
+    6400100: Water
+    6400102: Waterfall 1
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 10
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

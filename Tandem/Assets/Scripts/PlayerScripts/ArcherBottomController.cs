@@ -21,17 +21,17 @@ public class ArcherBottomController : PlayerBottomScript {
         Move(vertical);
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision other)
     {
-        if (other.tag == "Icy Ground")
+        if (other.gameObject.tag == "Icy Ground")
         {
             onIce = true;
         }
     }
 
-    void OnTriggerExit(Collider other)
+    void OnCollisionExit(Collision other)
     {
-        if (other.tag == "Icy Ground")
+        if (other.gameObject.tag == "Icy Ground")
         {
             onIce = false;
         }
