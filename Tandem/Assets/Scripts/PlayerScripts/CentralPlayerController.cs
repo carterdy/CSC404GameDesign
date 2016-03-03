@@ -5,7 +5,7 @@ public class CentralPlayerController : MonoBehaviour {
 
     public static CentralPlayerController instance = null;
 
-    private float playerHealth = 100f;
+    public float playerHealth = 100f;
 
     //The offset to place the top player above the bottom player
     private float topOffset;
