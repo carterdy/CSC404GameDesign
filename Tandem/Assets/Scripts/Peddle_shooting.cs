@@ -11,19 +11,31 @@ public class Peddle_shooting : MonoBehaviour {
     //void Update () {
     //}
     public GameObject obstacle;
-    public GameObject peddle;
-    public float speed = 0.1f;
+    public GameObject pebble;
+    public float speed = 20;
+    public float ShootingSpeed;
+    private float tempSpeed;
 
-
-    // Update is called once per frame
-    void Update()
-    {
-
-            //bullet = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        GameObject b = Instantiate(peddle, obstacle.transform.position + new Vector3(0.2f, 0, 0), Quaternion.identity) as GameObject;
-        //b.transform.position = player.transform.position + new Vector3 (0.5f, 0, 0);
-        b.transform.Translate(Vector3.right * speed * Time.deltaTime);
-
+    void Start () {
+        tempSpeed = ShootingSpeed;
     }
 
+    void Update()
+    {
+        if (tempSpeed < 0)
+        {
+
+            GameObject projectile = Instantiate(pebble) as GameObject;
+            projectile.transform.position = transform.position;
+            Rigidbody rb = projectile.GetComponent<Rigidbody>();
+            rb.velocity = Vector3.right * speed;
+            tempSpeed = ShootingSpeed;
+        }
+        else
+        {
+            tempSpeed -= 1;
+        }
+
+
+    }
 }

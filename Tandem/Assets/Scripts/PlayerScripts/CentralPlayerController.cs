@@ -140,4 +140,22 @@ public class CentralPlayerController : MonoBehaviour {
 	void Update () {
         playerHealthBar.GetComponent<RectTransform>().localScale = new Vector3(playerHealth / 100f, 0.33f, 0f);
 	}
+
+    
+    void OnCollisionEnter(Collision col)
+    {
+        //damage from mine exploding
+        if (col.gameObject.tag == "Mine")
+        {
+            takeDamage(35);
+        }
+
+        //damage from shooting obstacles
+        if (col.gameObject.tag == "Pebble")
+        {
+            takeDamage(5);
+        }
+
+    }
+
 }
