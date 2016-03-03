@@ -10,7 +10,11 @@ public class ArcherTopController : PlayerTopScript {
 
 	private float stickDir;
 	private Vector2 stickInput;
-	private float deadzone = 0.2f;
+	private float deadzone = 0.25f;
+
+	private float aimRange = 90f;
+	private float minRange;
+	private float maxRange;
 
 	void Start() {
 		arrowPrefab = Resources.Load ("Arrow") as GameObject;
@@ -24,14 +28,15 @@ public class ArcherTopController : PlayerTopScript {
 		float turn = Input.GetAxisRaw("Horizontal2");
 		Turn(turn);
 
-		/* Shoot Arrow on Fire */
+		// Aim Axis
 		float aimX = Input.GetAxis("AimX");
 		float aimY = Input.GetAxis ("AimY");
-		stickDir = Mathf.Atan2 (aimX, aimY) * Mathf.Rad2Deg;
-		stickInput = new Vector2(aimX, aimY);
 
-		// Debug.Log ("aimX: "+ aimX);
-		// Debug.Log ("aimY: "+ aimY);
+		// Math to convert Axis to Angle Direction
+		stickDir = Mathf.Atan2 (aimX, aimY) * Mathf.Rad2Deg;
+
+		// Used for Deadzone Check
+		stickInput = new Vector2(aimX, aimY);
 
 		// If joystick is active
 		if (stickInput.magnitude > deadzone) {
@@ -98,7 +103,51 @@ public class ArcherTopController : PlayerTopScript {
 		else {
 			// Rotate Arrow in the direction of the Joystick
 			arrow.transform.rotation = Quaternion.Euler (new Vector3 (90, stickDir, 0));
-			UpdatePosition(arrow.transform.eulerAngles.y);
+			LimitAimCone();
+		}
+	}
+
+	void LimitStickDir(float angle) {
+		// Controller Direction angles are 180 to -180
+		// Convert rotation angle to controller Angle
+		if (angle > 180) {
+			angle = angle - 360;
+		}
+		arrow.transform.rotation = Quaternion.Euler (new Vector3 (90, angle, 0));
+	}
+
+	void LimitAimCone() {
+		float playerRotation = player.transform.eulerAngles.y;
+		float arrowRot = arrow.transform.eulerAngles.y;
+
+		// Find Min Ranges
+		if ((playerRotation - aimRange) < 0f) {
+			minRange = playerRotation - aimRange + 360f;
+		} else {
+			minRange = playerRotation - aimRange;
+		}
+
+		// Find Max Ranges
+		if ((playerRotation + aimRange) > 360f) {
+			maxRange = playerRotation + aimRange - 360f;
+		} else {
+			maxRange = playerRotation + aimRange;
+		}
+
+		// Update Arrow with Range Restrictions
+		// Maintain Min Value if Rotation is under Min
+		if (arrowRot < minRange) {
+			UpdatePosition (minRange);
+			LimitStickDir (minRange);
+		} 
+		// Maintain Max Value if Rotation is under Max
+		else if (arrowRot > maxRange) {
+			UpdatePosition (maxRange);
+			LimitStickDir(maxRange);
+		} 
+		// All good, No limit
+		else {
+			UpdatePosition (arrowRot);
 		}
 	}
 	/*
