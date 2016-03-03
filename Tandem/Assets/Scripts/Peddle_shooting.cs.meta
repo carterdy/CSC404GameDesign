@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d7ba1e16d9b66e24a9d94774770d4fd4
+timeCreated: 1456883710
+licenseType: Pro
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - obstacle: {fileID: 152794, guid: 5fec29f839e03bc47bb9d1370542e6ec, type: 2}
+  - peddle: {fileID: 193106, guid: aa8c3ef7c73e97445888a71e465a7d0a, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
