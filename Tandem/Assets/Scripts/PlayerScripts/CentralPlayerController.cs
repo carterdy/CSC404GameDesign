@@ -21,6 +21,8 @@ public class CentralPlayerController : MonoBehaviour {
     private GameObject warriorTopIcon;
     private GameObject warriorBottomIcon;
     private GameObject playerHealthBar;
+	private GameObject startingSpawn;
+	private GameObject respawn;
 
 
     // Use this for initialization
@@ -43,9 +45,16 @@ public class CentralPlayerController : MonoBehaviour {
         warriorTopIcon = GameObject.Find("WarriorTopIcon");
         warriorBottomIcon = GameObject.Find("WarriorBottomIcon");
         playerHealthBar = GameObject.Find("PlayerHealthBar");
+		startingSpawn = GameObject.Find ("StartZone");
+		respawn = Instantiate (startingSpawn, 
+			gameObject.transform.position, 
+			startingSpawn.transform.rotation)
+			as GameObject;
 
         warriorTopIcon.SetActive(false);
         archerBottomIcon.SetActive(false);
+
+		gameObject.transform.position = startingSpawn.transform.position;
     }
 
     /*Flip the players by disabling movement for the top player and changing the interactable objects */
@@ -123,6 +132,17 @@ public class CentralPlayerController : MonoBehaviour {
         }
     }
 
+	void OnCollisionEnter(Collision other)
+	{
+		if (other.gameObject.name == "Water")
+		{
+			takeDamage (20.0f);
+			gameObject.SetActive(false);
+			gameObject.transform.position = respawn.transform.position;
+			gameObject.SetActive(true);
+		}
+	}
+
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "End Zone")
@@ -137,6 +157,11 @@ public class CentralPlayerController : MonoBehaviour {
         {
             FlipPlayers();
         }
+
+		// Respawn should follow player, when grounded
+		if (gameObject.GetComponent<WarriorBottomController> ().isGrounded ()) {
+			respawn.transform.position = gameObject.transform.position;
+		}
     }
 	
 	// Update is called once per frame
