@@ -18,4 +18,13 @@ public class WarriorBottomController : PlayerBottomScript {
        Move(vertical);
     }
 
+    void OnCollisionStay(Collision other)
+    {
+        //If the player is touching molten ground, take damage over time
+        if (other.gameObject.tag == "Molten Ground")
+        {
+            gameObject.GetComponent<CentralPlayerController>().standingInFire();
+        }
+    }
+
 }
