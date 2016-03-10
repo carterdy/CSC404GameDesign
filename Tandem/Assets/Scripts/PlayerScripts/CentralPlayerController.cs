@@ -39,7 +39,9 @@ public class CentralPlayerController : MonoBehaviour {
             Destroy(gameObject);
         }
 
-        playersObj = GameObject.Find("CompletePlayer/chars9");
+        players = GetComponent<Animator>();
+
+        //playersObj = GameObject.Find("CompletePlayer/chars9");
         //warrior = GameObject.Find("CompletePlayer/Player1");
         //archer = GameObject.Find("CompletePlayer/Player2");
         //topOffset = archer.transform.localScale.y * 1.5f;
@@ -59,13 +61,14 @@ public class CentralPlayerController : MonoBehaviour {
 
 		gameObject.transform.position = startingSpawn.transform.position;
 
-        players = playersObj.GetComponent<Animator>();
+        //players = playersObj.GetComponent<Animator>();
         
     }
 
     /*Flip the players by disabling movement for the top player and changing the interactable objects */
     void FlipPlayers ()
     {
+        players.SetInteger("flip", 0);
         warriorBottom = !warriorBottom;
         GameObject[] iceObstacles = GameObject.FindGameObjectsWithTag("IceObstacle");
         GameObject[] fireObstacles = GameObject.FindGameObjectsWithTag("FireObstacle");
@@ -84,6 +87,8 @@ public class CentralPlayerController : MonoBehaviour {
             //Physically switch the players
             //warrior.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
             //archer.transform.localPosition = new Vector3(0.0f, topOffset, 0.0f);
+            players.SetInteger("flip", 1);
+            
         }
         else
         {
@@ -99,6 +104,7 @@ public class CentralPlayerController : MonoBehaviour {
             //Physically switch the players
             //archer.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
             //warrior.transform.localPosition = new Vector3(0.0f, topOffset, 0.0f);
+            players.SetInteger("flip", 1);
         }
 
         //Enable/disable the colliders on the elemental objects
@@ -174,12 +180,15 @@ public class CentralPlayerController : MonoBehaviour {
 
     void FixedUpdate ()
     {
-
+        //Debug.Log(gameObject.GetComponent<WarriorBottomController>().isGrounded());
         players.SetInteger("flip", 0);
         if (Input.GetButtonDown("Fire1") && gameObject.GetComponent<WarriorBottomController>().isGrounded())
         {
-            FlipPlayers();
-            players.SetInteger("flip", 1);
+            if (players.GetCurrentAnimatorStateInfo(0).IsTag("idle"))
+            {
+                FlipPlayers();
+            }
+            //players.SetInteger("flip", 1);
         }
 
         // Respawn should follow player, when grounded

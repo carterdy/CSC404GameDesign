@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 2e4f58b23f0b06e4e835d6d0227f241f
-timeCreated: 1456907813
+guid: 5ca21abc0127a894ba3d9fefc83896b7
+timeCreated: 1457438673
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -80,23 +80,24 @@ ModelImporter:
     100144: neck
     100146: neckG
     100148: Pants
-    100150: Shoes
-    100152: shoulder.L
-    100154: shoulder.R
-    100156: ShoulderG.L
-    100158: ShoulderG.R
-    100160: Top
-    100162: Top.001
-    100164: torso
-    100166: TorsoG
-    100168: upperArm.L
-    100170: upperArm.R
-    100172: UpperArmG.L
-    100174: UpperArmG.R
-    100176: upperLeg.L
-    100178: upperLeg.R
-    100180: UpperLegG.L
-    100182: UpperLegG.R
+    100150: root
+    100152: Shoes
+    100154: shoulder.L
+    100156: shoulder.R
+    100158: ShoulderG.L
+    100160: ShoulderG.R
+    100162: Top
+    100164: Top.001
+    100166: torso
+    100168: TorsoG
+    100170: upperArm.L
+    100172: upperArm.R
+    100174: UpperArmG.L
+    100176: UpperArmG.R
+    100178: upperLeg.L
+    100180: upperLeg.R
+    100182: UpperLegG.L
+    100184: UpperLegG.R
     400000: Belt
     400002: Body
     400004: Body.G
@@ -172,23 +173,24 @@ ModelImporter:
     400144: neck
     400146: neckG
     400148: Pants
-    400150: Shoes
-    400152: shoulder.L
-    400154: shoulder.R
-    400156: ShoulderG.L
-    400158: ShoulderG.R
-    400160: Top
-    400162: Top.001
-    400164: torso
-    400166: TorsoG
-    400168: upperArm.L
-    400170: upperArm.R
-    400172: UpperArmG.L
-    400174: UpperArmG.R
-    400176: upperLeg.L
-    400178: upperLeg.R
-    400180: UpperLegG.L
-    400182: UpperLegG.R
+    400150: root
+    400152: Shoes
+    400154: shoulder.L
+    400156: shoulder.R
+    400158: ShoulderG.L
+    400160: ShoulderG.R
+    400162: Top
+    400164: Top.001
+    400166: torso
+    400168: TorsoG
+    400170: upperArm.L
+    400172: upperArm.R
+    400174: UpperArmG.L
+    400176: UpperArmG.R
+    400178: upperLeg.L
+    400180: upperLeg.R
+    400182: UpperLegG.L
+    400184: UpperLegG.R
     4300000: EyeG.L
     4300002: HairBand
     4300004: Mask
@@ -205,17 +207,16 @@ ModelImporter:
     4300026: Dress
     4300028: Top
     4300030: Pants
-    7400000: boyRun
+    7400000: boyIdle
     7400002: allAnim
-    7400004: allAnim
-    7400006: GirlArmature|boyRun
-    7400008: GirlArmature|boyRun.001
-    7400010: Hair.G|boyRun
-    7400012: girlRun
+    7400004: GirlArmature|boyRun
+    7400006: idleAnim
+    7400008: Hair.G|boyRun
+    7400010: girlRun
+    7400012: boyRun
     7400014: girlToBottom
     7400016: boyToBottom
-    7400018: boyidle
-    7400020: girlIdle
+    7400018: girlIdle
     9500000: //RootNode
     13700000: Belt
     13700002: Body
@@ -255,10 +256,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: allAnim
-      takeName: GirlArmature|allAnim
-      firstFrame: 0
-      lastFrame: 120
+      name: idleAnim
+      takeName: GirlArmature|idleAnim.001
+      firstFrame: 10
+      lastFrame: 100
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -299,365 +300,155 @@ ModelImporter:
         weight: 1
       - path: GirlArmature
         weight: 1
-      - path: GirlArmature/HandGIK.R
+      - path: GirlArmature/root
         weight: 1
-      - path: GirlArmature/HandGIK.R/HandGIK.R_end
+      - path: GirlArmature/root/HandGIK.R
         weight: 1
-      - path: GirlArmature/HandIGK.L
+      - path: GirlArmature/root/HandGIK.R/HandGIK.R_end
         weight: 1
-      - path: GirlArmature/HandIGK.L/HandIGK.L_end
+      - path: GirlArmature/root/HandIGK.L
         weight: 1
-      - path: GirlArmature/HandIK.L
+      - path: GirlArmature/root/HandIGK.L/HandIGK.L_end
         weight: 1
-      - path: GirlArmature/HandIK.L/HandIK.L_end
+      - path: GirlArmature/root/HandIK.L
         weight: 1
-      - path: GirlArmature/HandIK.R
+      - path: GirlArmature/root/HandIK.L/HandIK.L_end
         weight: 1
-      - path: GirlArmature/HandIK.R/HandIK.R_end
+      - path: GirlArmature/root/HandIK.R
         weight: 1
-      - path: GirlArmature/HandPole.L
+      - path: GirlArmature/root/HandIK.R/HandIK.R_end
         weight: 1
-      - path: GirlArmature/HandPole.L/HandPole.L_end
+      - path: GirlArmature/root/HandPole.L
         weight: 1
-      - path: GirlArmature/HandPole.R
+      - path: GirlArmature/root/HandPole.L/HandPole.L_end
         weight: 1
-      - path: GirlArmature/HandPole.R/HandPole.R_end
+      - path: GirlArmature/root/HandPole.R
         weight: 1
-      - path: GirlArmature/HandPoleG.L
+      - path: GirlArmature/root/HandPole.R/HandPole.R_end
         weight: 1
-      - path: GirlArmature/HandPoleG.L/HandPoleG.L_end
+      - path: GirlArmature/root/HandPoleG.L
         weight: 1
-      - path: GirlArmature/HandPoleG.R
+      - path: GirlArmature/root/HandPoleG.L/HandPoleG.L_end
         weight: 1
-      - path: GirlArmature/HandPoleG.R/HandPoleG.R_end
+      - path: GirlArmature/root/HandPoleG.R
         weight: 1
-      - path: GirlArmature/LegGIK.L
+      - path: GirlArmature/root/HandPoleG.R/HandPoleG.R_end
         weight: 1
-      - path: GirlArmature/LegGIK.L/LegGIK.L_end
+      - path: GirlArmature/root/LegGIK.L
         weight: 1
-      - path: GirlArmature/LegGIK.R
+      - path: GirlArmature/root/LegGIK.L/LegGIK.L_end
         weight: 1
-      - path: GirlArmature/LegGIK.R/LegGIK.R_end
+      - path: GirlArmature/root/LegGIK.R
         weight: 1
-      - path: GirlArmature/legIK.L
+      - path: GirlArmature/root/LegGIK.R/LegGIK.R_end
         weight: 1
-      - path: GirlArmature/legIK.L/legIK.L_end
+      - path: GirlArmature/root/legIK.L
         weight: 1
-      - path: GirlArmature/legIK.R
+      - path: GirlArmature/root/legIK.L/legIK.L_end
         weight: 1
-      - path: GirlArmature/legIK.R/legIK.R_end
+      - path: GirlArmature/root/legIK.R
         weight: 1
-      - path: GirlArmature/legPole.L
+      - path: GirlArmature/root/legIK.R/legIK.R_end
         weight: 1
-      - path: GirlArmature/legPole.L/legPole.L_end
+      - path: GirlArmature/root/legPole.L
         weight: 1
-      - path: GirlArmature/legPole.R
+      - path: GirlArmature/root/legPole.L/legPole.L_end
         weight: 1
-      - path: GirlArmature/legPole.R/legPole.R_end
+      - path: GirlArmature/root/legPole.R
         weight: 1
-      - path: GirlArmature/LegPoleG.L
+      - path: GirlArmature/root/legPole.R/legPole.R_end
         weight: 1
-      - path: GirlArmature/LegPoleG.L/LegPoleG.L_end
+      - path: GirlArmature/root/LegPoleG.L
         weight: 1
-      - path: GirlArmature/LegPoleG.R
+      - path: GirlArmature/root/LegPoleG.L/LegPoleG.L_end
         weight: 1
-      - path: GirlArmature/LegPoleG.R/LegPoleG.R_end
+      - path: GirlArmature/root/LegPoleG.R
         weight: 1
-      - path: GirlArmature/torso
+      - path: GirlArmature/root/LegPoleG.R/LegPoleG.R_end
         weight: 1
-      - path: GirlArmature/torso/chest
+      - path: GirlArmature/root/torso
         weight: 1
-      - path: GirlArmature/torso/chest/neck
+      - path: GirlArmature/root/torso/chest
         weight: 1
-      - path: GirlArmature/torso/chest/neck/head
+      - path: GirlArmature/root/torso/chest/neck
         weight: 1
-      - path: GirlArmature/torso/chest/neck/head/head_end
+      - path: GirlArmature/root/torso/chest/neck/head
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.L
+      - path: GirlArmature/root/torso/chest/neck/head/head_end
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.L/upperArm.L
+      - path: GirlArmature/root/torso/chest/shoulder.L
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.L/upperArm.L/lowerArm.L
+      - path: GirlArmature/root/torso/chest/shoulder.L/upperArm.L
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.L/upperArm.L/lowerArm.L/lowerArm.L_end
+      - path: GirlArmature/root/torso/chest/shoulder.L/upperArm.L/lowerArm.L
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.R
+      - path: GirlArmature/root/torso/chest/shoulder.L/upperArm.L/lowerArm.L/lowerArm.L_end
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.R/upperArm.R
+      - path: GirlArmature/root/torso/chest/shoulder.R
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.R/upperArm.R/lowerArm.R
+      - path: GirlArmature/root/torso/chest/shoulder.R/upperArm.R
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.R/upperArm.R/lowerArm.R/lowerArm.R_end
+      - path: GirlArmature/root/torso/chest/shoulder.R/upperArm.R/lowerArm.R
         weight: 1
-      - path: GirlArmature/torso/upperLeg.L
+      - path: GirlArmature/root/torso/chest/shoulder.R/upperArm.R/lowerArm.R/lowerArm.R_end
         weight: 1
-      - path: GirlArmature/torso/upperLeg.L/lowerLeg.L
+      - path: GirlArmature/root/torso/upperLeg.L
         weight: 1
-      - path: GirlArmature/torso/upperLeg.L/lowerLeg.L/lowerLeg.L_end
+      - path: GirlArmature/root/torso/upperLeg.L/lowerLeg.L
         weight: 1
-      - path: GirlArmature/torso/upperLeg.R
+      - path: GirlArmature/root/torso/upperLeg.L/lowerLeg.L/lowerLeg.L_end
         weight: 1
-      - path: GirlArmature/torso/upperLeg.R/lowerLeg.R
+      - path: GirlArmature/root/torso/upperLeg.R
         weight: 1
-      - path: GirlArmature/torso/upperLeg.R/lowerLeg.R/lowerLeg.R_end
+      - path: GirlArmature/root/torso/upperLeg.R/lowerLeg.R
         weight: 1
-      - path: GirlArmature/TorsoG
+      - path: GirlArmature/root/torso/upperLeg.R/lowerLeg.R/lowerLeg.R_end
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG
+      - path: GirlArmature/root/TorsoG
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG
+      - path: GirlArmature/root/TorsoG/ChestG
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG
+      - path: GirlArmature/root/TorsoG/ChestG/neckG
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003/HeadG.004
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003/HeadG.004/HeadG.004_end
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003/HeadG.004
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.L
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003/HeadG.004/HeadG.004_end
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.L/UpperArmG.L
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.L
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.L/UpperArmG.L/LowerArmG.L
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.L/UpperArmG.L
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.L/UpperArmG.L/LowerArmG.L/LowerArmG.L_end
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.L/UpperArmG.L/LowerArmG.L
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.R
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.L/UpperArmG.L/LowerArmG.L/LowerArmG.L_end
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.R/UpperArmG.R
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.R
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.R/UpperArmG.R/LowerArmG.R
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.R/UpperArmG.R
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.R/UpperArmG.R/LowerArmG.R/LowerArmG.R_end
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.R/UpperArmG.R/LowerArmG.R
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.L
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.R/UpperArmG.R/LowerArmG.R/LowerArmG.R_end
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.L/LowerLegG.L
+      - path: GirlArmature/root/TorsoG/UpperLegG.L
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.L/LowerLegG.L/LowerLegG.L_end
+      - path: GirlArmature/root/TorsoG/UpperLegG.L/LowerLegG.L
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.R
+      - path: GirlArmature/root/TorsoG/UpperLegG.L/LowerLegG.L/LowerLegG.L_end
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.R/LowerLegG.R
+      - path: GirlArmature/root/TorsoG/UpperLegG.R
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.R/LowerLegG.R/LowerLegG.R_end
+      - path: GirlArmature/root/TorsoG/UpperLegG.R/LowerLegG.R
         weight: 1
-      - path: hair
-        weight: 1
-      - path: Hair.G
-        weight: 1
-      - path: HairBand
-        weight: 1
-      - path: Mask
-        weight: 1
-      - path: Pants
-        weight: 1
-      - path: Shoes
-        weight: 1
-      - path: Top
-        weight: 1
-      - path: Top.001
-        weight: 1
-      maskType: 0
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: boyRun
-      takeName: GirlArmature|allAnim
-      firstFrame: 10
-      lastFrame: 30
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: Belt
-        weight: 1
-      - path: Body
-        weight: 1
-      - path: Body.G
-        weight: 1
-      - path: Dress
-        weight: 1
-      - path: Eye
-        weight: 1
-      - path: Eye.001
-        weight: 1
-      - path: Eye.R
-        weight: 1
-      - path: EyeG.L
-        weight: 1
-      - path: GirlArmature
-        weight: 1
-      - path: GirlArmature/HandGIK.R
-        weight: 1
-      - path: GirlArmature/HandGIK.R/HandGIK.R_end
-        weight: 1
-      - path: GirlArmature/HandIGK.L
-        weight: 1
-      - path: GirlArmature/HandIGK.L/HandIGK.L_end
-        weight: 1
-      - path: GirlArmature/HandIK.L
-        weight: 1
-      - path: GirlArmature/HandIK.L/HandIK.L_end
-        weight: 1
-      - path: GirlArmature/HandIK.R
-        weight: 1
-      - path: GirlArmature/HandIK.R/HandIK.R_end
-        weight: 1
-      - path: GirlArmature/HandPole.L
-        weight: 1
-      - path: GirlArmature/HandPole.L/HandPole.L_end
-        weight: 1
-      - path: GirlArmature/HandPole.R
-        weight: 1
-      - path: GirlArmature/HandPole.R/HandPole.R_end
-        weight: 1
-      - path: GirlArmature/HandPoleG.L
-        weight: 1
-      - path: GirlArmature/HandPoleG.L/HandPoleG.L_end
-        weight: 1
-      - path: GirlArmature/HandPoleG.R
-        weight: 1
-      - path: GirlArmature/HandPoleG.R/HandPoleG.R_end
-        weight: 1
-      - path: GirlArmature/LegGIK.L
-        weight: 1
-      - path: GirlArmature/LegGIK.L/LegGIK.L_end
-        weight: 1
-      - path: GirlArmature/LegGIK.R
-        weight: 1
-      - path: GirlArmature/LegGIK.R/LegGIK.R_end
-        weight: 1
-      - path: GirlArmature/legIK.L
-        weight: 1
-      - path: GirlArmature/legIK.L/legIK.L_end
-        weight: 1
-      - path: GirlArmature/legIK.R
-        weight: 1
-      - path: GirlArmature/legIK.R/legIK.R_end
-        weight: 1
-      - path: GirlArmature/legPole.L
-        weight: 1
-      - path: GirlArmature/legPole.L/legPole.L_end
-        weight: 1
-      - path: GirlArmature/legPole.R
-        weight: 1
-      - path: GirlArmature/legPole.R/legPole.R_end
-        weight: 1
-      - path: GirlArmature/LegPoleG.L
-        weight: 1
-      - path: GirlArmature/LegPoleG.L/LegPoleG.L_end
-        weight: 1
-      - path: GirlArmature/LegPoleG.R
-        weight: 1
-      - path: GirlArmature/LegPoleG.R/LegPoleG.R_end
-        weight: 1
-      - path: GirlArmature/torso
-        weight: 1
-      - path: GirlArmature/torso/chest
-        weight: 1
-      - path: GirlArmature/torso/chest/neck
-        weight: 1
-      - path: GirlArmature/torso/chest/neck/head
-        weight: 1
-      - path: GirlArmature/torso/chest/neck/head/head_end
-        weight: 1
-      - path: GirlArmature/torso/chest/shoulder.L
-        weight: 1
-      - path: GirlArmature/torso/chest/shoulder.L/upperArm.L
-        weight: 1
-      - path: GirlArmature/torso/chest/shoulder.L/upperArm.L/lowerArm.L
-        weight: 1
-      - path: GirlArmature/torso/chest/shoulder.L/upperArm.L/lowerArm.L/lowerArm.L_end
-        weight: 1
-      - path: GirlArmature/torso/chest/shoulder.R
-        weight: 1
-      - path: GirlArmature/torso/chest/shoulder.R/upperArm.R
-        weight: 1
-      - path: GirlArmature/torso/chest/shoulder.R/upperArm.R/lowerArm.R
-        weight: 1
-      - path: GirlArmature/torso/chest/shoulder.R/upperArm.R/lowerArm.R/lowerArm.R_end
-        weight: 1
-      - path: GirlArmature/torso/upperLeg.L
-        weight: 1
-      - path: GirlArmature/torso/upperLeg.L/lowerLeg.L
-        weight: 1
-      - path: GirlArmature/torso/upperLeg.L/lowerLeg.L/lowerLeg.L_end
-        weight: 1
-      - path: GirlArmature/torso/upperLeg.R
-        weight: 1
-      - path: GirlArmature/torso/upperLeg.R/lowerLeg.R
-        weight: 1
-      - path: GirlArmature/torso/upperLeg.R/lowerLeg.R/lowerLeg.R_end
-        weight: 1
-      - path: GirlArmature/TorsoG
-        weight: 1
-      - path: GirlArmature/TorsoG/ChestG
-        weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG
-        weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG
-        weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001
-        weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002
-        weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003
-        weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003/HeadG.004
-        weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003/HeadG.004/HeadG.004_end
-        weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.L
-        weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.L/UpperArmG.L
-        weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.L/UpperArmG.L/LowerArmG.L
-        weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.L/UpperArmG.L/LowerArmG.L/LowerArmG.L_end
-        weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.R
-        weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.R/UpperArmG.R
-        weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.R/UpperArmG.R/LowerArmG.R
-        weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.R/UpperArmG.R/LowerArmG.R/LowerArmG.R_end
-        weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.L
-        weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.L/LowerLegG.L
-        weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.L/LowerLegG.L/LowerLegG.L_end
-        weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.R
-        weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.R/LowerLegG.R
-        weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.R/LowerLegG.R/LowerLegG.R_end
+      - path: GirlArmature/root/TorsoG/UpperLegG.R/LowerLegG.R/LowerLegG.R_end
         weight: 1
       - path: hair
         weight: 1
@@ -723,153 +514,155 @@ ModelImporter:
         weight: 1
       - path: GirlArmature
         weight: 1
-      - path: GirlArmature/HandGIK.R
+      - path: GirlArmature/root
         weight: 1
-      - path: GirlArmature/HandGIK.R/HandGIK.R_end
+      - path: GirlArmature/root/HandGIK.R
         weight: 1
-      - path: GirlArmature/HandIGK.L
+      - path: GirlArmature/root/HandGIK.R/HandGIK.R_end
         weight: 1
-      - path: GirlArmature/HandIGK.L/HandIGK.L_end
+      - path: GirlArmature/root/HandIGK.L
         weight: 1
-      - path: GirlArmature/HandIK.L
+      - path: GirlArmature/root/HandIGK.L/HandIGK.L_end
         weight: 1
-      - path: GirlArmature/HandIK.L/HandIK.L_end
+      - path: GirlArmature/root/HandIK.L
         weight: 1
-      - path: GirlArmature/HandIK.R
+      - path: GirlArmature/root/HandIK.L/HandIK.L_end
         weight: 1
-      - path: GirlArmature/HandIK.R/HandIK.R_end
+      - path: GirlArmature/root/HandIK.R
         weight: 1
-      - path: GirlArmature/HandPole.L
+      - path: GirlArmature/root/HandIK.R/HandIK.R_end
         weight: 1
-      - path: GirlArmature/HandPole.L/HandPole.L_end
+      - path: GirlArmature/root/HandPole.L
         weight: 1
-      - path: GirlArmature/HandPole.R
+      - path: GirlArmature/root/HandPole.L/HandPole.L_end
         weight: 1
-      - path: GirlArmature/HandPole.R/HandPole.R_end
+      - path: GirlArmature/root/HandPole.R
         weight: 1
-      - path: GirlArmature/HandPoleG.L
+      - path: GirlArmature/root/HandPole.R/HandPole.R_end
         weight: 1
-      - path: GirlArmature/HandPoleG.L/HandPoleG.L_end
+      - path: GirlArmature/root/HandPoleG.L
         weight: 1
-      - path: GirlArmature/HandPoleG.R
+      - path: GirlArmature/root/HandPoleG.L/HandPoleG.L_end
         weight: 1
-      - path: GirlArmature/HandPoleG.R/HandPoleG.R_end
+      - path: GirlArmature/root/HandPoleG.R
         weight: 1
-      - path: GirlArmature/LegGIK.L
+      - path: GirlArmature/root/HandPoleG.R/HandPoleG.R_end
         weight: 1
-      - path: GirlArmature/LegGIK.L/LegGIK.L_end
+      - path: GirlArmature/root/LegGIK.L
         weight: 1
-      - path: GirlArmature/LegGIK.R
+      - path: GirlArmature/root/LegGIK.L/LegGIK.L_end
         weight: 1
-      - path: GirlArmature/LegGIK.R/LegGIK.R_end
+      - path: GirlArmature/root/LegGIK.R
         weight: 1
-      - path: GirlArmature/legIK.L
+      - path: GirlArmature/root/LegGIK.R/LegGIK.R_end
         weight: 1
-      - path: GirlArmature/legIK.L/legIK.L_end
+      - path: GirlArmature/root/legIK.L
         weight: 1
-      - path: GirlArmature/legIK.R
+      - path: GirlArmature/root/legIK.L/legIK.L_end
         weight: 1
-      - path: GirlArmature/legIK.R/legIK.R_end
+      - path: GirlArmature/root/legIK.R
         weight: 1
-      - path: GirlArmature/legPole.L
+      - path: GirlArmature/root/legIK.R/legIK.R_end
         weight: 1
-      - path: GirlArmature/legPole.L/legPole.L_end
+      - path: GirlArmature/root/legPole.L
         weight: 1
-      - path: GirlArmature/legPole.R
+      - path: GirlArmature/root/legPole.L/legPole.L_end
         weight: 1
-      - path: GirlArmature/legPole.R/legPole.R_end
+      - path: GirlArmature/root/legPole.R
         weight: 1
-      - path: GirlArmature/LegPoleG.L
+      - path: GirlArmature/root/legPole.R/legPole.R_end
         weight: 1
-      - path: GirlArmature/LegPoleG.L/LegPoleG.L_end
+      - path: GirlArmature/root/LegPoleG.L
         weight: 1
-      - path: GirlArmature/LegPoleG.R
+      - path: GirlArmature/root/LegPoleG.L/LegPoleG.L_end
         weight: 1
-      - path: GirlArmature/LegPoleG.R/LegPoleG.R_end
+      - path: GirlArmature/root/LegPoleG.R
         weight: 1
-      - path: GirlArmature/torso
+      - path: GirlArmature/root/LegPoleG.R/LegPoleG.R_end
         weight: 1
-      - path: GirlArmature/torso/chest
+      - path: GirlArmature/root/torso
         weight: 1
-      - path: GirlArmature/torso/chest/neck
+      - path: GirlArmature/root/torso/chest
         weight: 1
-      - path: GirlArmature/torso/chest/neck/head
+      - path: GirlArmature/root/torso/chest/neck
         weight: 1
-      - path: GirlArmature/torso/chest/neck/head/head_end
+      - path: GirlArmature/root/torso/chest/neck/head
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.L
+      - path: GirlArmature/root/torso/chest/neck/head/head_end
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.L/upperArm.L
+      - path: GirlArmature/root/torso/chest/shoulder.L
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.L/upperArm.L/lowerArm.L
+      - path: GirlArmature/root/torso/chest/shoulder.L/upperArm.L
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.L/upperArm.L/lowerArm.L/lowerArm.L_end
+      - path: GirlArmature/root/torso/chest/shoulder.L/upperArm.L/lowerArm.L
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.R
+      - path: GirlArmature/root/torso/chest/shoulder.L/upperArm.L/lowerArm.L/lowerArm.L_end
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.R/upperArm.R
+      - path: GirlArmature/root/torso/chest/shoulder.R
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.R/upperArm.R/lowerArm.R
+      - path: GirlArmature/root/torso/chest/shoulder.R/upperArm.R
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.R/upperArm.R/lowerArm.R/lowerArm.R_end
+      - path: GirlArmature/root/torso/chest/shoulder.R/upperArm.R/lowerArm.R
         weight: 1
-      - path: GirlArmature/torso/upperLeg.L
+      - path: GirlArmature/root/torso/chest/shoulder.R/upperArm.R/lowerArm.R/lowerArm.R_end
         weight: 1
-      - path: GirlArmature/torso/upperLeg.L/lowerLeg.L
+      - path: GirlArmature/root/torso/upperLeg.L
         weight: 1
-      - path: GirlArmature/torso/upperLeg.L/lowerLeg.L/lowerLeg.L_end
+      - path: GirlArmature/root/torso/upperLeg.L/lowerLeg.L
         weight: 1
-      - path: GirlArmature/torso/upperLeg.R
+      - path: GirlArmature/root/torso/upperLeg.L/lowerLeg.L/lowerLeg.L_end
         weight: 1
-      - path: GirlArmature/torso/upperLeg.R/lowerLeg.R
+      - path: GirlArmature/root/torso/upperLeg.R
         weight: 1
-      - path: GirlArmature/torso/upperLeg.R/lowerLeg.R/lowerLeg.R_end
+      - path: GirlArmature/root/torso/upperLeg.R/lowerLeg.R
         weight: 1
-      - path: GirlArmature/TorsoG
+      - path: GirlArmature/root/torso/upperLeg.R/lowerLeg.R/lowerLeg.R_end
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG
+      - path: GirlArmature/root/TorsoG
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG
+      - path: GirlArmature/root/TorsoG/ChestG
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG
+      - path: GirlArmature/root/TorsoG/ChestG/neckG
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003/HeadG.004
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003/HeadG.004/HeadG.004_end
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003/HeadG.004
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.L
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003/HeadG.004/HeadG.004_end
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.L/UpperArmG.L
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.L
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.L/UpperArmG.L/LowerArmG.L
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.L/UpperArmG.L
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.L/UpperArmG.L/LowerArmG.L/LowerArmG.L_end
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.L/UpperArmG.L/LowerArmG.L
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.R
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.L/UpperArmG.L/LowerArmG.L/LowerArmG.L_end
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.R/UpperArmG.R
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.R
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.R/UpperArmG.R/LowerArmG.R
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.R/UpperArmG.R
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.R/UpperArmG.R/LowerArmG.R/LowerArmG.R_end
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.R/UpperArmG.R/LowerArmG.R
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.L
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.R/UpperArmG.R/LowerArmG.R/LowerArmG.R_end
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.L/LowerLegG.L
+      - path: GirlArmature/root/TorsoG/UpperLegG.L
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.L/LowerLegG.L/LowerLegG.L_end
+      - path: GirlArmature/root/TorsoG/UpperLegG.L/LowerLegG.L
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.R
+      - path: GirlArmature/root/TorsoG/UpperLegG.L/LowerLegG.L/LowerLegG.L_end
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.R/LowerLegG.R
+      - path: GirlArmature/root/TorsoG/UpperLegG.R
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.R/LowerLegG.R/LowerLegG.R_end
+      - path: GirlArmature/root/TorsoG/UpperLegG.R/LowerLegG.R
+        weight: 1
+      - path: GirlArmature/root/TorsoG/UpperLegG.R/LowerLegG.R/LowerLegG.R_end
         weight: 1
       - path: hair
         weight: 1
@@ -891,17 +684,17 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: boyToBottom
+      name: boyRun
       takeName: GirlArmature|allAnim
-      firstFrame: 70
-      lastFrame: 90
+      firstFrame: 10
+      lastFrame: 30
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -935,153 +728,155 @@ ModelImporter:
         weight: 1
       - path: GirlArmature
         weight: 1
-      - path: GirlArmature/HandGIK.R
+      - path: GirlArmature/root
         weight: 1
-      - path: GirlArmature/HandGIK.R/HandGIK.R_end
+      - path: GirlArmature/root/HandGIK.R
         weight: 1
-      - path: GirlArmature/HandIGK.L
+      - path: GirlArmature/root/HandGIK.R/HandGIK.R_end
         weight: 1
-      - path: GirlArmature/HandIGK.L/HandIGK.L_end
+      - path: GirlArmature/root/HandIGK.L
         weight: 1
-      - path: GirlArmature/HandIK.L
+      - path: GirlArmature/root/HandIGK.L/HandIGK.L_end
         weight: 1
-      - path: GirlArmature/HandIK.L/HandIK.L_end
+      - path: GirlArmature/root/HandIK.L
         weight: 1
-      - path: GirlArmature/HandIK.R
+      - path: GirlArmature/root/HandIK.L/HandIK.L_end
         weight: 1
-      - path: GirlArmature/HandIK.R/HandIK.R_end
+      - path: GirlArmature/root/HandIK.R
         weight: 1
-      - path: GirlArmature/HandPole.L
+      - path: GirlArmature/root/HandIK.R/HandIK.R_end
         weight: 1
-      - path: GirlArmature/HandPole.L/HandPole.L_end
+      - path: GirlArmature/root/HandPole.L
         weight: 1
-      - path: GirlArmature/HandPole.R
+      - path: GirlArmature/root/HandPole.L/HandPole.L_end
         weight: 1
-      - path: GirlArmature/HandPole.R/HandPole.R_end
+      - path: GirlArmature/root/HandPole.R
         weight: 1
-      - path: GirlArmature/HandPoleG.L
+      - path: GirlArmature/root/HandPole.R/HandPole.R_end
         weight: 1
-      - path: GirlArmature/HandPoleG.L/HandPoleG.L_end
+      - path: GirlArmature/root/HandPoleG.L
         weight: 1
-      - path: GirlArmature/HandPoleG.R
+      - path: GirlArmature/root/HandPoleG.L/HandPoleG.L_end
         weight: 1
-      - path: GirlArmature/HandPoleG.R/HandPoleG.R_end
+      - path: GirlArmature/root/HandPoleG.R
         weight: 1
-      - path: GirlArmature/LegGIK.L
+      - path: GirlArmature/root/HandPoleG.R/HandPoleG.R_end
         weight: 1
-      - path: GirlArmature/LegGIK.L/LegGIK.L_end
+      - path: GirlArmature/root/LegGIK.L
         weight: 1
-      - path: GirlArmature/LegGIK.R
+      - path: GirlArmature/root/LegGIK.L/LegGIK.L_end
         weight: 1
-      - path: GirlArmature/LegGIK.R/LegGIK.R_end
+      - path: GirlArmature/root/LegGIK.R
         weight: 1
-      - path: GirlArmature/legIK.L
+      - path: GirlArmature/root/LegGIK.R/LegGIK.R_end
         weight: 1
-      - path: GirlArmature/legIK.L/legIK.L_end
+      - path: GirlArmature/root/legIK.L
         weight: 1
-      - path: GirlArmature/legIK.R
+      - path: GirlArmature/root/legIK.L/legIK.L_end
         weight: 1
-      - path: GirlArmature/legIK.R/legIK.R_end
+      - path: GirlArmature/root/legIK.R
         weight: 1
-      - path: GirlArmature/legPole.L
+      - path: GirlArmature/root/legIK.R/legIK.R_end
         weight: 1
-      - path: GirlArmature/legPole.L/legPole.L_end
+      - path: GirlArmature/root/legPole.L
         weight: 1
-      - path: GirlArmature/legPole.R
+      - path: GirlArmature/root/legPole.L/legPole.L_end
         weight: 1
-      - path: GirlArmature/legPole.R/legPole.R_end
+      - path: GirlArmature/root/legPole.R
         weight: 1
-      - path: GirlArmature/LegPoleG.L
+      - path: GirlArmature/root/legPole.R/legPole.R_end
         weight: 1
-      - path: GirlArmature/LegPoleG.L/LegPoleG.L_end
+      - path: GirlArmature/root/LegPoleG.L
         weight: 1
-      - path: GirlArmature/LegPoleG.R
+      - path: GirlArmature/root/LegPoleG.L/LegPoleG.L_end
         weight: 1
-      - path: GirlArmature/LegPoleG.R/LegPoleG.R_end
+      - path: GirlArmature/root/LegPoleG.R
         weight: 1
-      - path: GirlArmature/torso
+      - path: GirlArmature/root/LegPoleG.R/LegPoleG.R_end
         weight: 1
-      - path: GirlArmature/torso/chest
+      - path: GirlArmature/root/torso
         weight: 1
-      - path: GirlArmature/torso/chest/neck
+      - path: GirlArmature/root/torso/chest
         weight: 1
-      - path: GirlArmature/torso/chest/neck/head
+      - path: GirlArmature/root/torso/chest/neck
         weight: 1
-      - path: GirlArmature/torso/chest/neck/head/head_end
+      - path: GirlArmature/root/torso/chest/neck/head
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.L
+      - path: GirlArmature/root/torso/chest/neck/head/head_end
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.L/upperArm.L
+      - path: GirlArmature/root/torso/chest/shoulder.L
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.L/upperArm.L/lowerArm.L
+      - path: GirlArmature/root/torso/chest/shoulder.L/upperArm.L
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.L/upperArm.L/lowerArm.L/lowerArm.L_end
+      - path: GirlArmature/root/torso/chest/shoulder.L/upperArm.L/lowerArm.L
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.R
+      - path: GirlArmature/root/torso/chest/shoulder.L/upperArm.L/lowerArm.L/lowerArm.L_end
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.R/upperArm.R
+      - path: GirlArmature/root/torso/chest/shoulder.R
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.R/upperArm.R/lowerArm.R
+      - path: GirlArmature/root/torso/chest/shoulder.R/upperArm.R
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.R/upperArm.R/lowerArm.R/lowerArm.R_end
+      - path: GirlArmature/root/torso/chest/shoulder.R/upperArm.R/lowerArm.R
         weight: 1
-      - path: GirlArmature/torso/upperLeg.L
+      - path: GirlArmature/root/torso/chest/shoulder.R/upperArm.R/lowerArm.R/lowerArm.R_end
         weight: 1
-      - path: GirlArmature/torso/upperLeg.L/lowerLeg.L
+      - path: GirlArmature/root/torso/upperLeg.L
         weight: 1
-      - path: GirlArmature/torso/upperLeg.L/lowerLeg.L/lowerLeg.L_end
+      - path: GirlArmature/root/torso/upperLeg.L/lowerLeg.L
         weight: 1
-      - path: GirlArmature/torso/upperLeg.R
+      - path: GirlArmature/root/torso/upperLeg.L/lowerLeg.L/lowerLeg.L_end
         weight: 1
-      - path: GirlArmature/torso/upperLeg.R/lowerLeg.R
+      - path: GirlArmature/root/torso/upperLeg.R
         weight: 1
-      - path: GirlArmature/torso/upperLeg.R/lowerLeg.R/lowerLeg.R_end
+      - path: GirlArmature/root/torso/upperLeg.R/lowerLeg.R
         weight: 1
-      - path: GirlArmature/TorsoG
+      - path: GirlArmature/root/torso/upperLeg.R/lowerLeg.R/lowerLeg.R_end
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG
+      - path: GirlArmature/root/TorsoG
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG
+      - path: GirlArmature/root/TorsoG/ChestG
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG
+      - path: GirlArmature/root/TorsoG/ChestG/neckG
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003/HeadG.004
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003/HeadG.004/HeadG.004_end
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003/HeadG.004
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.L
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003/HeadG.004/HeadG.004_end
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.L/UpperArmG.L
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.L
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.L/UpperArmG.L/LowerArmG.L
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.L/UpperArmG.L
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.L/UpperArmG.L/LowerArmG.L/LowerArmG.L_end
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.L/UpperArmG.L/LowerArmG.L
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.R
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.L/UpperArmG.L/LowerArmG.L/LowerArmG.L_end
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.R/UpperArmG.R
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.R
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.R/UpperArmG.R/LowerArmG.R
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.R/UpperArmG.R
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.R/UpperArmG.R/LowerArmG.R/LowerArmG.R_end
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.R/UpperArmG.R/LowerArmG.R
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.L
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.R/UpperArmG.R/LowerArmG.R/LowerArmG.R_end
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.L/LowerLegG.L
+      - path: GirlArmature/root/TorsoG/UpperLegG.L
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.L/LowerLegG.L/LowerLegG.L_end
+      - path: GirlArmature/root/TorsoG/UpperLegG.L/LowerLegG.L
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.R
+      - path: GirlArmature/root/TorsoG/UpperLegG.L/LowerLegG.L/LowerLegG.L_end
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.R/LowerLegG.R
+      - path: GirlArmature/root/TorsoG/UpperLegG.R
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.R/LowerLegG.R/LowerLegG.R_end
+      - path: GirlArmature/root/TorsoG/UpperLegG.R/LowerLegG.R
+        weight: 1
+      - path: GirlArmature/root/TorsoG/UpperLegG.R/LowerLegG.R/LowerLegG.R_end
         weight: 1
       - path: hair
         weight: 1
@@ -1115,10 +910,224 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
       loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Belt
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Body.G
+        weight: 1
+      - path: Dress
+        weight: 1
+      - path: Eye
+        weight: 1
+      - path: Eye.001
+        weight: 1
+      - path: Eye.R
+        weight: 1
+      - path: EyeG.L
+        weight: 1
+      - path: GirlArmature
+        weight: 1
+      - path: GirlArmature/root
+        weight: 1
+      - path: GirlArmature/root/HandGIK.R
+        weight: 1
+      - path: GirlArmature/root/HandGIK.R/HandGIK.R_end
+        weight: 1
+      - path: GirlArmature/root/HandIGK.L
+        weight: 1
+      - path: GirlArmature/root/HandIGK.L/HandIGK.L_end
+        weight: 1
+      - path: GirlArmature/root/HandIK.L
+        weight: 1
+      - path: GirlArmature/root/HandIK.L/HandIK.L_end
+        weight: 1
+      - path: GirlArmature/root/HandIK.R
+        weight: 1
+      - path: GirlArmature/root/HandIK.R/HandIK.R_end
+        weight: 1
+      - path: GirlArmature/root/HandPole.L
+        weight: 1
+      - path: GirlArmature/root/HandPole.L/HandPole.L_end
+        weight: 1
+      - path: GirlArmature/root/HandPole.R
+        weight: 1
+      - path: GirlArmature/root/HandPole.R/HandPole.R_end
+        weight: 1
+      - path: GirlArmature/root/HandPoleG.L
+        weight: 1
+      - path: GirlArmature/root/HandPoleG.L/HandPoleG.L_end
+        weight: 1
+      - path: GirlArmature/root/HandPoleG.R
+        weight: 1
+      - path: GirlArmature/root/HandPoleG.R/HandPoleG.R_end
+        weight: 1
+      - path: GirlArmature/root/LegGIK.L
+        weight: 1
+      - path: GirlArmature/root/LegGIK.L/LegGIK.L_end
+        weight: 1
+      - path: GirlArmature/root/LegGIK.R
+        weight: 1
+      - path: GirlArmature/root/LegGIK.R/LegGIK.R_end
+        weight: 1
+      - path: GirlArmature/root/legIK.L
+        weight: 1
+      - path: GirlArmature/root/legIK.L/legIK.L_end
+        weight: 1
+      - path: GirlArmature/root/legIK.R
+        weight: 1
+      - path: GirlArmature/root/legIK.R/legIK.R_end
+        weight: 1
+      - path: GirlArmature/root/legPole.L
+        weight: 1
+      - path: GirlArmature/root/legPole.L/legPole.L_end
+        weight: 1
+      - path: GirlArmature/root/legPole.R
+        weight: 1
+      - path: GirlArmature/root/legPole.R/legPole.R_end
+        weight: 1
+      - path: GirlArmature/root/LegPoleG.L
+        weight: 1
+      - path: GirlArmature/root/LegPoleG.L/LegPoleG.L_end
+        weight: 1
+      - path: GirlArmature/root/LegPoleG.R
+        weight: 1
+      - path: GirlArmature/root/LegPoleG.R/LegPoleG.R_end
+        weight: 1
+      - path: GirlArmature/root/torso
+        weight: 1
+      - path: GirlArmature/root/torso/chest
+        weight: 1
+      - path: GirlArmature/root/torso/chest/neck
+        weight: 1
+      - path: GirlArmature/root/torso/chest/neck/head
+        weight: 1
+      - path: GirlArmature/root/torso/chest/neck/head/head_end
+        weight: 1
+      - path: GirlArmature/root/torso/chest/shoulder.L
+        weight: 1
+      - path: GirlArmature/root/torso/chest/shoulder.L/upperArm.L
+        weight: 1
+      - path: GirlArmature/root/torso/chest/shoulder.L/upperArm.L/lowerArm.L
+        weight: 1
+      - path: GirlArmature/root/torso/chest/shoulder.L/upperArm.L/lowerArm.L/lowerArm.L_end
+        weight: 1
+      - path: GirlArmature/root/torso/chest/shoulder.R
+        weight: 1
+      - path: GirlArmature/root/torso/chest/shoulder.R/upperArm.R
+        weight: 1
+      - path: GirlArmature/root/torso/chest/shoulder.R/upperArm.R/lowerArm.R
+        weight: 1
+      - path: GirlArmature/root/torso/chest/shoulder.R/upperArm.R/lowerArm.R/lowerArm.R_end
+        weight: 1
+      - path: GirlArmature/root/torso/upperLeg.L
+        weight: 1
+      - path: GirlArmature/root/torso/upperLeg.L/lowerLeg.L
+        weight: 1
+      - path: GirlArmature/root/torso/upperLeg.L/lowerLeg.L/lowerLeg.L_end
+        weight: 1
+      - path: GirlArmature/root/torso/upperLeg.R
+        weight: 1
+      - path: GirlArmature/root/torso/upperLeg.R/lowerLeg.R
+        weight: 1
+      - path: GirlArmature/root/torso/upperLeg.R/lowerLeg.R/lowerLeg.R_end
+        weight: 1
+      - path: GirlArmature/root/TorsoG
+        weight: 1
+      - path: GirlArmature/root/TorsoG/ChestG
+        weight: 1
+      - path: GirlArmature/root/TorsoG/ChestG/neckG
+        weight: 1
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG
+        weight: 1
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001
+        weight: 1
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002
+        weight: 1
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003
+        weight: 1
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003/HeadG.004
+        weight: 1
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003/HeadG.004/HeadG.004_end
+        weight: 1
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.L
+        weight: 1
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.L/UpperArmG.L
+        weight: 1
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.L/UpperArmG.L/LowerArmG.L
+        weight: 1
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.L/UpperArmG.L/LowerArmG.L/LowerArmG.L_end
+        weight: 1
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.R
+        weight: 1
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.R/UpperArmG.R
+        weight: 1
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.R/UpperArmG.R/LowerArmG.R
+        weight: 1
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.R/UpperArmG.R/LowerArmG.R/LowerArmG.R_end
+        weight: 1
+      - path: GirlArmature/root/TorsoG/UpperLegG.L
+        weight: 1
+      - path: GirlArmature/root/TorsoG/UpperLegG.L/LowerLegG.L
+        weight: 1
+      - path: GirlArmature/root/TorsoG/UpperLegG.L/LowerLegG.L/LowerLegG.L_end
+        weight: 1
+      - path: GirlArmature/root/TorsoG/UpperLegG.R
+        weight: 1
+      - path: GirlArmature/root/TorsoG/UpperLegG.R/LowerLegG.R
+        weight: 1
+      - path: GirlArmature/root/TorsoG/UpperLegG.R/LowerLegG.R/LowerLegG.R_end
+        weight: 1
+      - path: hair
+        weight: 1
+      - path: Hair.G
+        weight: 1
+      - path: HairBand
+        weight: 1
+      - path: Mask
+        weight: 1
+      - path: Pants
+        weight: 1
+      - path: Shoes
+        weight: 1
+      - path: Top
+        weight: 1
+      - path: Top.001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: boyToBottom
+      takeName: GirlArmature|allAnim
+      firstFrame: 70
+      lastFrame: 90
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
@@ -1147,153 +1156,155 @@ ModelImporter:
         weight: 1
       - path: GirlArmature
         weight: 1
-      - path: GirlArmature/HandGIK.R
+      - path: GirlArmature/root
         weight: 1
-      - path: GirlArmature/HandGIK.R/HandGIK.R_end
+      - path: GirlArmature/root/HandGIK.R
         weight: 1
-      - path: GirlArmature/HandIGK.L
+      - path: GirlArmature/root/HandGIK.R/HandGIK.R_end
         weight: 1
-      - path: GirlArmature/HandIGK.L/HandIGK.L_end
+      - path: GirlArmature/root/HandIGK.L
         weight: 1
-      - path: GirlArmature/HandIK.L
+      - path: GirlArmature/root/HandIGK.L/HandIGK.L_end
         weight: 1
-      - path: GirlArmature/HandIK.L/HandIK.L_end
+      - path: GirlArmature/root/HandIK.L
         weight: 1
-      - path: GirlArmature/HandIK.R
+      - path: GirlArmature/root/HandIK.L/HandIK.L_end
         weight: 1
-      - path: GirlArmature/HandIK.R/HandIK.R_end
+      - path: GirlArmature/root/HandIK.R
         weight: 1
-      - path: GirlArmature/HandPole.L
+      - path: GirlArmature/root/HandIK.R/HandIK.R_end
         weight: 1
-      - path: GirlArmature/HandPole.L/HandPole.L_end
+      - path: GirlArmature/root/HandPole.L
         weight: 1
-      - path: GirlArmature/HandPole.R
+      - path: GirlArmature/root/HandPole.L/HandPole.L_end
         weight: 1
-      - path: GirlArmature/HandPole.R/HandPole.R_end
+      - path: GirlArmature/root/HandPole.R
         weight: 1
-      - path: GirlArmature/HandPoleG.L
+      - path: GirlArmature/root/HandPole.R/HandPole.R_end
         weight: 1
-      - path: GirlArmature/HandPoleG.L/HandPoleG.L_end
+      - path: GirlArmature/root/HandPoleG.L
         weight: 1
-      - path: GirlArmature/HandPoleG.R
+      - path: GirlArmature/root/HandPoleG.L/HandPoleG.L_end
         weight: 1
-      - path: GirlArmature/HandPoleG.R/HandPoleG.R_end
+      - path: GirlArmature/root/HandPoleG.R
         weight: 1
-      - path: GirlArmature/LegGIK.L
+      - path: GirlArmature/root/HandPoleG.R/HandPoleG.R_end
         weight: 1
-      - path: GirlArmature/LegGIK.L/LegGIK.L_end
+      - path: GirlArmature/root/LegGIK.L
         weight: 1
-      - path: GirlArmature/LegGIK.R
+      - path: GirlArmature/root/LegGIK.L/LegGIK.L_end
         weight: 1
-      - path: GirlArmature/LegGIK.R/LegGIK.R_end
+      - path: GirlArmature/root/LegGIK.R
         weight: 1
-      - path: GirlArmature/legIK.L
+      - path: GirlArmature/root/LegGIK.R/LegGIK.R_end
         weight: 1
-      - path: GirlArmature/legIK.L/legIK.L_end
+      - path: GirlArmature/root/legIK.L
         weight: 1
-      - path: GirlArmature/legIK.R
+      - path: GirlArmature/root/legIK.L/legIK.L_end
         weight: 1
-      - path: GirlArmature/legIK.R/legIK.R_end
+      - path: GirlArmature/root/legIK.R
         weight: 1
-      - path: GirlArmature/legPole.L
+      - path: GirlArmature/root/legIK.R/legIK.R_end
         weight: 1
-      - path: GirlArmature/legPole.L/legPole.L_end
+      - path: GirlArmature/root/legPole.L
         weight: 1
-      - path: GirlArmature/legPole.R
+      - path: GirlArmature/root/legPole.L/legPole.L_end
         weight: 1
-      - path: GirlArmature/legPole.R/legPole.R_end
+      - path: GirlArmature/root/legPole.R
         weight: 1
-      - path: GirlArmature/LegPoleG.L
+      - path: GirlArmature/root/legPole.R/legPole.R_end
         weight: 1
-      - path: GirlArmature/LegPoleG.L/LegPoleG.L_end
+      - path: GirlArmature/root/LegPoleG.L
         weight: 1
-      - path: GirlArmature/LegPoleG.R
+      - path: GirlArmature/root/LegPoleG.L/LegPoleG.L_end
         weight: 1
-      - path: GirlArmature/LegPoleG.R/LegPoleG.R_end
+      - path: GirlArmature/root/LegPoleG.R
         weight: 1
-      - path: GirlArmature/torso
+      - path: GirlArmature/root/LegPoleG.R/LegPoleG.R_end
         weight: 1
-      - path: GirlArmature/torso/chest
+      - path: GirlArmature/root/torso
         weight: 1
-      - path: GirlArmature/torso/chest/neck
+      - path: GirlArmature/root/torso/chest
         weight: 1
-      - path: GirlArmature/torso/chest/neck/head
+      - path: GirlArmature/root/torso/chest/neck
         weight: 1
-      - path: GirlArmature/torso/chest/neck/head/head_end
+      - path: GirlArmature/root/torso/chest/neck/head
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.L
+      - path: GirlArmature/root/torso/chest/neck/head/head_end
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.L/upperArm.L
+      - path: GirlArmature/root/torso/chest/shoulder.L
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.L/upperArm.L/lowerArm.L
+      - path: GirlArmature/root/torso/chest/shoulder.L/upperArm.L
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.L/upperArm.L/lowerArm.L/lowerArm.L_end
+      - path: GirlArmature/root/torso/chest/shoulder.L/upperArm.L/lowerArm.L
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.R
+      - path: GirlArmature/root/torso/chest/shoulder.L/upperArm.L/lowerArm.L/lowerArm.L_end
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.R/upperArm.R
+      - path: GirlArmature/root/torso/chest/shoulder.R
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.R/upperArm.R/lowerArm.R
+      - path: GirlArmature/root/torso/chest/shoulder.R/upperArm.R
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.R/upperArm.R/lowerArm.R/lowerArm.R_end
+      - path: GirlArmature/root/torso/chest/shoulder.R/upperArm.R/lowerArm.R
         weight: 1
-      - path: GirlArmature/torso/upperLeg.L
+      - path: GirlArmature/root/torso/chest/shoulder.R/upperArm.R/lowerArm.R/lowerArm.R_end
         weight: 1
-      - path: GirlArmature/torso/upperLeg.L/lowerLeg.L
+      - path: GirlArmature/root/torso/upperLeg.L
         weight: 1
-      - path: GirlArmature/torso/upperLeg.L/lowerLeg.L/lowerLeg.L_end
+      - path: GirlArmature/root/torso/upperLeg.L/lowerLeg.L
         weight: 1
-      - path: GirlArmature/torso/upperLeg.R
+      - path: GirlArmature/root/torso/upperLeg.L/lowerLeg.L/lowerLeg.L_end
         weight: 1
-      - path: GirlArmature/torso/upperLeg.R/lowerLeg.R
+      - path: GirlArmature/root/torso/upperLeg.R
         weight: 1
-      - path: GirlArmature/torso/upperLeg.R/lowerLeg.R/lowerLeg.R_end
+      - path: GirlArmature/root/torso/upperLeg.R/lowerLeg.R
         weight: 1
-      - path: GirlArmature/TorsoG
+      - path: GirlArmature/root/torso/upperLeg.R/lowerLeg.R/lowerLeg.R_end
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG
+      - path: GirlArmature/root/TorsoG
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG
+      - path: GirlArmature/root/TorsoG/ChestG
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG
+      - path: GirlArmature/root/TorsoG/ChestG/neckG
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003/HeadG.004
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003/HeadG.004/HeadG.004_end
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003/HeadG.004
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.L
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003/HeadG.004/HeadG.004_end
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.L/UpperArmG.L
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.L
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.L/UpperArmG.L/LowerArmG.L
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.L/UpperArmG.L
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.L/UpperArmG.L/LowerArmG.L/LowerArmG.L_end
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.L/UpperArmG.L/LowerArmG.L
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.R
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.L/UpperArmG.L/LowerArmG.L/LowerArmG.L_end
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.R/UpperArmG.R
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.R
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.R/UpperArmG.R/LowerArmG.R
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.R/UpperArmG.R
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.R/UpperArmG.R/LowerArmG.R/LowerArmG.R_end
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.R/UpperArmG.R/LowerArmG.R
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.L
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.R/UpperArmG.R/LowerArmG.R/LowerArmG.R_end
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.L/LowerLegG.L
+      - path: GirlArmature/root/TorsoG/UpperLegG.L
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.L/LowerLegG.L/LowerLegG.L_end
+      - path: GirlArmature/root/TorsoG/UpperLegG.L/LowerLegG.L
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.R
+      - path: GirlArmature/root/TorsoG/UpperLegG.L/LowerLegG.L/LowerLegG.L_end
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.R/LowerLegG.R
+      - path: GirlArmature/root/TorsoG/UpperLegG.R
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.R/LowerLegG.R/LowerLegG.R_end
+      - path: GirlArmature/root/TorsoG/UpperLegG.R/LowerLegG.R
+        weight: 1
+      - path: GirlArmature/root/TorsoG/UpperLegG.R/LowerLegG.R/LowerLegG.R_end
         weight: 1
       - path: hair
         weight: 1
@@ -1315,7 +1326,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: boyidle
+      name: boyIdle
       takeName: GirlArmature|idleAnim.001
       firstFrame: 0
       lastFrame: 40
@@ -1359,153 +1370,155 @@ ModelImporter:
         weight: 1
       - path: GirlArmature
         weight: 1
-      - path: GirlArmature/HandGIK.R
+      - path: GirlArmature/root
         weight: 1
-      - path: GirlArmature/HandGIK.R/HandGIK.R_end
+      - path: GirlArmature/root/HandGIK.R
         weight: 1
-      - path: GirlArmature/HandIGK.L
+      - path: GirlArmature/root/HandGIK.R/HandGIK.R_end
         weight: 1
-      - path: GirlArmature/HandIGK.L/HandIGK.L_end
+      - path: GirlArmature/root/HandIGK.L
         weight: 1
-      - path: GirlArmature/HandIK.L
+      - path: GirlArmature/root/HandIGK.L/HandIGK.L_end
         weight: 1
-      - path: GirlArmature/HandIK.L/HandIK.L_end
+      - path: GirlArmature/root/HandIK.L
         weight: 1
-      - path: GirlArmature/HandIK.R
+      - path: GirlArmature/root/HandIK.L/HandIK.L_end
         weight: 1
-      - path: GirlArmature/HandIK.R/HandIK.R_end
+      - path: GirlArmature/root/HandIK.R
         weight: 1
-      - path: GirlArmature/HandPole.L
+      - path: GirlArmature/root/HandIK.R/HandIK.R_end
         weight: 1
-      - path: GirlArmature/HandPole.L/HandPole.L_end
+      - path: GirlArmature/root/HandPole.L
         weight: 1
-      - path: GirlArmature/HandPole.R
+      - path: GirlArmature/root/HandPole.L/HandPole.L_end
         weight: 1
-      - path: GirlArmature/HandPole.R/HandPole.R_end
+      - path: GirlArmature/root/HandPole.R
         weight: 1
-      - path: GirlArmature/HandPoleG.L
+      - path: GirlArmature/root/HandPole.R/HandPole.R_end
         weight: 1
-      - path: GirlArmature/HandPoleG.L/HandPoleG.L_end
+      - path: GirlArmature/root/HandPoleG.L
         weight: 1
-      - path: GirlArmature/HandPoleG.R
+      - path: GirlArmature/root/HandPoleG.L/HandPoleG.L_end
         weight: 1
-      - path: GirlArmature/HandPoleG.R/HandPoleG.R_end
+      - path: GirlArmature/root/HandPoleG.R
         weight: 1
-      - path: GirlArmature/LegGIK.L
+      - path: GirlArmature/root/HandPoleG.R/HandPoleG.R_end
         weight: 1
-      - path: GirlArmature/LegGIK.L/LegGIK.L_end
+      - path: GirlArmature/root/LegGIK.L
         weight: 1
-      - path: GirlArmature/LegGIK.R
+      - path: GirlArmature/root/LegGIK.L/LegGIK.L_end
         weight: 1
-      - path: GirlArmature/LegGIK.R/LegGIK.R_end
+      - path: GirlArmature/root/LegGIK.R
         weight: 1
-      - path: GirlArmature/legIK.L
+      - path: GirlArmature/root/LegGIK.R/LegGIK.R_end
         weight: 1
-      - path: GirlArmature/legIK.L/legIK.L_end
+      - path: GirlArmature/root/legIK.L
         weight: 1
-      - path: GirlArmature/legIK.R
+      - path: GirlArmature/root/legIK.L/legIK.L_end
         weight: 1
-      - path: GirlArmature/legIK.R/legIK.R_end
+      - path: GirlArmature/root/legIK.R
         weight: 1
-      - path: GirlArmature/legPole.L
+      - path: GirlArmature/root/legIK.R/legIK.R_end
         weight: 1
-      - path: GirlArmature/legPole.L/legPole.L_end
+      - path: GirlArmature/root/legPole.L
         weight: 1
-      - path: GirlArmature/legPole.R
+      - path: GirlArmature/root/legPole.L/legPole.L_end
         weight: 1
-      - path: GirlArmature/legPole.R/legPole.R_end
+      - path: GirlArmature/root/legPole.R
         weight: 1
-      - path: GirlArmature/LegPoleG.L
+      - path: GirlArmature/root/legPole.R/legPole.R_end
         weight: 1
-      - path: GirlArmature/LegPoleG.L/LegPoleG.L_end
+      - path: GirlArmature/root/LegPoleG.L
         weight: 1
-      - path: GirlArmature/LegPoleG.R
+      - path: GirlArmature/root/LegPoleG.L/LegPoleG.L_end
         weight: 1
-      - path: GirlArmature/LegPoleG.R/LegPoleG.R_end
+      - path: GirlArmature/root/LegPoleG.R
         weight: 1
-      - path: GirlArmature/torso
+      - path: GirlArmature/root/LegPoleG.R/LegPoleG.R_end
         weight: 1
-      - path: GirlArmature/torso/chest
+      - path: GirlArmature/root/torso
         weight: 1
-      - path: GirlArmature/torso/chest/neck
+      - path: GirlArmature/root/torso/chest
         weight: 1
-      - path: GirlArmature/torso/chest/neck/head
+      - path: GirlArmature/root/torso/chest/neck
         weight: 1
-      - path: GirlArmature/torso/chest/neck/head/head_end
+      - path: GirlArmature/root/torso/chest/neck/head
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.L
+      - path: GirlArmature/root/torso/chest/neck/head/head_end
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.L/upperArm.L
+      - path: GirlArmature/root/torso/chest/shoulder.L
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.L/upperArm.L/lowerArm.L
+      - path: GirlArmature/root/torso/chest/shoulder.L/upperArm.L
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.L/upperArm.L/lowerArm.L/lowerArm.L_end
+      - path: GirlArmature/root/torso/chest/shoulder.L/upperArm.L/lowerArm.L
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.R
+      - path: GirlArmature/root/torso/chest/shoulder.L/upperArm.L/lowerArm.L/lowerArm.L_end
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.R/upperArm.R
+      - path: GirlArmature/root/torso/chest/shoulder.R
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.R/upperArm.R/lowerArm.R
+      - path: GirlArmature/root/torso/chest/shoulder.R/upperArm.R
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.R/upperArm.R/lowerArm.R/lowerArm.R_end
+      - path: GirlArmature/root/torso/chest/shoulder.R/upperArm.R/lowerArm.R
         weight: 1
-      - path: GirlArmature/torso/upperLeg.L
+      - path: GirlArmature/root/torso/chest/shoulder.R/upperArm.R/lowerArm.R/lowerArm.R_end
         weight: 1
-      - path: GirlArmature/torso/upperLeg.L/lowerLeg.L
+      - path: GirlArmature/root/torso/upperLeg.L
         weight: 1
-      - path: GirlArmature/torso/upperLeg.L/lowerLeg.L/lowerLeg.L_end
+      - path: GirlArmature/root/torso/upperLeg.L/lowerLeg.L
         weight: 1
-      - path: GirlArmature/torso/upperLeg.R
+      - path: GirlArmature/root/torso/upperLeg.L/lowerLeg.L/lowerLeg.L_end
         weight: 1
-      - path: GirlArmature/torso/upperLeg.R/lowerLeg.R
+      - path: GirlArmature/root/torso/upperLeg.R
         weight: 1
-      - path: GirlArmature/torso/upperLeg.R/lowerLeg.R/lowerLeg.R_end
+      - path: GirlArmature/root/torso/upperLeg.R/lowerLeg.R
         weight: 1
-      - path: GirlArmature/TorsoG
+      - path: GirlArmature/root/torso/upperLeg.R/lowerLeg.R/lowerLeg.R_end
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG
+      - path: GirlArmature/root/TorsoG
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG
+      - path: GirlArmature/root/TorsoG/ChestG
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG
+      - path: GirlArmature/root/TorsoG/ChestG/neckG
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003/HeadG.004
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003/HeadG.004/HeadG.004_end
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003/HeadG.004
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.L
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003/HeadG.004/HeadG.004_end
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.L/UpperArmG.L
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.L
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.L/UpperArmG.L/LowerArmG.L
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.L/UpperArmG.L
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.L/UpperArmG.L/LowerArmG.L/LowerArmG.L_end
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.L/UpperArmG.L/LowerArmG.L
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.R
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.L/UpperArmG.L/LowerArmG.L/LowerArmG.L_end
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.R/UpperArmG.R
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.R
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.R/UpperArmG.R/LowerArmG.R
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.R/UpperArmG.R
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.R/UpperArmG.R/LowerArmG.R/LowerArmG.R_end
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.R/UpperArmG.R/LowerArmG.R
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.L
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.R/UpperArmG.R/LowerArmG.R/LowerArmG.R_end
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.L/LowerLegG.L
+      - path: GirlArmature/root/TorsoG/UpperLegG.L
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.L/LowerLegG.L/LowerLegG.L_end
+      - path: GirlArmature/root/TorsoG/UpperLegG.L/LowerLegG.L
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.R
+      - path: GirlArmature/root/TorsoG/UpperLegG.L/LowerLegG.L/LowerLegG.L_end
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.R/LowerLegG.R
+      - path: GirlArmature/root/TorsoG/UpperLegG.R
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.R/LowerLegG.R/LowerLegG.R_end
+      - path: GirlArmature/root/TorsoG/UpperLegG.R/LowerLegG.R
+        weight: 1
+      - path: GirlArmature/root/TorsoG/UpperLegG.R/LowerLegG.R/LowerLegG.R_end
         weight: 1
       - path: hair
         weight: 1
@@ -1571,153 +1584,155 @@ ModelImporter:
         weight: 1
       - path: GirlArmature
         weight: 1
-      - path: GirlArmature/HandGIK.R
+      - path: GirlArmature/root
         weight: 1
-      - path: GirlArmature/HandGIK.R/HandGIK.R_end
+      - path: GirlArmature/root/HandGIK.R
         weight: 1
-      - path: GirlArmature/HandIGK.L
+      - path: GirlArmature/root/HandGIK.R/HandGIK.R_end
         weight: 1
-      - path: GirlArmature/HandIGK.L/HandIGK.L_end
+      - path: GirlArmature/root/HandIGK.L
         weight: 1
-      - path: GirlArmature/HandIK.L
+      - path: GirlArmature/root/HandIGK.L/HandIGK.L_end
         weight: 1
-      - path: GirlArmature/HandIK.L/HandIK.L_end
+      - path: GirlArmature/root/HandIK.L
         weight: 1
-      - path: GirlArmature/HandIK.R
+      - path: GirlArmature/root/HandIK.L/HandIK.L_end
         weight: 1
-      - path: GirlArmature/HandIK.R/HandIK.R_end
+      - path: GirlArmature/root/HandIK.R
         weight: 1
-      - path: GirlArmature/HandPole.L
+      - path: GirlArmature/root/HandIK.R/HandIK.R_end
         weight: 1
-      - path: GirlArmature/HandPole.L/HandPole.L_end
+      - path: GirlArmature/root/HandPole.L
         weight: 1
-      - path: GirlArmature/HandPole.R
+      - path: GirlArmature/root/HandPole.L/HandPole.L_end
         weight: 1
-      - path: GirlArmature/HandPole.R/HandPole.R_end
+      - path: GirlArmature/root/HandPole.R
         weight: 1
-      - path: GirlArmature/HandPoleG.L
+      - path: GirlArmature/root/HandPole.R/HandPole.R_end
         weight: 1
-      - path: GirlArmature/HandPoleG.L/HandPoleG.L_end
+      - path: GirlArmature/root/HandPoleG.L
         weight: 1
-      - path: GirlArmature/HandPoleG.R
+      - path: GirlArmature/root/HandPoleG.L/HandPoleG.L_end
         weight: 1
-      - path: GirlArmature/HandPoleG.R/HandPoleG.R_end
+      - path: GirlArmature/root/HandPoleG.R
         weight: 1
-      - path: GirlArmature/LegGIK.L
+      - path: GirlArmature/root/HandPoleG.R/HandPoleG.R_end
         weight: 1
-      - path: GirlArmature/LegGIK.L/LegGIK.L_end
+      - path: GirlArmature/root/LegGIK.L
         weight: 1
-      - path: GirlArmature/LegGIK.R
+      - path: GirlArmature/root/LegGIK.L/LegGIK.L_end
         weight: 1
-      - path: GirlArmature/LegGIK.R/LegGIK.R_end
+      - path: GirlArmature/root/LegGIK.R
         weight: 1
-      - path: GirlArmature/legIK.L
+      - path: GirlArmature/root/LegGIK.R/LegGIK.R_end
         weight: 1
-      - path: GirlArmature/legIK.L/legIK.L_end
+      - path: GirlArmature/root/legIK.L
         weight: 1
-      - path: GirlArmature/legIK.R
+      - path: GirlArmature/root/legIK.L/legIK.L_end
         weight: 1
-      - path: GirlArmature/legIK.R/legIK.R_end
+      - path: GirlArmature/root/legIK.R
         weight: 1
-      - path: GirlArmature/legPole.L
+      - path: GirlArmature/root/legIK.R/legIK.R_end
         weight: 1
-      - path: GirlArmature/legPole.L/legPole.L_end
+      - path: GirlArmature/root/legPole.L
         weight: 1
-      - path: GirlArmature/legPole.R
+      - path: GirlArmature/root/legPole.L/legPole.L_end
         weight: 1
-      - path: GirlArmature/legPole.R/legPole.R_end
+      - path: GirlArmature/root/legPole.R
         weight: 1
-      - path: GirlArmature/LegPoleG.L
+      - path: GirlArmature/root/legPole.R/legPole.R_end
         weight: 1
-      - path: GirlArmature/LegPoleG.L/LegPoleG.L_end
+      - path: GirlArmature/root/LegPoleG.L
         weight: 1
-      - path: GirlArmature/LegPoleG.R
+      - path: GirlArmature/root/LegPoleG.L/LegPoleG.L_end
         weight: 1
-      - path: GirlArmature/LegPoleG.R/LegPoleG.R_end
+      - path: GirlArmature/root/LegPoleG.R
         weight: 1
-      - path: GirlArmature/torso
+      - path: GirlArmature/root/LegPoleG.R/LegPoleG.R_end
         weight: 1
-      - path: GirlArmature/torso/chest
+      - path: GirlArmature/root/torso
         weight: 1
-      - path: GirlArmature/torso/chest/neck
+      - path: GirlArmature/root/torso/chest
         weight: 1
-      - path: GirlArmature/torso/chest/neck/head
+      - path: GirlArmature/root/torso/chest/neck
         weight: 1
-      - path: GirlArmature/torso/chest/neck/head/head_end
+      - path: GirlArmature/root/torso/chest/neck/head
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.L
+      - path: GirlArmature/root/torso/chest/neck/head/head_end
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.L/upperArm.L
+      - path: GirlArmature/root/torso/chest/shoulder.L
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.L/upperArm.L/lowerArm.L
+      - path: GirlArmature/root/torso/chest/shoulder.L/upperArm.L
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.L/upperArm.L/lowerArm.L/lowerArm.L_end
+      - path: GirlArmature/root/torso/chest/shoulder.L/upperArm.L/lowerArm.L
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.R
+      - path: GirlArmature/root/torso/chest/shoulder.L/upperArm.L/lowerArm.L/lowerArm.L_end
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.R/upperArm.R
+      - path: GirlArmature/root/torso/chest/shoulder.R
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.R/upperArm.R/lowerArm.R
+      - path: GirlArmature/root/torso/chest/shoulder.R/upperArm.R
         weight: 1
-      - path: GirlArmature/torso/chest/shoulder.R/upperArm.R/lowerArm.R/lowerArm.R_end
+      - path: GirlArmature/root/torso/chest/shoulder.R/upperArm.R/lowerArm.R
         weight: 1
-      - path: GirlArmature/torso/upperLeg.L
+      - path: GirlArmature/root/torso/chest/shoulder.R/upperArm.R/lowerArm.R/lowerArm.R_end
         weight: 1
-      - path: GirlArmature/torso/upperLeg.L/lowerLeg.L
+      - path: GirlArmature/root/torso/upperLeg.L
         weight: 1
-      - path: GirlArmature/torso/upperLeg.L/lowerLeg.L/lowerLeg.L_end
+      - path: GirlArmature/root/torso/upperLeg.L/lowerLeg.L
         weight: 1
-      - path: GirlArmature/torso/upperLeg.R
+      - path: GirlArmature/root/torso/upperLeg.L/lowerLeg.L/lowerLeg.L_end
         weight: 1
-      - path: GirlArmature/torso/upperLeg.R/lowerLeg.R
+      - path: GirlArmature/root/torso/upperLeg.R
         weight: 1
-      - path: GirlArmature/torso/upperLeg.R/lowerLeg.R/lowerLeg.R_end
+      - path: GirlArmature/root/torso/upperLeg.R/lowerLeg.R
         weight: 1
-      - path: GirlArmature/TorsoG
+      - path: GirlArmature/root/torso/upperLeg.R/lowerLeg.R/lowerLeg.R_end
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG
+      - path: GirlArmature/root/TorsoG
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG
+      - path: GirlArmature/root/TorsoG/ChestG
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG
+      - path: GirlArmature/root/TorsoG/ChestG/neckG
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003/HeadG.004
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003/HeadG.004/HeadG.004_end
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003/HeadG.004
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.L
+      - path: GirlArmature/root/TorsoG/ChestG/neckG/HeadG/HeadG.001/HeadG.002/HeadG.003/HeadG.004/HeadG.004_end
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.L/UpperArmG.L
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.L
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.L/UpperArmG.L/LowerArmG.L
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.L/UpperArmG.L
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.L/UpperArmG.L/LowerArmG.L/LowerArmG.L_end
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.L/UpperArmG.L/LowerArmG.L
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.R
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.L/UpperArmG.L/LowerArmG.L/LowerArmG.L_end
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.R/UpperArmG.R
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.R
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.R/UpperArmG.R/LowerArmG.R
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.R/UpperArmG.R
         weight: 1
-      - path: GirlArmature/TorsoG/ChestG/ShoulderG.R/UpperArmG.R/LowerArmG.R/LowerArmG.R_end
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.R/UpperArmG.R/LowerArmG.R
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.L
+      - path: GirlArmature/root/TorsoG/ChestG/ShoulderG.R/UpperArmG.R/LowerArmG.R/LowerArmG.R_end
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.L/LowerLegG.L
+      - path: GirlArmature/root/TorsoG/UpperLegG.L
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.L/LowerLegG.L/LowerLegG.L_end
+      - path: GirlArmature/root/TorsoG/UpperLegG.L/LowerLegG.L
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.R
+      - path: GirlArmature/root/TorsoG/UpperLegG.L/LowerLegG.L/LowerLegG.L_end
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.R/LowerLegG.R
+      - path: GirlArmature/root/TorsoG/UpperLegG.R
         weight: 1
-      - path: GirlArmature/TorsoG/UpperLegG.R/LowerLegG.R/LowerLegG.R_end
+      - path: GirlArmature/root/TorsoG/UpperLegG.R/LowerLegG.R
+        weight: 1
+      - path: GirlArmature/root/TorsoG/UpperLegG.R/LowerLegG.R/LowerLegG.R_end
         weight: 1
       - path: hair
         weight: 1
@@ -1743,7 +1758,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
@@ -1772,7 +1787,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    rootMotionBoneName: 
+    rootMotionBoneName: root
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
