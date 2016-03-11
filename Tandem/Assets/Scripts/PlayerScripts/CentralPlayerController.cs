@@ -14,8 +14,8 @@ public class CentralPlayerController : MonoBehaviour {
     //The boolean determining who is on bottom.  If it's not the warrior, it's the archer.
     private bool warriorBottom = true;
 
-    private GameObject warrior;
-    private GameObject archer;
+    //private GameObject warrior;
+    //private GameObject archer;
     private GameObject archerTopIcon;
     private GameObject archerBottomIcon;
     private GameObject warriorTopIcon;
@@ -24,6 +24,8 @@ public class CentralPlayerController : MonoBehaviour {
 	private GameObject startingSpawn;
 	private GameObject respawn;
 
+    private GameObject playersObj;
+    private Animator players;
 
     // Use this for initialization
     void Awake () {
@@ -37,9 +39,12 @@ public class CentralPlayerController : MonoBehaviour {
             Destroy(gameObject);
         }
 
-        warrior = GameObject.Find("CompletePlayer/Player1");
-        archer = GameObject.Find("CompletePlayer/Player2");
-        topOffset = archer.transform.localScale.y * 1.5f;
+        players = GetComponent<Animator>();
+
+        //playersObj = GameObject.Find("CompletePlayer/chars9");
+        //warrior = GameObject.Find("CompletePlayer/Player1");
+        //archer = GameObject.Find("CompletePlayer/Player2");
+        //topOffset = archer.transform.localScale.y * 1.5f;
         archerTopIcon = GameObject.Find("ArcherTopIcon");
         archerBottomIcon = GameObject.Find("ArcherBottomIcon");
         warriorTopIcon = GameObject.Find("WarriorTopIcon");
@@ -55,11 +60,15 @@ public class CentralPlayerController : MonoBehaviour {
         archerBottomIcon.SetActive(false);
 
 		gameObject.transform.position = startingSpawn.transform.position;
+
+        //players = playersObj.GetComponent<Animator>();
+        
     }
 
     /*Flip the players by disabling movement for the top player and changing the interactable objects */
     void FlipPlayers ()
     {
+        players.SetInteger("flip", 0);
         warriorBottom = !warriorBottom;
         GameObject[] iceObstacles = GameObject.FindGameObjectsWithTag("IceObstacle");
         GameObject[] fireObstacles = GameObject.FindGameObjectsWithTag("FireObstacle");
@@ -76,9 +85,12 @@ public class CentralPlayerController : MonoBehaviour {
             warriorTopIcon.SetActive(false);
             warriorBottomIcon.SetActive(true);
             //Physically switch the players
-            warrior.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
-            archer.transform.localPosition = new Vector3(0.0f, topOffset, 0.0f);
-        } else
+            //warrior.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
+            //archer.transform.localPosition = new Vector3(0.0f, topOffset, 0.0f);
+            players.SetInteger("flip", 1);
+            
+        }
+        else
         {
             gameObject.GetComponent<ArcherBottomController>().enabled = true;
             gameObject.GetComponent<ArcherTopController>().enabled = false;
@@ -90,8 +102,9 @@ public class CentralPlayerController : MonoBehaviour {
             warriorTopIcon.SetActive(true);
             warriorBottomIcon.SetActive(false);
             //Physically switch the players
-            archer.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
-            warrior.transform.localPosition = new Vector3(0.0f, topOffset, 0.0f);
+            //archer.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
+            //warrior.transform.localPosition = new Vector3(0.0f, topOffset, 0.0f);
+            players.SetInteger("flip", 1);
         }
 
         //Enable/disable the colliders on the elemental objects
@@ -167,13 +180,19 @@ public class CentralPlayerController : MonoBehaviour {
 
     void FixedUpdate ()
     {
+        //Debug.Log(gameObject.GetComponent<WarriorBottomController>().isGrounded());
+        players.SetInteger("flip", 0);
         if (Input.GetButtonDown("Fire1") && gameObject.GetComponent<WarriorBottomController>().isGrounded())
         {
-            FlipPlayers();
+            if (players.GetCurrentAnimatorStateInfo(0).IsTag("idle"))
+            {
+                FlipPlayers();
+            }
+            //players.SetInteger("flip", 1);
         }
 
-		// Respawn should follow player, when grounded
-		if (gameObject.GetComponent<WarriorBottomController> ().isGrounded ()) {
+        // Respawn should follow player, when grounded
+        if (gameObject.GetComponent<WarriorBottomController> ().isGrounded ()) {
 			respawn.transform.position = gameObject.transform.position;
 		}
     }

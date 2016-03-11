@@ -8,6 +8,7 @@ public abstract class PlayerBottomScript : MonoBehaviour {
 
     protected Rigidbody rb;
     protected Vector3 movement;
+    protected float vertical = 0f;
     private float rayLength = 100f;
     private int jumpable;
 
@@ -51,7 +52,7 @@ public abstract class PlayerBottomScript : MonoBehaviour {
         }
     }
 
-    /* Move the player based off the given horizontal and vertical inputs */
+    /* Move the player based off the given horizontal and vertical inputs if the player is grounded. */
     protected virtual void Move(float vertical)
     {
         movement = transform.forward * vertical * speed * Time.deltaTime;

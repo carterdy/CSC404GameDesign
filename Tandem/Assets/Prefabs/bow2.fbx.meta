@@ -1,0 +1,193 @@
+fileFormatVersion: 2
+guid: d8e7ff59bb383e84c9adfcb639de75d1
+timeCreated: 1456996937
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Bone
+    100004: Bone.001
+    100006: Bone.002
+    100008: Bone.003
+    100010: Bone.004
+    100012: Bone.005
+    100014: Bone.006
+    100016: Bone.007
+    100018: Bone.008
+    100020: Bone.008_end
+    100022: Bone.009
+    100024: Bone.010
+    100026: Bone.011
+    100028: Bone.012
+    100030: Bone.013
+    100032: Bone.014
+    100034: Bone.015
+    100036: Bone.016
+    100038: Bone.017
+    100040: Bone.017_end
+    100042: //RootNode
+    100044: limit
+    100046: limit.001
+    100048: limit.001_end
+    100050: limit_end
+    100052: main
+    100054: Shape1
+    100056: Shape2
+    100058: Shape3
+    100060: Shape4
+    100062: string
+    100064: string_end
+    100066: topArrowIK
+    100068: topArrowIK.001
+    100070: topArrowIK.002
+    100072: topArrowIK.003
+    100074: topArrowIK.003_end
+    100076: topArrowIK_end
+    400000: Armature
+    400002: Bone
+    400004: Bone.001
+    400006: Bone.002
+    400008: Bone.003
+    400010: Bone.004
+    400012: Bone.005
+    400014: Bone.006
+    400016: Bone.007
+    400018: Bone.008
+    400020: Bone.008_end
+    400022: Bone.009
+    400024: Bone.010
+    400026: Bone.011
+    400028: Bone.012
+    400030: Bone.013
+    400032: Bone.014
+    400034: Bone.015
+    400036: Bone.016
+    400038: Bone.017
+    400040: Bone.017_end
+    400042: //RootNode
+    400044: limit
+    400046: limit.001
+    400048: limit.001_end
+    400050: limit_end
+    400052: main
+    400054: Shape1
+    400056: Shape2
+    400058: Shape3
+    400060: Shape4
+    400062: string
+    400064: string_end
+    400066: topArrowIK
+    400068: topArrowIK.001
+    400070: topArrowIK.002
+    400072: topArrowIK.003
+    400074: topArrowIK.003_end
+    400076: topArrowIK_end
+    4300000: Shape1
+    4300002: Shape2
+    4300004: Shape3
+    4300006: Shape4
+    7400000: bowAnim
+    7400002: Armature|Belt|allAnim|allAnim
+    7400004: Armature|Belt|ArmatureAction|ArmatureAction
+    7400006: Armature|Body.G|allAnim|allAnim
+    7400008: Armature|Body.G|ArmatureAction|ArmatureAction
+    7400010: Armature|Body|allAnim|allAnim
+    7400012: Armature|Body|ArmatureAction|ArmatureAction
+    7400014: Armature|bowAnim
+    7400016: Armature|Dress|allAnim|allAnim
+    7400018: Armature|Dress|ArmatureAction|ArmatureAction
+    7400020: Armature|Eye.001|allAnim|allAnim
+    7400022: Armature|Eye.001|ArmatureAction|ArmatureAction
+    7400024: Armature|Eye.R|allAnim|allAnim
+    7400026: Armature|Eye.R|ArmatureAction|ArmatureAction
+    7400028: Armature|EyeG.L|allAnim|allAnim
+    7400030: Armature|EyeG.L|ArmatureAction|ArmatureAction
+    7400032: Armature|Eye|allAnim|allAnim
+    7400034: Armature|Eye|ArmatureAction|ArmatureAction
+    7400036: Armature|Hair.G|allAnim|allAnim
+    7400038: Armature|Hair.G|ArmatureAction|ArmatureAction
+    7400040: Armature|Hair.G|Hair.G|boyRun|Hair.G|boyRun
+    7400042: Armature|HairBand|allAnim|allAnim
+    7400044: Armature|HairBand|ArmatureAction|ArmatureAction
+    7400046: Armature|hair|allAnim|allAnim
+    7400048: Armature|hair|ArmatureAction|ArmatureAction
+    7400050: Armature|Mask|allAnim|allAnim
+    7400052: Armature|Mask|ArmatureAction|ArmatureAction
+    7400054: Armature|Pants|allAnim|allAnim
+    7400056: Armature|Pants|ArmatureAction|ArmatureAction
+    7400058: Armature|Shoes|allAnim|allAnim
+    7400060: Armature|Shoes|ArmatureAction|ArmatureAction
+    7400062: Armature|Top.001|allAnim|allAnim
+    7400064: Armature|Top.001|ArmatureAction|ArmatureAction
+    7400066: Armature|Top|allAnim|allAnim
+    7400068: Armature|Top|ArmatureAction|ArmatureAction
+    9500000: //RootNode
+    13700000: Shape1
+    13700002: Shape2
+    13700004: Shape3
+    13700006: Shape4
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
