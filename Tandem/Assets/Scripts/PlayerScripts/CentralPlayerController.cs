@@ -182,6 +182,7 @@ public class CentralPlayerController : MonoBehaviour {
 
     void FixedUpdate ()
     {
+        Debug.Log(gameObject.GetComponent < WarriorBottomController>().isGrounded());
         players.SetInteger("flip", 0);
         if (Input.GetButtonDown("Fire1") && gameObject.GetComponent<WarriorBottomController>().isGrounded())
         {
