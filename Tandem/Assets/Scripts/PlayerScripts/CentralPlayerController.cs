@@ -8,14 +8,9 @@ public class CentralPlayerController : MonoBehaviour {
 
     public float playerHealth = 100f;
 
-    //The offset to place the top player above the bottom player
-    private float topOffset;
-
     //The boolean determining who is on bottom.  If it's not the warrior, it's the archer.
     private bool warriorBottom = true;
 
-    //private GameObject warrior;
-    //private GameObject archer;
     private GameObject archerTopIcon;
     private GameObject archerBottomIcon;
     private GameObject warriorTopIcon;
@@ -24,7 +19,6 @@ public class CentralPlayerController : MonoBehaviour {
 	private GameObject startingSpawn;
 	private GameObject respawn;
 
-    private GameObject playersObj;
     private Animator players;
 
     // Use this for initialization
@@ -41,10 +35,6 @@ public class CentralPlayerController : MonoBehaviour {
 
         players = GetComponent<Animator>();
 
-        //playersObj = GameObject.Find("CompletePlayer/chars9");
-        //warrior = GameObject.Find("CompletePlayer/Player1");
-        //archer = GameObject.Find("CompletePlayer/Player2");
-        //topOffset = archer.transform.localScale.y * 1.5f;
         archerTopIcon = GameObject.Find("ArcherTopIcon");
         archerBottomIcon = GameObject.Find("ArcherBottomIcon");
         warriorTopIcon = GameObject.Find("WarriorTopIcon");
@@ -102,11 +92,7 @@ public class CentralPlayerController : MonoBehaviour {
             //Physically switch the players
             //archer.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
             //warrior.transform.localPosition = new Vector3(0.0f, topOffset, 0.0f);
-            //while (players.IsInTransition(0)) ;
             players.SetInteger("flip", 1);
-            //while (players.GetCurrentAnimatorStateInfo(0).IsName("boyIdle")) ;
-            Debug.Log(players.IsInTransition(0));
-            Debug.Log("Girl");
         }
         
         //Enable/disable the colliders on the elemental objects
@@ -182,7 +168,6 @@ public class CentralPlayerController : MonoBehaviour {
 
     void FixedUpdate ()
     {
-        Debug.Log(gameObject.GetComponent < WarriorBottomController>().isGrounded());
         players.SetInteger("flip", 0);
         if (Input.GetButtonDown("Fire1") && gameObject.GetComponent<WarriorBottomController>().isGrounded())
         {
