@@ -21,10 +21,6 @@ public class runAnimations : MonoBehaviour {
         bool archerGrounded = gameObject.GetComponent<ArcherBottomController>().isGrounded();
         float archerMove = Mathf.Abs(Input.GetAxisRaw("Vertical2"));
 
-        Debug.Log(archerMove);
-        string debug = "Active:" + archerActive + "\n" + "Grounded:" + archerGrounded + "\n" + "Moving:" + archerMove + "\n";
-        Debug.Log(debug);
-
         if (warriorActive && warriorGrounded && warriorMove > 0.0f)
         {
             anim.SetInteger("run", 1);
