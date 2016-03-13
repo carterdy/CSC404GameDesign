@@ -16,9 +16,10 @@ public class CameraController : MonoBehaviour {
 	}
 	
 	void FixedUpdate () {
-        Vector3 targetCameraPos = player.position + offset;
+        Vector3 targetCameraPos = player.position + player.transform.InverseTransformVector(offset);
         Quaternion targetCamRot = Quaternion.Euler(transform.rotation.x, player.rotation.y, transform.rotation.z);
         transform.position = Vector3.Lerp(transform.position, targetCameraPos, positionSmoothing * Time.deltaTime);
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetCamRot, rotationSmoothing * Time.deltaTime);
+        //transform.rotation = Quaternion.Lerp(transform.rotation, targetCamRot, rotationSmoothing * Time.deltaTime);
+        transform.LookAt(player.transform);
 	}
 }
