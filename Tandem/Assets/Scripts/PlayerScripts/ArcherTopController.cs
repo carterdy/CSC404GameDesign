@@ -13,8 +13,8 @@ public class ArcherTopController : PlayerTopScript {
 	private float deadzone = 0.25f;
 
 	private float aimRange = 90f;
-	private float minRange;
-	private float maxRange;
+	private float leftRange;
+	private float rightRange;
 
 	void Start() {
 		arrowPrefab = Resources.Load ("Arrow") as GameObject;
@@ -103,11 +103,7 @@ public class ArcherTopController : PlayerTopScript {
 		else {
 			// Rotate Arrow in the direction of the Joystick
 			arrow.transform.rotation = Quaternion.Euler (new Vector3 (90, stickDir, 0));
-
-			// TODO: Fix Range Limit
-
-			UpdatePosition(arrow.transform.eulerAngles.y);
-			// LimitAimCone();
+			LimitAimCone();
 		}
 	}
 
@@ -124,34 +120,52 @@ public class ArcherTopController : PlayerTopScript {
 		float playerRotation = player.transform.eulerAngles.y;
 		float arrowRot = arrow.transform.eulerAngles.y;
 
+		leftRange = playerRotation - aimRange;
+		rightRange = playerRotation + aimRange;
+
+
 		// Find Min Ranges
-		if ((playerRotation - aimRange) < 0f) {
-			minRange = playerRotation - aimRange + 360f;
-		} else {
-			minRange = playerRotation - aimRange;
+		if (leftRange < 0f) {
+			leftRange = leftRange + 360f;
 		}
 
 		// Find Max Ranges
-		if ((playerRotation + aimRange) > 360f) {
-			maxRange = playerRotation + aimRange - 360f;
-		} else {
-			maxRange = playerRotation + aimRange;
+		if (rightRange > 360f) {
+			rightRange = rightRange - 360f;
 		}
 
-		// Update Arrow with Range Restrictions
-		// Maintain Min Value if Rotation is under Min
-		if (arrowRot < minRange) {
-			UpdatePosition (minRange);
-			LimitStickDir (minRange);
+		// EDGE CASE
+		// if leftRange is larger than rightRange
+		// the cone will be from min to 0 to max
+		// this case need to be cover :(
+		if (leftRange > rightRange) {
+			if (arrowRot < leftRange && arrowRot > leftRange - aimRange) {
+				UpdatePosition (leftRange);
+				LimitStickDir (leftRange);
+			} else if (arrowRot > rightRange && arrowRot < rightRange + aimRange) {
+				UpdatePosition (rightRange);
+				LimitStickDir (rightRange);
+			} else {
+				UpdatePosition (arrowRot);
+			}
 		} 
-		// Maintain Max Value if Rotation is under Max
-		else if (arrowRot > maxRange) {
-			UpdatePosition (maxRange);
-			LimitStickDir(maxRange);
-		} 
-		// All good, No limit
+		// NORMAL CASE HERE
 		else {
-			UpdatePosition (arrowRot);
+			// Update Arrow with Range Restrictions
+			// Maintain Min Value if Rotation is under Min
+			if (arrowRot < leftRange && arrowRot > leftRange - aimRange) {
+				UpdatePosition (leftRange);
+				LimitStickDir (leftRange);
+			} 
+			// Maintain Max Value if Rotation is under Max
+			else if (arrowRot > rightRange && arrowRot < rightRange + aimRange) {
+				UpdatePosition (rightRange);
+				LimitStickDir (rightRange);
+			} 
+			// All good, No limit
+			else {
+				UpdatePosition (arrowRot);
+			}
 		}
 	}
 	/*

@@ -44,6 +44,9 @@ ModelImporter:
     100072: topArrowIK.003
     100074: topArrowIK.003_end
     100076: topArrowIK_end
+    100078: Shape005
+    100080: Shape006
+    100082: Shape007
     400000: Armature
     400002: Bone
     400004: Bone.001
@@ -83,10 +86,25 @@ ModelImporter:
     400072: topArrowIK.003
     400074: topArrowIK.003_end
     400076: topArrowIK_end
+    400078: Shape005
+    400080: Shape006
+    400082: Shape007
+    2300000: Shape005
+    2300002: Shape006
+    2300004: Shape007
+    3300000: Shape005
+    3300002: Shape006
+    3300004: Shape007
     4300000: Shape1
     4300002: Shape2
     4300004: Shape3
     4300006: Shape4
+    4300008: Shape007
+    4300010: Shape006
+    4300012: Shape005
+    6400000: Shape005
+    6400002: Shape006
+    6400004: Shape007
     7400000: bowAnim
     7400002: Armature|Belt|allAnim|allAnim
     7400004: Armature|Belt|ArmatureAction|ArmatureAction
@@ -122,6 +140,8 @@ ModelImporter:
     7400064: Armature|Top.001|ArmatureAction|ArmatureAction
     7400066: Armature|Top|allAnim|allAnim
     7400068: Armature|Top|ArmatureAction|ArmatureAction
+    7400070: start
+    7400072: end
     9500000: //RootNode
     13700000: Shape1
     13700002: Shape2
@@ -147,13 +167,331 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: bowAnim
+      takeName: bowAnim
+      firstFrame: 0
+      lastFrame: 27
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/main
+        weight: 1
+      - path: Armature/main/Bone
+        weight: 1
+      - path: Armature/main/Bone/Bone.001
+        weight: 1
+      - path: Armature/main/Bone/Bone.001/Bone.002
+        weight: 1
+      - path: Armature/main/Bone/Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: Armature/main/Bone/Bone.001/Bone.002/Bone.003/Bone.004
+        weight: 1
+      - path: Armature/main/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005
+        weight: 1
+      - path: Armature/main/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005/Bone.006
+        weight: 1
+      - path: Armature/main/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Armature/main/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Armature/main/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005/Bone.006/Bone.007/Bone.008/Bone.008_end
+        weight: 1
+      - path: Armature/main/Bone.009
+        weight: 1
+      - path: Armature/main/Bone.009/Bone.010
+        weight: 1
+      - path: Armature/main/Bone.009/Bone.010/Bone.011
+        weight: 1
+      - path: Armature/main/Bone.009/Bone.010/Bone.011/Bone.012
+        weight: 1
+      - path: Armature/main/Bone.009/Bone.010/Bone.011/Bone.012/Bone.013
+        weight: 1
+      - path: Armature/main/Bone.009/Bone.010/Bone.011/Bone.012/Bone.013/Bone.014
+        weight: 1
+      - path: Armature/main/Bone.009/Bone.010/Bone.011/Bone.012/Bone.013/Bone.014/Bone.015
+        weight: 1
+      - path: Armature/main/Bone.009/Bone.010/Bone.011/Bone.012/Bone.013/Bone.014/Bone.015/Bone.016
+        weight: 1
+      - path: Armature/main/Bone.009/Bone.010/Bone.011/Bone.012/Bone.013/Bone.014/Bone.015/Bone.016/Bone.017
+        weight: 1
+      - path: Armature/main/Bone.009/Bone.010/Bone.011/Bone.012/Bone.013/Bone.014/Bone.015/Bone.016/Bone.017/Bone.017_end
+        weight: 1
+      - path: Armature/main/limit
+        weight: 1
+      - path: Armature/main/limit/limit_end
+        weight: 1
+      - path: Armature/main/limit.001
+        weight: 1
+      - path: Armature/main/limit.001/limit.001_end
+        weight: 1
+      - path: Armature/main/topArrowIK.001
+        weight: 1
+      - path: Armature/main/topArrowIK.001/topArrowIK
+        weight: 1
+      - path: Armature/main/topArrowIK.001/topArrowIK/topArrowIK_end
+        weight: 1
+      - path: Armature/main/topArrowIK.002
+        weight: 1
+      - path: Armature/main/topArrowIK.002/topArrowIK.003
+        weight: 1
+      - path: Armature/main/topArrowIK.002/topArrowIK.003/topArrowIK.003_end
+        weight: 1
+      - path: Armature/string
+        weight: 1
+      - path: Armature/string/string_end
+        weight: 1
+      - path: Shape1
+        weight: 1
+      - path: Shape2
+        weight: 1
+      - path: Shape3
+        weight: 1
+      - path: Shape4
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: start
+      takeName: bowAnim
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/main
+        weight: 1
+      - path: Armature/main/Bone
+        weight: 1
+      - path: Armature/main/Bone/Bone.001
+        weight: 1
+      - path: Armature/main/Bone/Bone.001/Bone.002
+        weight: 1
+      - path: Armature/main/Bone/Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: Armature/main/Bone/Bone.001/Bone.002/Bone.003/Bone.004
+        weight: 1
+      - path: Armature/main/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005
+        weight: 1
+      - path: Armature/main/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005/Bone.006
+        weight: 1
+      - path: Armature/main/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Armature/main/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Armature/main/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005/Bone.006/Bone.007/Bone.008/Bone.008_end
+        weight: 1
+      - path: Armature/main/Bone.009
+        weight: 1
+      - path: Armature/main/Bone.009/Bone.010
+        weight: 1
+      - path: Armature/main/Bone.009/Bone.010/Bone.011
+        weight: 1
+      - path: Armature/main/Bone.009/Bone.010/Bone.011/Bone.012
+        weight: 1
+      - path: Armature/main/Bone.009/Bone.010/Bone.011/Bone.012/Bone.013
+        weight: 1
+      - path: Armature/main/Bone.009/Bone.010/Bone.011/Bone.012/Bone.013/Bone.014
+        weight: 1
+      - path: Armature/main/Bone.009/Bone.010/Bone.011/Bone.012/Bone.013/Bone.014/Bone.015
+        weight: 1
+      - path: Armature/main/Bone.009/Bone.010/Bone.011/Bone.012/Bone.013/Bone.014/Bone.015/Bone.016
+        weight: 1
+      - path: Armature/main/Bone.009/Bone.010/Bone.011/Bone.012/Bone.013/Bone.014/Bone.015/Bone.016/Bone.017
+        weight: 1
+      - path: Armature/main/Bone.009/Bone.010/Bone.011/Bone.012/Bone.013/Bone.014/Bone.015/Bone.016/Bone.017/Bone.017_end
+        weight: 1
+      - path: Armature/main/limit
+        weight: 1
+      - path: Armature/main/limit/limit_end
+        weight: 1
+      - path: Armature/main/limit.001
+        weight: 1
+      - path: Armature/main/limit.001/limit.001_end
+        weight: 1
+      - path: Armature/main/topArrowIK.001
+        weight: 1
+      - path: Armature/main/topArrowIK.001/topArrowIK
+        weight: 1
+      - path: Armature/main/topArrowIK.001/topArrowIK/topArrowIK_end
+        weight: 1
+      - path: Armature/main/topArrowIK.002
+        weight: 1
+      - path: Armature/main/topArrowIK.002/topArrowIK.003
+        weight: 1
+      - path: Armature/main/topArrowIK.002/topArrowIK.003/topArrowIK.003_end
+        weight: 1
+      - path: Armature/string
+        weight: 1
+      - path: Armature/string/string_end
+        weight: 1
+      - path: Shape1
+        weight: 1
+      - path: Shape2
+        weight: 1
+      - path: Shape3
+        weight: 1
+      - path: Shape4
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: end
+      takeName: bowAnim
+      firstFrame: 20
+      lastFrame: 27
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/main
+        weight: 1
+      - path: Armature/main/Bone
+        weight: 1
+      - path: Armature/main/Bone/Bone.001
+        weight: 1
+      - path: Armature/main/Bone/Bone.001/Bone.002
+        weight: 1
+      - path: Armature/main/Bone/Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: Armature/main/Bone/Bone.001/Bone.002/Bone.003/Bone.004
+        weight: 1
+      - path: Armature/main/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005
+        weight: 1
+      - path: Armature/main/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005/Bone.006
+        weight: 1
+      - path: Armature/main/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Armature/main/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Armature/main/Bone/Bone.001/Bone.002/Bone.003/Bone.004/Bone.005/Bone.006/Bone.007/Bone.008/Bone.008_end
+        weight: 1
+      - path: Armature/main/Bone.009
+        weight: 1
+      - path: Armature/main/Bone.009/Bone.010
+        weight: 1
+      - path: Armature/main/Bone.009/Bone.010/Bone.011
+        weight: 1
+      - path: Armature/main/Bone.009/Bone.010/Bone.011/Bone.012
+        weight: 1
+      - path: Armature/main/Bone.009/Bone.010/Bone.011/Bone.012/Bone.013
+        weight: 1
+      - path: Armature/main/Bone.009/Bone.010/Bone.011/Bone.012/Bone.013/Bone.014
+        weight: 1
+      - path: Armature/main/Bone.009/Bone.010/Bone.011/Bone.012/Bone.013/Bone.014/Bone.015
+        weight: 1
+      - path: Armature/main/Bone.009/Bone.010/Bone.011/Bone.012/Bone.013/Bone.014/Bone.015/Bone.016
+        weight: 1
+      - path: Armature/main/Bone.009/Bone.010/Bone.011/Bone.012/Bone.013/Bone.014/Bone.015/Bone.016/Bone.017
+        weight: 1
+      - path: Armature/main/Bone.009/Bone.010/Bone.011/Bone.012/Bone.013/Bone.014/Bone.015/Bone.016/Bone.017/Bone.017_end
+        weight: 1
+      - path: Armature/main/limit
+        weight: 1
+      - path: Armature/main/limit/limit_end
+        weight: 1
+      - path: Armature/main/limit.001
+        weight: 1
+      - path: Armature/main/limit.001/limit.001_end
+        weight: 1
+      - path: Armature/main/topArrowIK.001
+        weight: 1
+      - path: Armature/main/topArrowIK.001/topArrowIK
+        weight: 1
+      - path: Armature/main/topArrowIK.001/topArrowIK/topArrowIK_end
+        weight: 1
+      - path: Armature/main/topArrowIK.002
+        weight: 1
+      - path: Armature/main/topArrowIK.002/topArrowIK.003
+        weight: 1
+      - path: Armature/main/topArrowIK.002/topArrowIK.003/topArrowIK.003_end
+        weight: 1
+      - path: Armature/string
+        weight: 1
+      - path: Armature/string/string_end
+        weight: 1
+      - path: Shape1
+        weight: 1
+      - path: Shape2
+        weight: 1
+      - path: Shape3
+        weight: 1
+      - path: Shape4
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0

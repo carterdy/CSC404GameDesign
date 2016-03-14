@@ -11,10 +11,13 @@ public class PlayerTopScript : MonoBehaviour {
     protected void Awake () {
         rb = GetComponent<Rigidbody>();
     }
-	
+
     /* Rotate the players based off the given input */
-	protected void Turn(float turn)
+    protected void Turn(float turn)
     {
-        rb.transform.Rotate(Vector3.up * turn * turnSpeed);
+        if (gameObject.GetComponent<WarriorBottomController>().isGrounded())
+        {
+            rb.transform.Rotate(Vector3.up * turn * turnSpeed);
+        }
     }
 }
