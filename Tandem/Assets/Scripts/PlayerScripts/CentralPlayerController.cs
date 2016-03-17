@@ -135,7 +135,7 @@ public class CentralPlayerController : MonoBehaviour {
 
 	void OnCollisionEnter(Collision other)
 	{
-		if (other.gameObject.name == "Water")
+		if (other.gameObject.tag == "Water")
 		{
 			takeDamage (20.0f);
 			gameObject.SetActive(false);
