@@ -5,16 +5,19 @@ public class runAnimations : MonoBehaviour {
 
 
     private Animator anim;
+    private GameObject weapon, IK;
 
 	// Use this for initialization
 	void Start () {
         anim = GetComponent<Animator>();
+        weapon = GameObject.Find("Bow");
+        weapon.SetActive(false);
+        IK = GameObject.Find("IK");
+        IK.GetComponent<customIK>().enabled = false;
 	}
 
     void FixedUpdate()
     {
-        //set the location of the bow
-        //bow.position = rightHand.position;
         bool warriorActive = gameObject.GetComponent<WarriorBottomController>().isActiveAndEnabled;
         bool warriorGrounded = gameObject.GetComponent<WarriorBottomController>().isGrounded();
         float warriorMove = Mathf.Abs(Input.GetAxisRaw("Vertical"));
@@ -36,6 +39,15 @@ public class runAnimations : MonoBehaviour {
             anim.SetInteger("run", 0);
         }
 
+        //activate archer bow and arm movements
+        if (warriorActive)
+        {
+            IK.GetComponent<customIK>().enabled = true;
+        }
+        else
+        {
+            IK.GetComponent<customIK>().enabled = false;
+        }
     }
 	
 	// Update is called once per frame
