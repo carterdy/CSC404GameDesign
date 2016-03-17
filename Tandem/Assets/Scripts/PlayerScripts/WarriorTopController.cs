@@ -30,7 +30,7 @@ public class WarriorTopController : PlayerTopScript {
             //Create a shield and set the parent to the player.  Then set the position to the front of the player.
             activeShield = Instantiate(shield);
             activeShield.transform.SetParent(gameObject.transform);
-            activeShield.transform.localPosition = new Vector3(0f, 0.5f, 0.5f);
+            activeShield.transform.localPosition = new Vector3(0f, 1.0f, 1.0f);
             activeShield.transform.rotation = gameObject.transform.rotation;
         }
         float horizontal = Input.GetAxis("ShieldHorizontal");
