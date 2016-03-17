@@ -15,9 +15,11 @@ public class ShootToDeactivate : MonoBehaviour {
 	
 	void OnCollisionEnter (Collision other)
     {
-        if (other.gameObject.tag == "arrow")
+        Debug.Log("We got a collision");
+        if (other.gameObject.tag == "Arrow")
         {
-            other.gameObject.SetActive(false);
+            Debug.Log("do we get here?");
+            objectToDeactivate.SetActive(false);
         }
     }
 }

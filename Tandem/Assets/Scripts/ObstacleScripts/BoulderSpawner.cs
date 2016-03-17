@@ -19,5 +19,10 @@ public class BoulderSpawner : MonoBehaviour {
         launchedBoulder.transform.position = gameObject.transform.position;
         launchedBoulder.transform.rotation = gameObject.transform.rotation;
     }
+
+    void OnDisable()
+    {
+        CancelInvoke();
+    }
 	
 }
