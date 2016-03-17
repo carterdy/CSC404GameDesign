@@ -56,6 +56,7 @@ public class CentralPlayerController : MonoBehaviour {
     /*Flip the players by disabling movement for the top player and changing the interactable objects */
     void FlipPlayers ()
     {
+
         warriorBottom = !warriorBottom;
         GameObject[] iceObstacles = GameObject.FindGameObjectsWithTag("IceObstacle");
         GameObject[] fireObstacles = GameObject.FindGameObjectsWithTag("FireObstacle");
@@ -72,11 +73,7 @@ public class CentralPlayerController : MonoBehaviour {
             warriorTopIcon.SetActive(false);
             warriorBottomIcon.SetActive(true);
             //Physically switch the players
-            players.SetInteger("flip", 1);
-            
-
-
-            
+            players.SetInteger("flip", 1);            
         }
         else if (!players.IsInTransition(0) && players.GetCurrentAnimatorStateInfo(0).IsName("boyIdle"))
         {
@@ -90,8 +87,6 @@ public class CentralPlayerController : MonoBehaviour {
             warriorTopIcon.SetActive(true);
             warriorBottomIcon.SetActive(false);
             //Physically switch the players
-            //archer.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
-            //warrior.transform.localPosition = new Vector3(0.0f, topOffset, 0.0f);
             players.SetInteger("flip", 1);
         }
         
@@ -140,8 +135,9 @@ public class CentralPlayerController : MonoBehaviour {
 			takeDamage (20.0f);
 			gameObject.SetActive(false);
 			gameObject.transform.position = respawn.transform.position;
-			gameObject.SetActive(true);
-		}
+            gameObject.SetActive(true);
+            players.SetBool("bottom", warriorBottom);
+        }
 
         //damage from mine exploding
         if (other.gameObject.tag == "Mine")
