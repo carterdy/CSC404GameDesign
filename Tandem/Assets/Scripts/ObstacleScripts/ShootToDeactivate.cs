@@ -6,7 +6,7 @@ using System.Collections;
 
 public class ShootToDeactivate : MonoBehaviour {
 
-    public GameObject objectToDeactivate;
+    public GameObject[] objectsToDeactivate;
 
 	// Use this for initialization
 	void Start () {
@@ -15,11 +15,12 @@ public class ShootToDeactivate : MonoBehaviour {
 	
 	void OnCollisionEnter (Collision other)
     {
-        Debug.Log("We got a collision");
         if (other.gameObject.tag == "Arrow")
         {
-            Debug.Log("do we get here?");
-            objectToDeactivate.SetActive(false);
+            foreach (GameObject obj in objectsToDeactivate)
+            {
+                obj.SetActive(false);
+            }
         }
     }
 }
