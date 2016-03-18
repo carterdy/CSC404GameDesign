@@ -5,14 +5,13 @@ public class runAnimations : MonoBehaviour {
 
 
     private Animator anim;
-    private GameObject weapon, IK;
+    public GameObject weapon;
+    public GameObject IK;
 
 	// Use this for initialization
 	void Start () {
         anim = GetComponent<Animator>();
-        weapon = GameObject.Find("Bow");
         weapon.SetActive(false);
-        IK = GameObject.Find("IK");
         IK.GetComponent<customIK>().enabled = false;
 	}
 

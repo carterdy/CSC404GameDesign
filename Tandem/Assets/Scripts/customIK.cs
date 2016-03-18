@@ -28,7 +28,7 @@ public class customIK : MonoBehaviour {
     private Vector3 targetStart, poleStart;
 
     private GameObject player;
-    private Animator anim;
+    //private Animator anim;
     private float deadzone;
 
     float previousPos;

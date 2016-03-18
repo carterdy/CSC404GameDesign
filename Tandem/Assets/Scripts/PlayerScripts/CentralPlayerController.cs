@@ -56,10 +56,8 @@ public class CentralPlayerController : MonoBehaviour {
     /* Sets which script and UI elements are active depending on which player is top */
     void setPlayerState ()
     {
-
-        warriorBottom = !warriorBottom;
-        GameObject[] iceObstacles = GameObject.FindGameObjectsWithTag("IceObstacle");
-        GameObject[] fireObstacles = GameObject.FindGameObjectsWithTag("FireObstacle");
+        //GameObject[] iceObstacles = GameObject.FindGameObjectsWithTag("IceObstacle");
+        //GameObject[] fireObstacles = GameObject.FindGameObjectsWithTag("FireObstacle");
         //Set the movement controller scripts
         if (!players.IsInTransition(0) && players.GetCurrentAnimatorStateInfo(0).IsName("girlIdle"))
         {
@@ -93,8 +91,6 @@ public class CentralPlayerController : MonoBehaviour {
     /*Flip the players by disabling movement for the top player and changing the interactable objects */
     void FlipPlayers ()
     {
-        GameObject[] iceObstacles = GameObject.FindGameObjectsWithTag("IceObstacle");
-        GameObject[] fireObstacles = GameObject.FindGameObjectsWithTag("FireObstacle");
         //Set the movement controller scripts
         if (!players.IsInTransition(0) && players.GetCurrentAnimatorStateInfo(0).IsName("girlIdle"))
         {
