@@ -42,7 +42,7 @@ public class customIK : MonoBehaviour {
     void Start () {
         player = GameObject.Find("CompletePlayer");
         previousPos = chest.transform.rotation.eulerAngles.y;
-        anim = player.GetComponent<Animator>();
+        //anim = player.GetComponent<Animator>();
         deadzone = 0.25f;
 
         bow.parent.Rotate(0, 18.81f, 0);
