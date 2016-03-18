@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class ArcherTopController : PlayerTopScript {
 
+    public GameObject ArcherTurningActive;
+
 	GameObject arrowPrefab;
 	GameObject player;
 	GameObject arrow;
@@ -26,10 +28,18 @@ public class ArcherTopController : PlayerTopScript {
 	{
 		/* Rotate the players based off the given input */
 		float turn = Input.GetAxisRaw("Horizontal2");
-		Turn(turn);
+        if (turn != 0)
+        {
+            ArcherTurningActive.SetActive(true);
+            Turn(turn);
+        }
+        else
+        {
+            ArcherTurningActive.SetActive(false);
+        }
 
-		// Aim Axis
-		float aimX = Input.GetAxis("AimX");
+        // Aim Axis
+        float aimX = Input.GetAxis("AimX");
 		float aimY = Input.GetAxis ("AimY");
 
 		// Math to convert Axis to Angle Direction

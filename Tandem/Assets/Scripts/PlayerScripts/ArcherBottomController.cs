@@ -3,6 +3,7 @@ using System.Collections;
 
 public class ArcherBottomController : PlayerBottomScript {
 
+    public GameObject ArcherStraightActive;
     public float onIceSpeedModifier = 5;
 
     //Set to true when the archer is on the bottom and standing on ice
@@ -21,7 +22,15 @@ public class ArcherBottomController : PlayerBottomScript {
             AttemptJump();
         }
 
-        Move(vertical);
+        if (vertical != 0)
+        {
+            ArcherStraightActive.SetActive(true);
+            Move(vertical);
+        }
+        else
+        {
+            ArcherStraightActive.SetActive(false);
+        }
     }
 
     void OnCollisionEnter(Collision other)

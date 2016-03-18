@@ -3,6 +3,7 @@ using System;
 public class WarriorTopController : PlayerTopScript {
 
     public GameObject shield;
+    public GameObject WarriorTurningActive;
     public float shieldRotateSpeed = 5f;
 
     private GameObject activeShield;
@@ -13,7 +14,14 @@ public class WarriorTopController : PlayerTopScript {
     void FixedUpdate()
     {
         float turn = Input.GetAxisRaw("Horizontal");
-        Turn(turn);
+        if (turn != 0)
+        {
+            WarriorTurningActive.SetActive(true);
+            Turn(turn);
+        } else
+        {
+            WarriorTurningActive.SetActive(false);
+        }
         if (Input.GetAxis("Block") > 0)
         {
             Block();

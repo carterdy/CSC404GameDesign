@@ -6,15 +6,19 @@ public class CentralPlayerController : MonoBehaviour {
 
     public static CentralPlayerController instance = null;
 
+    public GameObject ArcherStraightActive;
+    public GameObject ArcherTurningActive;
+    public GameObject WarriorStraightActive;
+    public GameObject WarriorTurningActive;
     public float playerHealth = 100f;
 
     //The boolean determining who is on bottom.  If it's not the warrior, it's the archer.
     private bool warriorBottom = true;
 
-    private GameObject archerTopIcon;
-    private GameObject archerBottomIcon;
-    private GameObject warriorTopIcon;
-    private GameObject warriorBottomIcon;
+    private GameObject ArcherTurningBase;
+    private GameObject ArcherStraightBase;
+    private GameObject WarriorTurningBase;
+    private GameObject WarriorStraightBase;
     private GameObject playerHealthBar;
 	private GameObject startingSpawn;
 	private GameObject respawn;
@@ -35,10 +39,10 @@ public class CentralPlayerController : MonoBehaviour {
 
         players = GetComponent<Animator>();
 
-        archerTopIcon = GameObject.Find("ArcherTopIcon");
-        archerBottomIcon = GameObject.Find("ArcherBottomIcon");
-        warriorTopIcon = GameObject.Find("WarriorTopIcon");
-        warriorBottomIcon = GameObject.Find("WarriorBottomIcon");
+        ArcherTurningBase = GameObject.Find("ArcherTurningBase");
+        ArcherStraightBase = GameObject.Find("ArcherStraightBase");
+        WarriorTurningBase = GameObject.Find("WarriorTurningBase");
+        WarriorStraightBase = GameObject.Find("WarriorStraightBase");
         playerHealthBar = GameObject.Find("PlayerHealthBar");
 		startingSpawn = GameObject.Find ("StartZone");
 		respawn = Instantiate (startingSpawn, 
@@ -46,8 +50,8 @@ public class CentralPlayerController : MonoBehaviour {
 			startingSpawn.transform.rotation)
 			as GameObject;
 
-        warriorTopIcon.SetActive(false);
-        archerBottomIcon.SetActive(false);
+        WarriorTurningBase.SetActive(false);
+        ArcherStraightBase.SetActive(false);
 
 		gameObject.transform.position = startingSpawn.transform.position;
         
@@ -66,10 +70,10 @@ public class CentralPlayerController : MonoBehaviour {
             gameObject.GetComponent<ArcherBottomController>().enabled = false;
             gameObject.GetComponent<ArcherTopController>().enabled = true;
             //Flip the icons
-            archerTopIcon.SetActive(true);
-            archerBottomIcon.SetActive(false);
-            warriorTopIcon.SetActive(false);
-            warriorBottomIcon.SetActive(true);
+            ArcherTurningBase.SetActive(true);
+            ArcherStraightBase.SetActive(false);
+            WarriorTurningBase.SetActive(false);
+            WarriorStraightBase.SetActive(true);
             //Physically switch the players
             players.SetInteger("flip", 1);            
         }
@@ -81,11 +85,18 @@ public class CentralPlayerController : MonoBehaviour {
             gameObject.GetComponent<WarriorBottomController>().enabled = false;
             gameObject.GetComponent<WarriorTopController>().enabled = true;
             //Flip the icons
-            archerTopIcon.SetActive(false);
-            archerBottomIcon.SetActive(true);
-            warriorTopIcon.SetActive(true);
-            warriorBottomIcon.SetActive(false);
+            ArcherTurningBase.SetActive(false);
+            ArcherStraightBase.SetActive(true);
+            WarriorTurningBase.SetActive(true);
+            WarriorStraightBase.SetActive(false);
         }
+
+        //Deactivate all the active movement indicators
+        ArcherTurningActive.SetActive(false);
+        ArcherStraightActive.SetActive(false);
+        WarriorTurningActive.SetActive(false);
+        WarriorStraightActive.SetActive(false);
+
     }
 
     /*Flip the players by disabling movement for the top player and changing the interactable objects */

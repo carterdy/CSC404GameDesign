@@ -5,6 +5,7 @@ using System.Collections;
 
 public class WarriorBottomController : PlayerBottomScript {
 
+    public GameObject WarriorStraightActive;
 
      void FixedUpdate ()
     {
@@ -17,7 +18,16 @@ public class WarriorBottomController : PlayerBottomScript {
         {
             AttemptJump();
         }
-       Move(vertical);
+
+        if (vertical != 0)
+        {
+            WarriorStraightActive.SetActive(true);
+            Move(vertical);
+        }
+        else
+        {
+            WarriorStraightActive.SetActive(false);
+        }
     }
 
     void OnCollisionStay(Collision other)
