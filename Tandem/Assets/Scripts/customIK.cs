@@ -61,18 +61,18 @@ public class customIK : MonoBehaviour {
         // Aim Axis
         float aimX = Input.GetAxis("AimX");
         float aimY = Input.GetAxis("AimY");
-    
+
         // Used for Deadzone Check
         Vector2 stickInput = new Vector2(aimX, aimY);
 
         // If joystick is active
         if (stickInput.magnitude > deadzone)
         {
+            //activate the bow
             bow.parent.gameObject.SetActive(true);
             applyRotations(aimX, aimY);
 
             createIK();
-
         }
         else
         {
@@ -82,17 +82,19 @@ public class customIK : MonoBehaviour {
     }
     float adjustAngle(float angle)
     {
-        if (angle > 180) angle -= 360;
-        if (angle <= -180) angle += 360;
+        if (angle < 0) angle += 360;
+        if (angle > 360) angle -= 360;
         return angle;
     }
+
     void applyRotations(float aimX, float aimY)
     {
-//        Debug.Log("player: " + player.transform.rotation.eulerAngles.y);
+        boyNeck.localRotation = Quaternion.Euler(new Vector3(boyNeckRot, 0, 0));
+        rightArm.localEulerAngles = new Vector3(17.9996f, 24.7699f, -32.3385f);
+
         //find the center we want to rotate around
         float center = player.transform.rotation.eulerAngles.y;//0-360
-//        Debug.Log("player: " + center);
-        center = adjustAngle(center);
+        
         //get the aim ranges
         float leftRange = center - LeftAim;
         float rightRange = center + rightAim;
@@ -101,78 +103,25 @@ public class customIK : MonoBehaviour {
         
         // Math to convert Axis to Angle Direction
         float stickDir = Mathf.Atan2(aimX, aimY) * Mathf.Rad2Deg;
- //       Debug.Log("dir: " + stickDir);
-        boyNeck.localRotation = Quaternion.Euler(new Vector3(boyNeckRot, 0, 0));
-        rightArm.localEulerAngles = new Vector3(17.9996f, 24.7699f, -32.3385f);
 
         float wantedChestRot = stickDir - chestRot;
         wantedChestRot = adjustAngle(wantedChestRot);
         float wantedHeadRot = stickDir - headRot;
         wantedHeadRot = adjustAngle(wantedHeadRot);
 
-//        Debug.Log("leftR: "+ leftRange);
-//        Debug.Log("rightR: " + rightRange);
-//        Debug.Log("wantedR: " + wantedChestRot);
+        //aim the neck to the bow direction
+        neck.localEulerAngles = new Vector3(0, headRot, 0);
 
-        if (leftRange > rightRange)
+        //limit the archer's chest rotations
+        if (wantedChestRot <200 && wantedChestRot > 20)
         {
-            bool left = wantedChestRot <= 180 && wantedChestRot >= leftRange;
-            bool right = wantedChestRot >= -180 && wantedChestRot <= rightRange;
-            if (left || right)
-            {
-                chest.rotation = Quaternion.Euler(new Vector3(0, wantedChestRot, 0));
-                neck.rotation = Quaternion.Euler(new Vector3(0, wantedHeadRot, 0));
-                previousPos = chest.transform.rotation.eulerAngles.y;
-            }
-            else if (!left)
-            {
-                //stay on left
-                chest.rotation = Quaternion.Euler(new Vector3(0, previousPos, 0));
-                neck.rotation = Quaternion.Euler(new Vector3(0, previousPos + headRot, 0));
-                chest.localEulerAngles = new Vector3(0, 360 - LeftAim, 0);
-                neck.localEulerAngles = new Vector3(0, 30, 0);
-
-
-            }
-            else if (!right)
-            {
-                chest.rotation = Quaternion.Euler(new Vector3(0, previousPos, 0));
-                neck.rotation = Quaternion.Euler(new Vector3(0, previousPos + headRot, 0));
-                chest.localEulerAngles = new Vector3(0, rightAim, 0);
-                neck.localEulerAngles = new Vector3(0, 30, 0);
-            }
+            chest.localEulerAngles = new Vector3(0, previousPos, 0);
         }
         else
         {
-            if (wantedChestRot >= leftRange && wantedChestRot <= rightRange)
-            {
-                chest.rotation = Quaternion.Euler(new Vector3(0, wantedChestRot, 0));
-                neck.rotation = Quaternion.Euler(new Vector3(0, wantedHeadRot, 0));
-                previousPos = chest.transform.rotation.eulerAngles.y;
-            }
-            else if (wantedChestRot < leftRange)
-            {
-                //stay on left
-                chest.rotation = Quaternion.Euler(new Vector3(0, previousPos, 0));
-                neck.rotation = Quaternion.Euler(new Vector3(0, previousPos + headRot, 0));
-                chest.localEulerAngles = new Vector3(0, 360 - LeftAim, 0);
-                neck.localEulerAngles = new Vector3(0, 30, 0);
-
-            }
-            else if (wantedChestRot > rightRange)
-            {
-                chest.rotation = Quaternion.Euler(new Vector3(0, previousPos, 0));
-                neck.rotation = Quaternion.Euler(new Vector3(0, previousPos + headRot, 0));
-                chest.localEulerAngles = new Vector3(0, rightAim, 0);
-                neck.localEulerAngles = new Vector3(0, 30, 0);
-
-            }
+            chest.localEulerAngles = new Vector3(0, wantedChestRot, 0);
+            previousPos = chest.localEulerAngles.y;
         }
-//        Debug.Log("girl: " + chest.transform.rotation.eulerAngles.y);
-//        Debug.Log(chest.transform.localEulerAngles.y);
-//        Debug.Log(neck.transform.localEulerAngles.y);
-
-
     }
 
     void createIK()
