@@ -53,12 +53,11 @@ public class CentralPlayerController : MonoBehaviour {
         
     }
 
-    /*Flip the players by disabling movement for the top player and changing the interactable objects */
-    void FlipPlayers ()
+    /* Sets which script and UI elements are active depending on which player is top */
+    void setPlayerState ()
     {
-        warriorBottom = !warriorBottom;
-        GameObject[] iceObstacles = GameObject.FindGameObjectsWithTag("IceObstacle");
-        GameObject[] fireObstacles = GameObject.FindGameObjectsWithTag("FireObstacle");
+        //GameObject[] iceObstacles = GameObject.FindGameObjectsWithTag("IceObstacle");
+        //GameObject[] fireObstacles = GameObject.FindGameObjectsWithTag("FireObstacle");
         //Set the movement controller scripts
         if (!players.IsInTransition(0) && players.GetCurrentAnimatorStateInfo(0).IsName("girlIdle"))
         {
@@ -72,12 +71,9 @@ public class CentralPlayerController : MonoBehaviour {
             warriorTopIcon.SetActive(false);
             warriorBottomIcon.SetActive(true);
             //Physically switch the players
-            players.SetInteger("flip", 1);
-            
-
-
-            
+            players.SetInteger("flip", 1);            
         }
+
         else if (!players.IsInTransition(0) && players.GetCurrentAnimatorStateInfo(0).IsName("boyIdle"))
         {
             gameObject.GetComponent<ArcherBottomController>().enabled = true;
@@ -89,33 +85,30 @@ public class CentralPlayerController : MonoBehaviour {
             archerBottomIcon.SetActive(true);
             warriorTopIcon.SetActive(true);
             warriorBottomIcon.SetActive(false);
+        }
+    }
+
+    /*Flip the players by disabling movement for the top player and changing the interactable objects */
+    void FlipPlayers ()
+    {
+        //Set the movement controller scripts
+        if (!players.IsInTransition(0) && players.GetCurrentAnimatorStateInfo(0).IsName("girlIdle"))
+        {
+            warriorBottom = true;
+            setPlayerState();
             //Physically switch the players
-            //archer.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
-            //warrior.transform.localPosition = new Vector3(0.0f, topOffset, 0.0f);
+            players.SetInteger("flip", 1);
+            
+            
+        }
+        else if (!players.IsInTransition(0) && players.GetCurrentAnimatorStateInfo(0).IsName("boyIdle"))
+        {
+            warriorBottom = false;
+            setPlayerState();
+            //Physically switch the players
             players.SetInteger("flip", 1);
         }
         
-        //Enable/disable the colliders on the elemental objects
-        foreach (GameObject obstacle in iceObstacles)
-        {
-            if (warriorBottom)
-            {
-                obstacle.GetComponents<BoxCollider>()[1].enabled = false;
-            } else
-            {
-                obstacle.GetComponents<BoxCollider>()[1].enabled = true;
-            }
-        }
-        foreach (GameObject obstacle in fireObstacles)
-        {
-            if (warriorBottom)
-            {
-                obstacle.GetComponents<BoxCollider>()[1].enabled = true;
-            } else
-            {
-                obstacle.GetComponents<BoxCollider>()[1].enabled = false;
-            }
-        }
     }
 
     /* Called to deal damage to the players */
@@ -135,13 +128,14 @@ public class CentralPlayerController : MonoBehaviour {
 
 	void OnCollisionEnter(Collision other)
 	{
-		if (other.gameObject.name == "Water")
+		if (other.gameObject.tag == "Water")
 		{
 			takeDamage (20.0f);
 			gameObject.SetActive(false);
 			gameObject.transform.position = respawn.transform.position;
-			gameObject.SetActive(true);
-		}
+            gameObject.SetActive(true);
+            players.SetBool("bottom", warriorBottom);
+        }
 
         //damage from mine exploding
         if (other.gameObject.tag == "Mine")
@@ -188,6 +182,9 @@ public class CentralPlayerController : MonoBehaviour {
         playerHealthBar.GetComponent<RectTransform>().localScale = new Vector3(playerHealth / 100f, 0.33f, 0f);
 	}
 
-    
+    void OnEnable()
+    {
+        setPlayerState();
+    }
 
 }

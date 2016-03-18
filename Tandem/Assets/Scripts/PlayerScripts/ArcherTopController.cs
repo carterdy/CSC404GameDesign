@@ -102,7 +102,6 @@ public class ArcherTopController : PlayerTopScript {
 		// Arrow exist, now aim the arrow
 		else {
 			// Rotate Arrow in the direction of the Joystick
-			arrow.transform.rotation = Quaternion.Euler (new Vector3 (90, stickDir, 0));
 			LimitAimCone();
 		}
 	}
@@ -118,7 +117,16 @@ public class ArcherTopController : PlayerTopScript {
 
 	void LimitAimCone() {
 		float playerRotation = player.transform.eulerAngles.y;
-		float arrowRot = arrow.transform.eulerAngles.y;
+		float arrowRot = playerRotation + stickDir;
+
+		arrow.transform.rotation = Quaternion.Euler (new Vector3 (90, arrowRot, 0));
+
+		if (arrowRot > 360) {
+			arrowRot = arrowRot - 360f;
+		}
+		if (arrowRot < 0) {
+			arrowRot = arrowRot + 360f;
+		}
 
 		leftRange = playerRotation - aimRange;
 		rightRange = playerRotation + aimRange;
@@ -153,12 +161,12 @@ public class ArcherTopController : PlayerTopScript {
 		else {
 			// Update Arrow with Range Restrictions
 			// Maintain Min Value if Rotation is under Min
-			if (arrowRot < leftRange && arrowRot > leftRange - aimRange) {
+			if (arrowRot < leftRange) {
 				UpdatePosition (leftRange);
 				LimitStickDir (leftRange);
 			} 
 			// Maintain Max Value if Rotation is under Max
-			else if (arrowRot > rightRange && arrowRot < rightRange + aimRange) {
+			else if (arrowRot > rightRange) {
 				UpdatePosition (rightRange);
 				LimitStickDir (rightRange);
 			} 
