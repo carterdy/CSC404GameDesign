@@ -31,7 +31,6 @@ public class customIK : MonoBehaviour {
     //private Animator anim;
     private float deadzone;
 
-    float previousPos;
     public float chestRot = 70.0f;
     public float headRot = 30.0f;
     public float boyNeckRot = 135.0f;
@@ -41,7 +40,6 @@ public class customIK : MonoBehaviour {
     // Use this for initialization
     void Start () {
         player = GameObject.Find("CompletePlayer");
-        previousPos = chest.transform.rotation.eulerAngles.y;
         //anim = player.GetComponent<Animator>();
         deadzone = 0.25f;
 
@@ -103,6 +101,7 @@ public class customIK : MonoBehaviour {
         
         // Math to convert Axis to Angle Direction
         float stickDir = Mathf.Atan2(aimX, aimY) * Mathf.Rad2Deg;
+        float stickAngle = adjustAngle(stickDir);
 
         float wantedChestRot = stickDir - chestRot;
         wantedChestRot = adjustAngle(wantedChestRot);
@@ -115,12 +114,13 @@ public class customIK : MonoBehaviour {
         //limit the archer's chest rotations
         if (wantedChestRot <200 && wantedChestRot > 20)
         {
-            chest.localEulerAngles = new Vector3(0, previousPos, 0);
+            //90-180
+            if (stickAngle >= 90 && stickAngle < 180) chest.localEulerAngles = new Vector3(0, 20, 0);
+            if (stickAngle >=180 && stickAngle < 270) chest.localEulerAngles = new Vector3(0, 200, 0);
         }
         else
         {
             chest.localEulerAngles = new Vector3(0, wantedChestRot, 0);
-            previousPos = chest.localEulerAngles.y;
         }
     }
 
