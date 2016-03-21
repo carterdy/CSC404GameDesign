@@ -30,6 +30,9 @@ public class BoulderController : MonoBehaviour {
         {
             other.gameObject.GetComponent<CentralPlayerController>().takeDamage(20);
             destroyBoulder();
+        } else if (other.gameObject.tag == "Water")
+        {
+            destroyBoulder();
         }
     }
 }
