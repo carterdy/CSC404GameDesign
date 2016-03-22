@@ -3,11 +3,17 @@ using System.Collections;
 
 public class rayCastShooting : MonoBehaviour {
 
-    public float distance = 10;
+    public float distance = 10.0f;
     public bool debug = false;
+
+    private GameObject cursor;
+    private Vector3 startPos;
 
 	// Use this for initialization
 	void Start () {
+        cursor = GameObject.Find("Cursor");
+        startPos = new Vector3(distance/10, 0, 0);
+        cursor.transform.localPosition = startPos;
 	
 	}
 	
@@ -21,6 +27,11 @@ public class rayCastShooting : MonoBehaviour {
         if (hit)
         {
             if (debug) Debug.Log(enemy.transform.gameObject.name);
+            cursor.transform.localPosition = new Vector3((enemy.distance/10)-0.01f, 0, 0);
+        }
+        else
+        {
+            cursor.transform.localPosition = new Vector3(distance / 10, 0, 0);
         }
 	
 	}
