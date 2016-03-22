@@ -25,6 +25,9 @@ public class CentralPlayerController : MonoBehaviour {
 
     private Animator players;
 
+    public AudioClip jumpSound;
+    private AudioSource source;
+
     // Use this for initialization
     void Awake () {
         //Borrowing simple singleton code from Unity's Roguelike tutorial
@@ -54,7 +57,10 @@ public class CentralPlayerController : MonoBehaviour {
         ArcherStraightBase.SetActive(false);
 
 		gameObject.transform.position = startingSpawn.transform.position;
-        
+
+        //audio setup
+        source = GetComponent<AudioSource>();
+
     }
 
     /* Sets which script and UI elements are active depending on which player is top */
@@ -109,8 +115,9 @@ public class CentralPlayerController : MonoBehaviour {
             setPlayerState();
             //Physically switch the players
             players.SetInteger("flip", 1);
-            
-            
+            //flip audio
+            source.PlayOneShot(jumpSound, 1F);
+
         }
         else if (!players.IsInTransition(0) && players.GetCurrentAnimatorStateInfo(0).IsName("boyIdle"))
         {
@@ -118,6 +125,8 @@ public class CentralPlayerController : MonoBehaviour {
             setPlayerState();
             //Physically switch the players
             players.SetInteger("flip", 1);
+            //flip audio
+            source.PlayOneShot(jumpSound, 1F);
         }
         
     }

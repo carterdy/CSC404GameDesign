@@ -18,10 +18,16 @@ public class ArcherTopController : PlayerTopScript {
 	private float leftRange;
 	private float rightRange;
 
+    public AudioClip shootSound;
+    private AudioSource source;
+
+
 	void Start() {
 		arrowPrefab = Resources.Load ("Arrow") as GameObject;
 		player = GameObject.Find("CompletePlayer");
 		arrow = null;
+        //audio setup
+        source = GetComponent<AudioSource>();
 	}
 
 	void FixedUpdate()
@@ -98,6 +104,9 @@ public class ArcherTopController : PlayerTopScript {
 		// Add Arrow Velocity, Driection of Arrow Head
 		Rigidbody rb = arrow.GetComponent<Rigidbody>();
 		rb.velocity = arrow.transform.up * 10;
+
+        //shoot sound
+        source.PlayOneShot(shootSound, 1F);
 
 		// Destroy the Arrow After 3 Seconds
 		Destroy(arrow.gameObject, 3);
