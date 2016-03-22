@@ -1,0 +1,31 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# Explicit paths specified without -i or -o; assuming --only paths...
+# On branch master
+# Your branch is behind 'origin/master' by 8 commits, and can be fast-forwarded.
+#   (use "git pull" to update your local branch)
+#
+# Changes to be committed:
+#	modified:   Tandem/Assets/_Scenes/Level1.unity
+#
+# Changes not staged for commit:
+#	modified:   Tandem/Assets/Scripts/PlayerScripts/ArcherTopController.cs
+#	modified:   Tandem/Assets/Scripts/PlayerScripts/CentralPlayerController.cs
+#	modified:   Tandem/ProjectSettings/InputManager.asset
+#	modified:   Tandem/ProjectSettings/ProjectSettings.asset
+#	modified:   Tandem/ProjectSettings/ProjectVersion.txt
+#
+# Untracked files:
+#	Tandem/Assets/Audio.meta
+#	Tandem/Assets/Audio/
+#	Tandem/Assets/Prefabs/Bridge.meta
+#	Tandem/Assets/Prefabs/Bridge/
+#	Tandem/Assets/Resources/Materials/blinn1.mat
+#	Tandem/Assets/Resources/Materials/blinn1.mat.meta
+#	Tandem/Assets/Scripts/TriggerPlane.cs
+#	Tandem/Assets/Scripts/TriggerPlane.cs.meta
+#	Tandem/Assets/Scripts/floatingUp.cs
+#	Tandem/Assets/Scripts/floatingUp.cs.meta
+#
+
