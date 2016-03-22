@@ -15,9 +15,6 @@ public class GettingBlocked : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "PlayerShield")
-        {
             Destroy(this.gameObject);
-        }
     }
 }

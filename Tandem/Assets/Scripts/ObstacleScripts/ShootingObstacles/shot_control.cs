@@ -14,9 +14,9 @@ public class shot_control : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        rb.AddRelativeForce(Vector3.right * Time.deltaTime * 100f);
+        rb.AddForce(transform.forward * 10f);
     }
 
 
