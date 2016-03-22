@@ -3,11 +3,20 @@ using System.Collections;
 
 public class rayCastShooting : MonoBehaviour {
 
-    public float distance = 10;
+    public float distance = 40.0f;
+    public float cursorDistance = 9.0f;
     public bool debug = false;
+
+    private GameObject cursor;
+    private SpriteRenderer cursorColor;
+    private Vector3 startPos;
 
 	// Use this for initialization
 	void Start () {
+        cursor = GameObject.Find("Cursor");
+        cursorColor = cursor.GetComponent<SpriteRenderer>();
+        startPos = new Vector3(cursorDistance/10, 0, 0);
+        cursor.transform.localPosition = startPos;
 	
 	}
 	
@@ -21,7 +30,24 @@ public class rayCastShooting : MonoBehaviour {
         if (hit)
         {
             if (debug) Debug.Log(enemy.transform.gameObject.name);
+            cursor.transform.localPosition = new Vector3((enemy.distance/10)-0.01f, 0, 0);
+            Debug.Log(enemy.transform.gameObject.tag);
+            if(enemy.transform.gameObject.tag == "Target")
+            {
+                cursorColor.color = Color.red;
+                
+            }
+            else
+            {
+                cursorColor.color = Color.white;
+            }
         }
+        else
+        {
+            cursor.transform.localPosition = startPos;
+            cursorColor.color = Color.white;
+        }
+        Debug.Log(cursorColor.color);
 	
 	}
 }
