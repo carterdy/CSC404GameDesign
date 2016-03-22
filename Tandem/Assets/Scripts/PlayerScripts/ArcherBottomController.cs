@@ -10,6 +10,14 @@ public class ArcherBottomController : PlayerBottomScript {
     private bool onIce = false;
     private Vector3 onIceMovement;
 
+    public AudioClip jumpSound;
+    private AudioSource source;
+
+    void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
+
     void FixedUpdate()
     {
         //Need to get movement axis values and hand them off to a movement function
@@ -19,6 +27,8 @@ public class ArcherBottomController : PlayerBottomScript {
         }
         if (Input.GetButton("Jump2"))
         {
+            // jump sound
+            source.PlayOneShot(jumpSound, 1F);
             AttemptJump();
         }
 

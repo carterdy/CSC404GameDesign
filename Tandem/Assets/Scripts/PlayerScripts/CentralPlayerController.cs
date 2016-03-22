@@ -26,7 +26,12 @@ public class CentralPlayerController : MonoBehaviour {
     private Animator players;
 
     public AudioClip jumpSound;
+    public AudioClip hitSound;
     private AudioSource source;
+    public int reaction;
+    private int reactionTemp;
+    private bool soundrelease;
+
 
     // Use this for initialization
     void Awake () {
@@ -60,7 +65,7 @@ public class CentralPlayerController : MonoBehaviour {
 
         //audio setup
         source = GetComponent<AudioSource>();
-
+        reactionTemp = reaction; 
     }
 
     /* Sets which script and UI elements are active depending on which player is top */
@@ -134,7 +139,18 @@ public class CentralPlayerController : MonoBehaviour {
     /* Called to deal damage to the players */
     public void takeDamage(float damage)
     {
-        playerHealth -= damage;
+        playerHealth -= damage;  //----------------------------------
+
+        //Taking damage audio
+        if (soundrelease)
+        {
+            source.PlayOneShot(hitSound, 1F);
+            reactionTemp = 0;
+            soundrelease = false;
+        }
+
+
+        
     }
 
     /* Called while the player is standing in fire */
@@ -195,6 +211,16 @@ public class CentralPlayerController : MonoBehaviour {
         if (gameObject.GetComponent<WarriorBottomController> ().isGrounded ()) {
 			respawn.transform.position = gameObject.transform.position;
 		}
+
+        // reduce continously hit sound effect
+        if (reactionTemp < reaction)
+        {
+            reactionTemp++;
+        }
+        else
+        {
+            soundrelease = true;
+        }
     }
 	
 	// Update is called once per frame

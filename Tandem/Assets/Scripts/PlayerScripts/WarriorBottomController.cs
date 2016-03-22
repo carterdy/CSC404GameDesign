@@ -7,7 +7,16 @@ public class WarriorBottomController : PlayerBottomScript {
 
     public GameObject WarriorStraightActive;
 
-     void FixedUpdate ()
+    public AudioClip jumpSound;
+    private AudioSource source;
+
+
+    void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
+
+    void FixedUpdate ()
     {
         //Need to get movement axis values and hand them off to a movement function
         if (isGrounded())
@@ -16,6 +25,8 @@ public class WarriorBottomController : PlayerBottomScript {
         }
         if (Input.GetButton("Jump"))
         {
+            //jump sound
+            source.PlayOneShot(jumpSound, 1F);
             AttemptJump();
         }
 
