@@ -11,22 +11,25 @@ public class floatingUp : MonoBehaviour {
     private float tempValz;
     private Vector3 tempPos;
 
+    public Transform target;
+
     // Use this for initialization
     void Start () {
         tempValx = transform.position.x;
         tempValz = transform.position.z;
         tempValy = transform.position.y;
         move = false;
-
-    }
+      }
 	
 	// Update is called once per frame
 	void Update () {
-	    if (move == true)
+        if (move == true)
         {
-            floatingup();
+            float step = speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+            
         }
-	}
+    }
 
     void floatingup()
     {
@@ -34,7 +37,6 @@ public class floatingUp : MonoBehaviour {
         tempPos.x = tempValx;
         tempPos.z = tempValz;
         transform.position = tempPos;
-        //transform.Translate(Vector3.up * 10);
         StartCoroutine(waiting());
     }
 
