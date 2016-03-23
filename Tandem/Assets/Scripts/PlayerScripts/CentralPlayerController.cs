@@ -25,7 +25,7 @@ public class CentralPlayerController : MonoBehaviour {
 
     private Animator players;
 
-    public AudioClip jumpSound;
+    public AudioClip flipSound;
     public AudioClip hitSound;
     private AudioSource source;
     public int reaction;
@@ -121,7 +121,7 @@ public class CentralPlayerController : MonoBehaviour {
             //Physically switch the players
             players.SetInteger("flip", 1);
             //flip audio
-            source.PlayOneShot(jumpSound, 1F);
+            source.PlayOneShot(flipSound, 1F);
 
         }
         else if (!players.IsInTransition(0) && players.GetCurrentAnimatorStateInfo(0).IsName("boyIdle"))
@@ -131,7 +131,7 @@ public class CentralPlayerController : MonoBehaviour {
             //Physically switch the players
             players.SetInteger("flip", 1);
             //flip audio
-            source.PlayOneShot(jumpSound, 1F);
+            source.PlayOneShot(flipSound, 1F);
         }
         
     }
@@ -148,9 +148,6 @@ public class CentralPlayerController : MonoBehaviour {
             reactionTemp = 0;
             soundrelease = false;
         }
-
-
-        
     }
 
     /* Called while the player is standing in fire */
@@ -180,19 +177,22 @@ public class CentralPlayerController : MonoBehaviour {
         }
 
         //damage from shooting obstacles
-        if (other.gameObject.tag == "Pebble")
-        {
-            takeDamage(5);
-        }
+        //if (other.gameObject.tag == "Pebble")
+        //{
+        //    takeDamage(5);
+        //}
 
     }
 
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "End Zone")
+        if (other.tag == "End Zone2")
         {
             SceneManager.LoadScene("Victory");
+        } else if (other.tag == "End Zone")
+        {
+            SceneManager.LoadScene("Level2");
         }
     }
 

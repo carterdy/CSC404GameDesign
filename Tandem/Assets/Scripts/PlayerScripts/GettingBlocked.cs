@@ -15,6 +15,24 @@ public class GettingBlocked : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
+        if (col.contacts[0].otherCollider.tag == "PlayerShield")
+        {
+            foreach (ContactPoint c in col.contacts)
+            {
+                Debug.Log(c.thisCollider.name);
+            }
             Destroy(this.gameObject);
+        } else if (col.gameObject.tag == "Player")
+        {
+            foreach (ContactPoint c in col.contacts)
+            {
+                Debug.Log(c.otherCollider.tag);
+            }
+            col.gameObject.GetComponent<CentralPlayerController>().takeDamage(10);
+            Destroy(this.gameObject);
+        } else
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

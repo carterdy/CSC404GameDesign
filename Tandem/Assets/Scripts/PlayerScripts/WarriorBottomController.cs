@@ -6,9 +6,11 @@ using System.Collections;
 public class WarriorBottomController : PlayerBottomScript {
 
     public GameObject WarriorStraightActive;
+    public float onMoltenSpeed = 1f;
 
     public AudioClip jumpSound;
     private AudioSource source;
+    private bool onMolten = false;
 
 
     void Start()
@@ -41,12 +43,32 @@ public class WarriorBottomController : PlayerBottomScript {
         }
     }
 
-    void OnCollisionStay(Collision other)
+    void OnCollisionEnter(Collision other)
     {
-        //If the player is touching molten ground, take damage over time
         if (other.gameObject.tag == "Molten Ground")
         {
-            gameObject.GetComponent<CentralPlayerController>().standingInFire();
+            onMolten = true;
+        }
+    }
+
+    void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.tag == "Molten Ground")
+        {
+            onMolten = false;
+        }
+    }
+
+    protected override void Move(float vertical)
+    {
+        //When the warrior is on the bottom, suffer reduced movement speed if standin on molten ground
+        if (onMolten)
+        {
+            movement = transform.forward * vertical * onMoltenSpeed * Time.deltaTime;
+            rb.MovePosition(transform.position + movement);
+        }
+        else {
+            base.Move(vertical);
         }
     }
 

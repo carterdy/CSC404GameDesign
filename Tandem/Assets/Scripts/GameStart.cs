@@ -14,17 +14,18 @@ public class GameStart : MonoBehaviour {
 	void Update () {
 	    if (Input.GetButton("Start"))
         {
-			incrementLevel ();
-			// Minus 3 for the non level scene files
-			// Title, Victory and GameOver
-			if (currentLevel <= Application.levelCount - 3) {
-				SceneManager.LoadScene ("Level" + currentLevel);
-			} 
-			
-			// Restart Title Screen
-			else {
-				SceneManager.LoadScene ("TitleScreen");
-			}
+            //incrementLevel ();
+            //// Minus 3 for the non level scene files
+            //// Title, Victory and GameOver
+            //if (currentLevel <= Application.levelCount - 3) {
+            //	SceneManager.LoadScene ("Level" + currentLevel);
+            //} 
+
+            //// Restart Title Screen
+            //else {
+            //	SceneManager.LoadScene ("TitleScreen");
+            //}
+            SceneManager.LoadScene("Level1");
         }
 	}
 
