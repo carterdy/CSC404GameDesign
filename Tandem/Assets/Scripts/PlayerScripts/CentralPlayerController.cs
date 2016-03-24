@@ -11,6 +11,7 @@ public class CentralPlayerController : MonoBehaviour {
     public GameObject WarriorStraightActive;
     public GameObject WarriorTurningActive;
     public GameObject[] hearts;
+    public GameObject[] deadHearts;
 
     //The boolean determining who is on bottom.  If it's not the warrior, it's the archer.
     private bool warriorBottom = true;
@@ -144,6 +145,7 @@ public class CentralPlayerController : MonoBehaviour {
     public void takeDamage()
     {
         hearts[HP - 1].SetActive(false);
+        deadHearts[HP - 1].SetActive(true);
         HP--;  //----------------------------------
 
         //Taking damage audio
