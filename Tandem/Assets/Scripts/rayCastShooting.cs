@@ -31,7 +31,6 @@ public class rayCastShooting : MonoBehaviour {
         {
             if (debug) Debug.Log(enemy.transform.gameObject.name);
             cursor.transform.localPosition = new Vector3((enemy.distance/10)-0.01f, 0, 0);
-            Debug.Log(enemy.transform.gameObject.tag);
             if(enemy.transform.gameObject.tag == "Target")
             {
                 cursorColor.color = Color.red;
@@ -46,8 +45,6 @@ public class rayCastShooting : MonoBehaviour {
         {
             cursor.transform.localPosition = startPos;
             cursorColor.color = Color.white;
-        }
-        Debug.Log(cursorColor.color);
-	
+        }	
 	}
 }
