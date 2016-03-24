@@ -216,7 +216,10 @@ public class customIK : MonoBehaviour {
 
 
     }
-
+    void OnDisable ()
+    {
+        bow.parent.gameObject.SetActive(false);
+    }
     // Update is called once per frame
     void Update () {
 	
