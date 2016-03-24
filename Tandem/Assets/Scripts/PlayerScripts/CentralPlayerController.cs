@@ -10,16 +10,17 @@ public class CentralPlayerController : MonoBehaviour {
     public GameObject ArcherTurningActive;
     public GameObject WarriorStraightActive;
     public GameObject WarriorTurningActive;
-    public float playerHealth = 100f;
+    public GameObject[] hearts;
 
     //The boolean determining who is on bottom.  If it's not the warrior, it's the archer.
     private bool warriorBottom = true;
+    //Player's HP. Player's health should not exceed this starting value.
+    private int HP = 5;
 
     private GameObject ArcherTurningBase;
     private GameObject ArcherStraightBase;
     private GameObject WarriorTurningBase;
     private GameObject WarriorStraightBase;
-    private GameObject playerHealthBar;
 	private GameObject startingSpawn;
 	private GameObject respawn;
 
@@ -51,7 +52,6 @@ public class CentralPlayerController : MonoBehaviour {
         ArcherStraightBase = GameObject.Find("ArcherStraightBase");
         WarriorTurningBase = GameObject.Find("WarriorTurningBase");
         WarriorStraightBase = GameObject.Find("WarriorStraightBase");
-        playerHealthBar = GameObject.Find("PlayerHealthBar");
 		startingSpawn = GameObject.Find ("StartZone");
 		respawn = Instantiate (startingSpawn, 
 			gameObject.transform.position, 
@@ -68,11 +68,15 @@ public class CentralPlayerController : MonoBehaviour {
         reactionTemp = reaction; 
     }
 
+    /*  Return the amount of HP the players have left */
+    public int getHP()
+    {
+        return HP;
+    }
+
     /* Sets which script and UI elements are active depending on which player is top */
     void setPlayerState ()
     {
-        //GameObject[] iceObstacles = GameObject.FindGameObjectsWithTag("IceObstacle");
-        //GameObject[] fireObstacles = GameObject.FindGameObjectsWithTag("FireObstacle");
         //Set the movement controller scripts
         if (!players.IsInTransition(0) && players.GetCurrentAnimatorStateInfo(0).IsName("girlIdle"))
         {
@@ -136,10 +140,11 @@ public class CentralPlayerController : MonoBehaviour {
         
     }
 
-    /* Called to deal damage to the players */
-    public void takeDamage(float damage)
+    /* Called to deal damage to the players. Players take 1 heart of damage per call */
+    public void takeDamage()
     {
-        playerHealth -= damage;  //----------------------------------
+        hearts[HP - 1].SetActive(false);
+        HP--;  //----------------------------------
 
         //Taking damage audio
         if (soundrelease)
@@ -155,7 +160,7 @@ public class CentralPlayerController : MonoBehaviour {
     {
         if (warriorBottom)
         {
-            takeDamage(5 * Time.deltaTime);
+            takeDamage();
         }
     }
 
@@ -163,7 +168,7 @@ public class CentralPlayerController : MonoBehaviour {
 	{
 		if (other.gameObject.tag == "Water")
 		{
-			takeDamage (20.0f);
+			takeDamage ();
 			gameObject.SetActive(false);
 			gameObject.transform.position = respawn.transform.position;
             gameObject.SetActive(true);
@@ -173,14 +178,8 @@ public class CentralPlayerController : MonoBehaviour {
         //damage from mine exploding
         if (other.gameObject.tag == "Mine")
         {
-            takeDamage(35);
+            takeDamage();
         }
-
-        //damage from shooting obstacles
-        //if (other.gameObject.tag == "Pebble")
-        //{
-        //    takeDamage(5);
-        //}
 
     }
 
@@ -224,8 +223,7 @@ public class CentralPlayerController : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
-        playerHealthBar.GetComponent<RectTransform>().localScale = new Vector3(playerHealth / 100f, 0.33f, 0f);
+	void Update () { 
 	}
 
     void OnEnable()

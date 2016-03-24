@@ -28,7 +28,7 @@ public class GettingBlocked : MonoBehaviour {
             {
                 Debug.Log(c.otherCollider.tag);
             }
-            col.gameObject.GetComponent<CentralPlayerController>().takeDamage(10);
+            col.gameObject.GetComponent<CentralPlayerController>().takeDamage();
             Destroy(this.gameObject);
         } else
         {
