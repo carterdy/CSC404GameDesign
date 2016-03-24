@@ -6,10 +6,19 @@ public class CentralPlayerController : MonoBehaviour {
 
     public static CentralPlayerController instance = null;
 
+    //These are all UI elements.  They should all be public and plugged in, but some are private because reasons
     public GameObject ArcherStraightActive;
     public GameObject ArcherTurningActive;
     public GameObject WarriorStraightActive;
     public GameObject WarriorTurningActive;
+
+    public GameObject ArcherFlipBase;
+    public GameObject ArcherFlipActive;
+    public GameObject ArcherFlipWaiting;
+    public GameObject WarriorFlipBase;
+    public GameObject WarriorFlipActive;
+    public GameObject WarriorFlipWaiting;
+
     public float playerHealth = 100f;
 
     //The boolean determining who is on bottom.  If it's not the warrior, it's the archer.
@@ -159,6 +168,61 @@ public class CentralPlayerController : MonoBehaviour {
         }
     }
 
+    /* Check if players want to switch and change the UI/switch accordingly */
+    void checkForSwitch()
+    {
+        players.SetInteger("flip", 0);
+        float firstPlayerSwitch = Input.GetAxis("Switch1");
+        float secondPlayerSwitch = Input.GetAxis("Switch2");
+        Debug.Log(firstPlayerSwitch);
+        Debug.Log(secondPlayerSwitch);
+
+        if (firstPlayerSwitch > 0 && secondPlayerSwitch == 0)
+        { //First player is holding down switch button but not second
+            Debug.Log("p1 but no p2");
+            WarriorFlipActive.SetActive(true);
+            WarriorFlipBase.SetActive(false);
+            ArcherFlipWaiting.SetActive(true);
+            ArcherFlipBase.SetActive(false);
+        }
+        else if (firstPlayerSwitch == 0 && secondPlayerSwitch > 0)
+        { //Second player is holding down switch button but not first
+            Debug.Log("p2 but no p1");
+            WarriorFlipWaiting.SetActive(true);
+            WarriorFlipBase.SetActive(false);
+            ArcherFlipActive.SetActive(true);
+            ArcherFlipBase.SetActive(false);
+        }
+        else if (firstPlayerSwitch > 0 && secondPlayerSwitch > 0)
+        { //Both players wanth to switch
+            Debug.Log("both");
+            WarriorFlipActive.SetActive(true);
+            ArcherFlipActive.SetActive(true);
+            WarriorFlipWaiting.SetActive(false);
+            ArcherFlipWaiting.SetActive(false);
+            WarriorFlipBase.SetActive(false);
+            ArcherFlipBase.SetActive(false);
+            //Have to make sure players are grounded and not already flipping
+            if (gameObject.GetComponent<WarriorBottomController>().isGrounded())
+            {
+                if (!players.GetCurrentAnimatorStateInfo(0).IsTag("flip"))
+                {
+                    FlipPlayers();
+                }
+            }
+        }
+        else
+        { //No one wants to switch
+            Debug.Log("none");
+            WarriorFlipActive.SetActive(false);
+            WarriorFlipWaiting.SetActive(false);
+            ArcherFlipActive.SetActive(false);
+            ArcherFlipWaiting.SetActive(false);
+            WarriorFlipBase.SetActive(true);
+            ArcherFlipBase.SetActive(true);
+        }
+    }
+
 	void OnCollisionEnter(Collision other)
 	{
 		if (other.gameObject.tag == "Water")
@@ -170,17 +234,11 @@ public class CentralPlayerController : MonoBehaviour {
             players.SetBool("bottom", warriorBottom);
         }
 
-        //damage from mine exploding
+        //damage from mine exploding. THIS SHOULD BE IN THE MINE SCRIPT AND CALL PLAYER'S TAKE DAMAGE
         if (other.gameObject.tag == "Mine")
         {
             takeDamage(35);
         }
-
-        //damage from shooting obstacles
-        //if (other.gameObject.tag == "Pebble")
-        //{
-        //    takeDamage(5);
-        //}
 
     }
 
@@ -198,14 +256,8 @@ public class CentralPlayerController : MonoBehaviour {
 
     void FixedUpdate ()
     {
-        players.SetInteger("flip", 0);
-        if (Input.GetButtonDown("Fire1") && gameObject.GetComponent<WarriorBottomController>().isGrounded())
-        {
-            if (!players.GetCurrentAnimatorStateInfo(0).IsTag("flip"))
-            {
-                FlipPlayers();
-            }
-        }
+
+        checkForSwitch();
 
         // Respawn should follow player, when grounded
         if (gameObject.GetComponent<WarriorBottomController> ().isGrounded ()) {
