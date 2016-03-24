@@ -81,4 +81,9 @@ public class WarriorTopController : PlayerTopScript {
     {
         Destroy(activeShield);
     }
+
+    void OnDisable()
+    {
+        if (activeShield) Destroy(activeShield);
+    }
 }
