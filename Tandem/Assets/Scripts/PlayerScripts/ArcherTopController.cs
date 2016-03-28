@@ -5,7 +5,8 @@ using System.Collections.Generic;
 public class ArcherTopController : PlayerTopScript {
 
     public GameObject ArcherTurningActive;
-
+    public Transform hand;
+    public float tmp = 1.0f;
 	GameObject arrowPrefab;
 	GameObject player;
 	GameObject arrow;
@@ -87,17 +88,16 @@ public class ArcherTopController : PlayerTopScript {
 		// Rotation around Origin with Vector [0, 0, 0.5]
 		float newX = Mathf.Sin(rads) / 2;
 		float newZ = Mathf.Cos(rads) / 2;
-
 		// Make new vector for the arrow position
 		Vector3 newPos = new Vector3 (newX, 0, newZ);
 
-		// Move the arrow into place
-		arrow.transform.position = newPos + 
-			// Center Origin at the player
-			playerPos + 
-			// Move Arrow up to proper height
-			Vector3.up * transform.GetComponent<CapsuleCollider>().height / 2;
-	}
+        Physics.IgnoreLayerCollision(9, 10, true);
+       // Physics.Ignore;
+        // Move the arrow into place
+
+        arrow.transform.position = hand.position - newPos;
+        //for (int i = 0; i < 10000000; i++) ;
+    }
 
 	void Shoot(GameObject arrow)
 	{
