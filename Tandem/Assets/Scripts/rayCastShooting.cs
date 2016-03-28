@@ -7,22 +7,25 @@ public class rayCastShooting : MonoBehaviour {
     public float cursorDistance = 9.0f;
     public bool debug = false;
 
+    private GameObject aim;
     private GameObject cursor;
     private SpriteRenderer cursorColor;
     private Vector3 startPos;
 
 	// Use this for initialization
 	void Start () {
+        aim = GameObject.Find("rayAim");
         cursor = GameObject.Find("Cursor");
         cursorColor = cursor.GetComponent<SpriteRenderer>();
         startPos = new Vector3(cursorDistance/10, 0, 0);
         cursor.transform.localPosition = startPos;
+
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        Vector3 forward = transform.TransformDirection(Vector3.right);
+        Vector3 forward = aim.transform.TransformDirection(Vector3.down);
         if(debug) Debug.DrawRay(transform.position, forward * distance, Color.red);
         RaycastHit enemy = new RaycastHit();
         bool hit = Physics.Raycast(transform.position, forward, out enemy, distance);
