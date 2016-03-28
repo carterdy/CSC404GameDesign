@@ -6,7 +6,6 @@ public class ArcherTopController : PlayerTopScript {
 
     public GameObject ArcherTurningActive;
     public Transform hand;
-    public float tmp = 1.0f;
 	GameObject arrowPrefab;
 	GameObject player;
 	GameObject arrow;
@@ -96,7 +95,6 @@ public class ArcherTopController : PlayerTopScript {
         // Move the arrow into place
 
         arrow.transform.position = hand.position - newPos;
-        //for (int i = 0; i < 10000000; i++) ;
     }
 
 	void Shoot(GameObject arrow)
