@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour {
 	void FixedUpdate () {
 
         //Check to see if the players are still alive
-	    if (players.playerHealth <= 0)
+	    if (players.getHP() == 0)
         {
             gameOver();
         }
