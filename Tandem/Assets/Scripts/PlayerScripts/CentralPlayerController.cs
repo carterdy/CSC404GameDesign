@@ -44,9 +44,11 @@ public class CentralPlayerController : MonoBehaviour {
     private int reactionTemp;
     private bool soundrelease;
 
+    public int gemCost = 10;
 
     // Use this for initialization
     void Awake () {
+
         //Borrowing simple singleton code from Unity's Roguelike tutorial
         if (instance == null)
         {
@@ -56,6 +58,7 @@ public class CentralPlayerController : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+
 
         players = GetComponent<Animator>();
 
@@ -260,11 +263,16 @@ public class CentralPlayerController : MonoBehaviour {
         {
             SceneManager.LoadScene("Level2");
         }
+        if(other.tag == "Gem")
+        {
+            Destroy(other.gameObject);
+            Scores.totalScore += gemCost;
+        }
     }
 
     void FixedUpdate ()
     {
-
+        Debug.Log(Scores.totalScore);
         checkForSwitch();
 
         // Respawn should follow player, when grounded
