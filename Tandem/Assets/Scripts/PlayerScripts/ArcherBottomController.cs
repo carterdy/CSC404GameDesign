@@ -23,7 +23,7 @@ public class ArcherBottomController : PlayerBottomScript {
         //Need to get movement axis values and hand them off to a movement function
         if (isGrounded())
         {
-            vertical = Input.GetAxisRaw("Vertical2");
+            vertical = Input.GetAxis("Vertical2");
         }
         if (Input.GetButton("Jump2"))
         {
