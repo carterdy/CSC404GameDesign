@@ -187,23 +187,24 @@ public class CentralPlayerController : MonoBehaviour {
 
         if (firstPlayerSwitch > 0 && secondPlayerSwitch == 0)
         { //First player is holding down switch button but not second
-            Debug.Log("p1 but no p2");
             WarriorFlipActive.SetActive(true);
             WarriorFlipBase.SetActive(false);
             ArcherFlipWaiting.SetActive(true);
             ArcherFlipBase.SetActive(false);
+            WarriorFlipBase.SetActive(false);
+            ArcherFlipBase.SetActive(false);
         }
         else if (firstPlayerSwitch == 0 && secondPlayerSwitch > 0)
         { //Second player is holding down switch button but not first
-            Debug.Log("p2 but no p1");
             WarriorFlipWaiting.SetActive(true);
             WarriorFlipBase.SetActive(false);
             ArcherFlipActive.SetActive(true);
             ArcherFlipBase.SetActive(false);
+            WarriorFlipBase.SetActive(false);
+            ArcherFlipBase.SetActive(false);
         }
         else if (firstPlayerSwitch > 0 && secondPlayerSwitch > 0)
         { //Both players wanth to switch
-            Debug.Log("both");
             WarriorFlipActive.SetActive(true);
             ArcherFlipActive.SetActive(true);
             WarriorFlipWaiting.SetActive(false);
@@ -221,7 +222,6 @@ public class CentralPlayerController : MonoBehaviour {
         }
         else
         { //No one wants to switch
-            Debug.Log("none");
             WarriorFlipActive.SetActive(false);
             WarriorFlipWaiting.SetActive(false);
             ArcherFlipActive.SetActive(false);
