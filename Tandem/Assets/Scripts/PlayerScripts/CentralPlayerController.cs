@@ -44,6 +44,8 @@ public class CentralPlayerController : MonoBehaviour {
     private int reactionTemp;
     private bool soundrelease;
 
+    private bool invuln = false;
+
     public int gemCost = 10;
 
     // Use this for initialization
@@ -154,20 +156,67 @@ public class CentralPlayerController : MonoBehaviour {
         
     }
 
-    /* Called to deal damage to the players. Players take 1 heart of damage per call */
-    public void takeDamage()
+    /* A function that can be called by other objects to deal damage to the player */
+    public void dealDamage ()
     {
-        hearts[HP - 1].SetActive(false);
-        deadHearts[HP - 1].SetActive(true);
-        HP--;  //----------------------------------
+        StartCoroutine(takeDamage());
+    }
 
-        //Taking damage audio
-        if (soundrelease)
+    /* Called to deal damage to the players. Players take 1 heart of damage per call.  Have to also start the invulnerability phase. */
+    IEnumerator takeDamage()
+    {
+        if (!invuln)
         {
-            source.PlayOneShot(hitSound, 1F);
-            reactionTemp = 0;
-            soundrelease = false;
+            hearts[HP - 1].SetActive(false);
+            deadHearts[HP - 1].SetActive(true);
+            HP--;  //----------------------------------
+
+            //Taking damage audio
+            if (soundrelease)
+            {
+                source.PlayOneShot(hitSound, 1F);
+                reactionTemp = 0;
+                soundrelease = false;
+            }
+            //Now have to make player invulnerable and start the visual effect.  Invulnerabiliy ends 1 second later.
+            invuln = true;
+            StartCoroutine(invulnFlicker(1));
+            yield return new WaitForSeconds(1f);
+            invuln = false;
         }
+    }
+
+    /* When started, cause the players to flicker for the given number of seconds */
+    IEnumerator invulnFlicker(int seconds)
+    {
+        float flickerTime = 0.1f;
+        //Calculate the number of times to flicker based off given seconds to flicker for
+        int flickerTimes = (int) (seconds / flickerTime);
+        //So, have to go through all the body parts of the players and change the material colour to make them flicker
+        Renderer[] renderers = gameObject.GetComponentsInChildren<Renderer>();
+        //Flicker number of times needed
+        for (int i = 0; i < flickerTimes / 2; i++)
+        {
+            //Go through each renderer found in children
+            foreach (Renderer rend in renderers)
+            {
+                //Change the emmision of the material to make the part look pale
+                Material mat = rend.material;
+                mat.EnableKeyword("_EMISSION");
+                mat.SetColor("_EmissionColor", Color.grey);
+            }
+            //Now wait a fraction of a second before changing back
+            yield return new WaitForSeconds(flickerTime);
+            foreach (Renderer rend in renderers)
+            {
+                //Change the emmision of the material to make the part look pale
+                Material mat = rend.material;
+                mat.SetColor("_EmissionColor", Color.black);
+            }
+            //Now wait again before flickering
+            yield return new WaitForSeconds(flickerTime);
+        }
+        yield return null;
     }
 
     /* Called while the player is standing in fire */
@@ -175,7 +224,7 @@ public class CentralPlayerController : MonoBehaviour {
     {
         if (warriorBottom)
         {
-            takeDamage();
+           StartCoroutine(takeDamage());
         }
     }
 
@@ -185,9 +234,6 @@ public class CentralPlayerController : MonoBehaviour {
         players.SetInteger("flip", 0);
         float firstPlayerSwitch = Input.GetAxis("Switch1");
         float secondPlayerSwitch = Input.GetAxis("Switch2");
-        Debug.Log(firstPlayerSwitch);
-        Debug.Log(secondPlayerSwitch);
-
         if (firstPlayerSwitch > 0 && secondPlayerSwitch == 0)
         { //First player is holding down switch button but not second
             WarriorFlipActive.SetActive(true);
@@ -238,17 +284,15 @@ public class CentralPlayerController : MonoBehaviour {
 	{
 		if (other.gameObject.tag == "Water")
 		{
-			takeDamage ();
-			gameObject.SetActive(false);
+			StartCoroutine(takeDamage ());
 			gameObject.transform.position = respawn.transform.position;
-            gameObject.SetActive(true);
             players.SetBool("bottom", warriorBottom);
         }
 
-        //damage from mine exploding. THIS SHOULD BE IN THE MINE SCRIPT AND CALL PLAYER'S TAKE DAMAGE
+        //damage from mine exploding
         if (other.gameObject.tag == "Mine")
         {
-            takeDamage();
+            StartCoroutine(takeDamage());
         }
 
     }
@@ -272,7 +316,6 @@ public class CentralPlayerController : MonoBehaviour {
 
     void FixedUpdate ()
     {
-        Debug.Log(Scores.totalScore);
         checkForSwitch();
 
         // Respawn should follow player, when grounded
