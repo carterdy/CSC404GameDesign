@@ -46,7 +46,7 @@ public class ArcherTopController : PlayerTopScript
 	void FixedUpdate ()
 	{
 		/* Rotate the players based off the given input */
-		float turn = Input.GetAxisRaw ("Horizontal2");
+		float turn = Input.GetAxis("Horizontal2");
 		if (turn != 0) {
 			ArcherTurningActive.SetActive (true);
 			Turn (turn);

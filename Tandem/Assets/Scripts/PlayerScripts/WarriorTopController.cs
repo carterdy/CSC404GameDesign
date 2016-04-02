@@ -13,7 +13,7 @@ public class WarriorTopController : PlayerTopScript {
 
     void FixedUpdate()
     {
-        float turn = Input.GetAxisRaw("Horizontal");
+        float turn = Input.GetAxis("Horizontal");
         if (turn != 0)
         {
             WarriorTurningActive.SetActive(true);

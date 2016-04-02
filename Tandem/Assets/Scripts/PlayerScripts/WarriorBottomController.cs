@@ -23,7 +23,7 @@ public class WarriorBottomController : PlayerBottomScript {
         //Need to get movement axis values and hand them off to a movement function
         if (isGrounded())
         {
-            vertical = Input.GetAxisRaw("Vertical");
+            vertical = Input.GetAxis("Vertical");
         }
         if (Input.GetButton("Jump"))
         {
