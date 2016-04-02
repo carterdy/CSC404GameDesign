@@ -5,6 +5,7 @@ public class WarriorTopController : PlayerTopScript {
     public GameObject shield;
     public GameObject WarriorTurningActive;
     public float shieldRotateSpeed = 5f;
+    public Vector3 shieldOffset = new Vector3(0f, 1.0f, 1.0f);
 
     private GameObject activeShield;
     //Min and max offset the shield is allowed to move around the player, in degrees
@@ -77,7 +78,6 @@ public class WarriorTopController : PlayerTopScript {
     void UpdatePosition(float angle)
     {
         // Shield Should Rotate Around Player
-        Vector3 playerPos = gameObject.transform.position;
         float rads = angle * Mathf.Deg2Rad;
 
         // Math here...
@@ -85,13 +85,13 @@ public class WarriorTopController : PlayerTopScript {
         float newX = Mathf.Sin(rads) / 2;
         float newZ = Mathf.Cos(rads) / 2;
         // Make new vector for the shield position
-        Vector3 newPos = new Vector3(newX, 0, newZ);
+        Vector3 newPos = new Vector3(newX, 0, newZ) + shieldOffset;
 
         Physics.IgnoreLayerCollision(9, 10, true);
         // Physics.Ignore;
-        // Move the shield into place
-
+        // Move the shield into place.  Have to offset the shield from the player
         activeShield.transform.position = gameObject.transform.position - newPos;
+        
     }
 
     void LimitStickDir(float angle)
