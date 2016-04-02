@@ -8,15 +8,10 @@ public class WarriorTopController : PlayerTopScript {
     public Vector3 shieldOffset = new Vector3(0f, 1.0f, 1.0f);
 
     private GameObject activeShield;
-    //Min and max offset the shield is allowed to move around the player, in degrees
-    private float shieldRightLimit = 90f;
-    private float shieldLeftLimit = 90f;
 
     private float blockX;
     private float blockY;
     private float stickDir;
-    private Vector2 stickInput;
-    private float deadzone = 0.25f;
 
     private float aimRange = 90f;
     private float leftRange;
@@ -40,9 +35,6 @@ public class WarriorTopController : PlayerTopScript {
 
         // Math to convert Axis to Angle Direction
         stickDir = Mathf.Atan2(blockX, blockY) * Mathf.Rad2Deg;
-
-        // Used for Deadzone Check
-        stickInput = new Vector2(blockX, blockY);
 
         if (Input.GetAxis("Block") > 0)
         {
@@ -75,24 +67,79 @@ public class WarriorTopController : PlayerTopScript {
         }
     }
 
-    void UpdatePosition(float angle)
-    {
-        // Shield Should Rotate Around Player
-        float rads = angle * Mathf.Deg2Rad;
+	void LimitAimCone()
+	{
+		float playerRotation = gameObject.transform.eulerAngles.y;
+		float shieldRot = playerRotation + stickDir;
 
-        // Math here...
-        // Rotation around Origin with Vector [0, 0, 0.5]
-        float newX = Mathf.Sin(rads) / 2;
-        float newZ = Mathf.Cos(rads) / 2;
-        // Make new vector for the shield position
-        Vector3 newPos = new Vector3(newX, 0, newZ) + shieldOffset;
+        activeShield.transform.rotation = Quaternion.Euler(new Vector3(0, shieldRot, 0));
 
-        Physics.IgnoreLayerCollision(9, 10, true);
-        // Physics.Ignore;
-        // Move the shield into place.  Have to offset the shield from the player
-        activeShield.transform.position = gameObject.transform.position - newPos;
-        
-    }
+		if (shieldRot > 360)
+		{
+			shieldRot = shieldRot - 360f;
+		}
+		if (shieldRot < 0)
+		{
+			shieldRot = shieldRot + 360f;
+		}
+
+		leftRange = playerRotation - aimRange;
+		rightRange = playerRotation + aimRange;
+
+
+		// Find Min Ranges
+		if (leftRange < 0f)
+		{
+			leftRange = leftRange + 360f;
+		}
+
+		// Find Max Ranges
+		if (rightRange > 360f)
+		{
+			rightRange = rightRange - 360f;
+		}
+
+		// EDGE CASE
+		// if leftRange is larger than rightRange
+		// the cone will be from min to 0 to max
+		// this case need to be cover :(
+		if (leftRange > rightRange)
+		{
+			if (shieldRot < leftRange && shieldRot > leftRange - aimRange)
+			{
+				UpdatePosition(leftRange);
+				LimitStickDir(leftRange);
+			}
+			else if (shieldRot > rightRange && shieldRot < rightRange + aimRange)
+			{
+				UpdatePosition(rightRange);
+				LimitStickDir(rightRange);
+			}
+			else {
+				UpdatePosition(shieldRot);
+			}
+		}
+		// NORMAL CASE HERE
+		else {
+			// Update Shield with Range Restrictions
+			// Maintain Min Value if Rotation is under Min
+			if (shieldRot < leftRange)
+			{
+				UpdatePosition(leftRange);
+				LimitStickDir(leftRange);
+			}
+			// Maintain Max Value if Rotation is under Max
+			else if (shieldRot > rightRange)
+			{
+				UpdatePosition(rightRange);
+				LimitStickDir(rightRange);
+			}
+			// All good, No limit
+			else {
+				UpdatePosition(shieldRot);
+			}
+		}
+	}
 
     void LimitStickDir(float angle)
     {
@@ -102,82 +149,30 @@ public class WarriorTopController : PlayerTopScript {
         {
             angle = angle - 360;
         }
-        activeShield.transform.rotation = Quaternion.Euler(new Vector3(90, angle, 0));
+        activeShield.transform.rotation = Quaternion.Euler(new Vector3(0, angle, 0));
     }
 
-    void LimitAimCone()
-    {
-        float playerRotation = gameObject.transform.eulerAngles.y;
-        float shieldRot = playerRotation + stickDir;
+	void UpdatePosition(float angle)
+	{
+		// Shield Should Rotate Around Player
+		float rads = angle * Mathf.Deg2Rad;
 
-        activeShield.transform.rotation = Quaternion.Euler(new Vector3(90, shieldRot, 0));
+		// Math here...
+		// Rotation around Origin with Vector [0, 0, 0.5]
+		float newX = Mathf.Sin(rads) * 1;
+		float newZ = Mathf.Cos(rads) * 1;
+		// Make new vector for the shield position
+		Vector3 newPos = new Vector3(newX, 0, newZ);
 
-        if (shieldRot > 360)
-        {
-            shieldRot = shieldRot - 360f;
-        }
-        if (shieldRot < 0)
-        {
-            shieldRot = shieldRot + 360f;
-        }
+		Physics.IgnoreLayerCollision(9, 10, true);
+		// Physics.Ignore;
+		// Move the shield into place.  Have to offset the shield from the player
+		activeShield.transform.position = 
+			newPos + 
+			GameObject.Find("CompletePlayer").transform.position +
+			Vector3.up * transform.GetComponent<CapsuleCollider>().height / 2;
 
-        leftRange = playerRotation - aimRange;
-        rightRange = playerRotation + aimRange;
-
-
-        // Find Min Ranges
-        if (leftRange < 0f)
-        {
-            leftRange = leftRange + 360f;
-        }
-
-        // Find Max Ranges
-        if (rightRange > 360f)
-        {
-            rightRange = rightRange - 360f;
-        }
-
-        // EDGE CASE
-        // if leftRange is larger than rightRange
-        // the cone will be from min to 0 to max
-        // this case need to be cover :(
-        if (leftRange > rightRange)
-        {
-            if (shieldRot < leftRange && shieldRot > leftRange - aimRange)
-            {
-                UpdatePosition(leftRange);
-                LimitStickDir(leftRange);
-            }
-            else if (shieldRot > rightRange && shieldRot < rightRange + aimRange)
-            {
-                UpdatePosition(rightRange);
-                LimitStickDir(rightRange);
-            }
-            else {
-                UpdatePosition(shieldRot);
-            }
-        }
-        // NORMAL CASE HERE
-        else {
-            // Update Shield with Range Restrictions
-            // Maintain Min Value if Rotation is under Min
-            if (shieldRot < leftRange)
-            {
-                UpdatePosition(leftRange);
-                LimitStickDir(leftRange);
-            }
-            // Maintain Max Value if Rotation is under Max
-            else if (shieldRot > rightRange)
-            {
-                UpdatePosition(rightRange);
-                LimitStickDir(rightRange);
-            }
-            // All good, No limit
-            else {
-                UpdatePosition(shieldRot);
-            }
-        }
-    }
+	}
 
     /* Cease blocking by destroying the shield */
     void StopBlock()
