@@ -228,7 +228,10 @@ public class ArcherTopController : PlayerTopScript
 	 */
 	void OnDisable ()
 	{
-		if (arrow)
-			Destroy (arrow);
+        if (arrow != dummy)
+        {
+            Destroy(arrow.gameObject);
+            arrow = dummy;
+        }
 	}
 }
