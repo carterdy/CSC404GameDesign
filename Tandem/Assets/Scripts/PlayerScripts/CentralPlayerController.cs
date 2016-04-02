@@ -321,6 +321,7 @@ public class CentralPlayerController : MonoBehaviour {
         // Respawn should follow player, when grounded
         if (gameObject.GetComponent<WarriorBottomController> ().isGrounded ()) {
 			respawn.transform.position = gameObject.transform.position;
+			respawn.transform.position -= gameObject.transform.forward / 2;
 		}
 
         // reduce continously hit sound effect
