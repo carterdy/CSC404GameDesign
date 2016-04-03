@@ -24,7 +24,7 @@ public class customIK : MonoBehaviour {
     public float weight = 1;
 
     //internal variables 
-    private Quaternion lowerStart, handStart;
+    private Quaternion lowerStart, handStart, upperStart;
     private Vector3 targetStart, poleStart;
 
     private GameObject player;
@@ -45,7 +45,7 @@ public class customIK : MonoBehaviour {
 
         bow.parent.Rotate(0, 18.81f, 0);
         
-  //      upperStart = upperArm.rotation;
+        upperStart = upperArm.rotation;
         lowerStart = lowerArm.rotation;
         handStart = hand.rotation;
         targetStart = target.position - upperArm.position;
@@ -133,7 +133,7 @@ public class customIK : MonoBehaviour {
         float hypotenuse = upperLength;
 
         //set start rotations
-//        upperStart = transform.rotation;
+        upperStart = transform.rotation;
         lowerStart = lowerArm.rotation;
 
         //upperArm angle
@@ -213,8 +213,6 @@ public class customIK : MonoBehaviour {
         upperArm.rotation = Quaternion.Slerp(upperArmRot, upperArm.rotation, transition);
         lowerArm.rotation = Quaternion.Slerp(lowerArmRot, lowerArm.rotation, transition);
         hand.rotation = Quaternion.Slerp(handRot, hand.rotation, transition);
-
-
     }
     void OnDisable ()
     {
