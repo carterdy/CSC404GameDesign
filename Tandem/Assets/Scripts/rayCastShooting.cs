@@ -22,7 +22,7 @@ public class rayCastShooting : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         Vector3 forward = transform.TransformDirection(Vector3.right);
         forward.y = 0.0f;

@@ -206,7 +206,6 @@ public class ArcherTopController : PlayerTopScript
 	void UpdatePosition (float angle)
 	{
 		// Arrow Should Rotate Around Player
-		Vector3 playerPos = player.transform.position;
 		float rads = angle * Mathf.Deg2Rad;
 
 		// Math here...
@@ -229,7 +228,10 @@ public class ArcherTopController : PlayerTopScript
 	 */
 	void OnDisable ()
 	{
-		if (arrow)
-			Destroy (arrow);
+        if (arrow != dummy)
+        {
+            Destroy(arrow.gameObject);
+            arrow = dummy;
+        }
 	}
 }
