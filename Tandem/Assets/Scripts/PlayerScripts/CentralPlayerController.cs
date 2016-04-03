@@ -342,7 +342,7 @@ public class CentralPlayerController : MonoBehaviour {
     }
 
     /* Pause the game */
-    IEnumerator Pause()
+    IEnumerator pause()
     {
         //Check to make sure we're not already pausing/unpausing.  Prevents spam
         if (!pausing)
@@ -361,7 +361,7 @@ public class CentralPlayerController : MonoBehaviour {
     }
 
     /* Unpause the game */
-    IEnumerator Unpause()
+    IEnumerator unpause()
     {
         if (!pausing)
         {
@@ -378,20 +378,26 @@ public class CentralPlayerController : MonoBehaviour {
         }
     }
 
-    /* Public access of Unpause so UI buttons can call it */
-    public void unPause()
+    /* Public access of Pause so UI buttons etc can call it */
+    public void Pause()
     {
-        StartCoroutine(Unpause());
+        StartCoroutine(pause());
+    }
+
+    /* Public access of Unpause so UI buttons can call it */
+    public void Unpause()
+    {
+        StartCoroutine(unpause());
     }
 	
 	// Update is called once per frame.  Pause mechanics go in here because fixed update won't be called while the game is paused
 	void Update () { 
         if (Input.GetButton("Start") && !paused)
         {
-            StartCoroutine(Pause());
+            StartCoroutine(pause());
         } else if (Input.GetButton("Start") && paused)
         {
-            StartCoroutine(Unpause());
+            StartCoroutine(unpause());
         }
 	}
 

@@ -4,6 +4,9 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 
+    public GameObject controlsScreen;
+    public GameObject pauseScreen;
+
     private CentralPlayerController players;
 
 	// Use this for initialization
@@ -39,5 +42,21 @@ public class GameManager : MonoBehaviour {
         Time.timeScale = 1;
         //Reload the level
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    /* Called to open the controls screen */
+    public void OpenControlsScreen()
+    {
+        //Disable the pause screen.  Time will still be stopped though
+        pauseScreen.SetActive(false);
+        //Show the controls screen
+        controlsScreen.SetActive(true);
+    }
+
+    /* Called to close the controls screen */
+    public void CloseControlsScreen()
+    {
+        controlsScreen.SetActive(false);
+        pauseScreen.SetActive(true);
     }
 }
