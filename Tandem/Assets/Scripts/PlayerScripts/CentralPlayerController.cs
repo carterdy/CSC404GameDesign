@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 using System.Collections;
 
 public class CentralPlayerController : MonoBehaviour {
@@ -22,11 +23,24 @@ public class CentralPlayerController : MonoBehaviour {
     public GameObject[] hearts;
     public GameObject[] deadHearts;
 
+    public GameObject pauseScreen;
+
+    public AudioClip flipSound;
+    public AudioClip hitSound;
+    public int reaction;
+
+    public int gemCost = 10;
+
 
     //The boolean determining who is on bottom.  If it's not the warrior, it's the archer.
     private bool warriorBottom = true;
     //Player's HP. Player's health should not exceed this starting value.
     private int HP = 5;
+
+    //States for players being invulnerable and the game being paused.  paused has to be checked for anything that shouldn't happen while paused
+    private bool invuln = false;
+    private bool paused = false;
+    private bool pausing = false;
 
     private GameObject ArcherTurningBase;
     private GameObject ArcherStraightBase;
@@ -37,16 +51,9 @@ public class CentralPlayerController : MonoBehaviour {
 
     private Animator players;
 
-    public AudioClip flipSound;
-    public AudioClip hitSound;
     private AudioSource source;
-    public int reaction;
     private int reactionTemp;
     private bool soundrelease;
-
-    private bool invuln = false;
-
-    public int gemCost = 10;
 
     // Use this for initialization
     void Awake () {
@@ -334,9 +341,67 @@ public class CentralPlayerController : MonoBehaviour {
             soundrelease = true;
         }
     }
+
+    /* Pause the game */
+    IEnumerator pause()
+    {
+        //Check to make sure we're not already pausing/unpausing.  Prevents spam
+        if (!pausing)
+        {
+            pausing = true;
+            //First set paused bool to reflect the pause
+            paused = true;
+            //Turn on the pause screen
+            pauseScreen.SetActive(true);
+            //Set the resume button to the default selected button
+            EventSystem.current.SetSelectedGameObject(GameObject.Find("Resume"));
+            //Wait a fraction of a second to keep the pause from being spammed
+            yield return new WaitForSeconds(0.2f);
+            pausing = false;
+            //Set timescale to be 0 so physics stops happening
+            Time.timeScale = 0;
+        }
+    }
+
+    /* Unpause the game */
+    IEnumerator unpause()
+    {
+        if (!pausing)
+        {
+            pausing = true;
+            //first set paused bool to false
+            paused = false;
+            //Turn time back on
+            Time.timeScale = 1;
+            //Take the pause screen off
+            pauseScreen.SetActive(false);
+            //Wait a fraction of a second to keep the pause from being spammed
+            yield return new WaitForSeconds(0.2f);
+            pausing = false;
+        }
+    }
+
+    /* Public access of Pause so UI buttons etc can call it */
+    public void Pause()
+    {
+        StartCoroutine(pause());
+    }
+
+    /* Public access of Unpause so UI buttons can call it */
+    public void Unpause()
+    {
+        StartCoroutine(unpause());
+    }
 	
-	// Update is called once per frame
+	// Update is called once per frame.  Pause mechanics go in here because fixed update won't be called while the game is paused
 	void Update () { 
+        if (Input.GetButton("Start") && !paused)
+        {
+            StartCoroutine(pause());
+        } else if (Input.GetButton("Start") && paused)
+        {
+            StartCoroutine(unpause());
+        }
 	}
 
     void OnEnable()

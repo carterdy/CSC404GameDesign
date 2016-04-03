@@ -25,7 +25,15 @@ public class GameStart : MonoBehaviour {
             //else {
             //	SceneManager.LoadScene ("TitleScreen");
             //}
-            SceneManager.LoadScene("Level1");
+
+            //Load level 1 if on title screen, otherwise load the titlescreen (since we'll be on a game over)
+            if (SceneManager.GetActiveScene().name == "TitleScreen")
+            {
+                SceneManager.LoadScene("Level1");
+            }
+            else {
+                SceneManager.LoadScene("TitleScreen");
+            }
         }
 	}
 
