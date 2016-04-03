@@ -24,7 +24,5 @@ public class GameManager : MonoBehaviour {
     public void gameOver()
     {
         SceneManager.LoadScene("GameOver");
-        //reset the scores
-        Scores.totalScore = 0;
     }
 }
