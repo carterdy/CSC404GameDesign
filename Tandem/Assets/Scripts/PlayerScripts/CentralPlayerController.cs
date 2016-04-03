@@ -280,11 +280,65 @@ public class CentralPlayerController : MonoBehaviour {
         }
     }
 
+	// SetPlayerState is reversed for Water Respawn for some reason...
+	// Duplicated that code but reversed logic
+	void enableControls ()
+	{
+		//Set the movement controller scripts
+		if (!players.IsInTransition (0) && players.GetCurrentAnimatorStateInfo (0).IsName ("boyIdle")) {
+			gameObject.GetComponent<WarriorBottomController> ().enabled = true;
+			gameObject.GetComponent<WarriorTopController> ().enabled = false;
+			gameObject.GetComponent<ArcherBottomController> ().enabled = false;
+			gameObject.GetComponent<ArcherTopController> ().enabled = true;
+			//Flip the icons
+			ArcherTurningBase.SetActive (true);
+			ArcherStraightBase.SetActive (false);
+			WarriorTurningBase.SetActive (false);
+			WarriorStraightBase.SetActive (true);
+			//Physically switch the players
+			players.SetInteger ("flip", 1);            
+		} else if (!players.IsInTransition (0) && players.GetCurrentAnimatorStateInfo (0).IsName ("girlIdle")) {
+			gameObject.GetComponent<ArcherBottomController> ().enabled = true;
+			gameObject.GetComponent<ArcherTopController> ().enabled = false;
+			gameObject.GetComponent<WarriorBottomController> ().enabled = false;
+			gameObject.GetComponent<WarriorTopController> ().enabled = true;
+			//Flip the icons
+			ArcherTurningBase.SetActive (false);
+			ArcherStraightBase.SetActive (true);
+			WarriorTurningBase.SetActive (true);
+			WarriorStraightBase.SetActive (false);
+		}
+
+		//Deactivate all the active movement indicators
+		ArcherTurningActive.SetActive (false);
+		ArcherStraightActive.SetActive (false);
+		WarriorTurningActive.SetActive (false);
+		WarriorStraightActive.SetActive (false);
+	}
+
+	void disableControls ()
+	{
+		gameObject.GetComponent<ArcherBottomController> ().enabled = false;
+		gameObject.GetComponent<ArcherTopController> ().enabled = false;
+		gameObject.GetComponent<WarriorBottomController> ().enabled = false;
+		gameObject.GetComponent<WarriorTopController> ().enabled = false;
+	}
+
+	IEnumerator disableControlsFor (float seconds)
+	{
+		disableControls ();
+		yield return new WaitForSeconds (seconds);
+		// Comment and uncomment one of the nest line and view behaviour
+		setPlayerState ();
+//		enableControls ();
+	}
+
 	void OnCollisionEnter(Collision other)
 	{
 		if (other.gameObject.tag == "Water")
 		{
 			StartCoroutine(takeDamage ());
+			StartCoroutine (disableControlsFor (1));
 			gameObject.transform.position = respawn.transform.position;
             players.SetBool("bottom", warriorBottom);
         }
