@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 using System.Collections;
 
 public class GameManager : MonoBehaviour {
@@ -8,10 +9,12 @@ public class GameManager : MonoBehaviour {
     public GameObject pauseScreen;
 
     private CentralPlayerController players;
+    private EventSystem eventSystem;
 
 	// Use this for initialization
 	void Awake () {
         players = GameObject.Find("CompletePlayer").GetComponent<CentralPlayerController>();
+        eventSystem = EventSystem.current;
 	}
 	
 	void FixedUpdate () {
@@ -32,7 +35,9 @@ public class GameManager : MonoBehaviour {
     /* Called to kill the game */
     public void CloseGame()
     {
-        Application.Quit();
+        //Turn time on and load the title screen
+        Time.timeScale = 1;
+        SceneManager.LoadScene("TitleScreen");
     }
 
     /* Called to restart the current level */
@@ -51,6 +56,8 @@ public class GameManager : MonoBehaviour {
         pauseScreen.SetActive(false);
         //Show the controls screen
         controlsScreen.SetActive(true);
+        //Set the back button to the selected object in the event system
+        eventSystem.SetSelectedGameObject(GameObject.Find("Back Button"));
     }
 
     /* Called to close the controls screen */
@@ -58,5 +65,7 @@ public class GameManager : MonoBehaviour {
     {
         controlsScreen.SetActive(false);
         pauseScreen.SetActive(true);
+        //Set the resume button in the pause screen to the selected button
+        eventSystem.SetSelectedGameObject(GameObject.Find("Resume"));
     }
 }

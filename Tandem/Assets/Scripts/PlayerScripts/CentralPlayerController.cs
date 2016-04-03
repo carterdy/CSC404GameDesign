@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 using System.Collections;
 
 public class CentralPlayerController : MonoBehaviour {
@@ -352,6 +353,8 @@ public class CentralPlayerController : MonoBehaviour {
             paused = true;
             //Turn on the pause screen
             pauseScreen.SetActive(true);
+            //Set the resume button to the default selected button
+            EventSystem.current.SetSelectedGameObject(GameObject.Find("Resume"));
             //Wait a fraction of a second to keep the pause from being spammed
             yield return new WaitForSeconds(0.2f);
             pausing = false;
