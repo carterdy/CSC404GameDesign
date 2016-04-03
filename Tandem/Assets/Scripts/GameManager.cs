@@ -25,4 +25,19 @@ public class GameManager : MonoBehaviour {
     {
         SceneManager.LoadScene("GameOver");
     }
+
+    /* Called to kill the game */
+    public void CloseGame()
+    {
+        Application.Quit();
+    }
+
+    /* Called to restart the current level */
+    public void RestartLevel()
+    {
+        //Turn time back on in case we were in the pause menu
+        Time.timeScale = 1;
+        //Reload the level
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }

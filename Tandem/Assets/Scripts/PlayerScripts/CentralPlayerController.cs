@@ -377,6 +377,12 @@ public class CentralPlayerController : MonoBehaviour {
             pausing = false;
         }
     }
+
+    /* Public access of Unpause so UI buttons can call it */
+    public void unPause()
+    {
+        StartCoroutine(Unpause());
+    }
 	
 	// Update is called once per frame.  Pause mechanics go in here because fixed update won't be called while the game is paused
 	void Update () { 
