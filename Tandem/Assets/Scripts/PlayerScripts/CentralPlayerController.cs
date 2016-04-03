@@ -328,8 +328,6 @@ public class CentralPlayerController : MonoBehaviour {
 	{
 		disableControls ();
 		yield return new WaitForSeconds (seconds);
-		// Comment and uncomment one of the nest line and view behaviour
-//		setPlayerState ();
 		enableControls ();
 	}
 
