@@ -32,8 +32,8 @@ public class GameManager : MonoBehaviour {
         SceneManager.LoadScene("GameOver");
     }
 
-    /* Called to kill the game */
-    public void CloseGame()
+    /* Called to end the game */
+    public void EndGame()
     {
         //Turn time on and load the title screen
         Time.timeScale = 1;
