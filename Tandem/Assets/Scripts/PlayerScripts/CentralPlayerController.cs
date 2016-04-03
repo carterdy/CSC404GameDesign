@@ -285,7 +285,7 @@ public class CentralPlayerController : MonoBehaviour {
 	void enableControls ()
 	{
 		//Set the movement controller scripts
-		if (!players.IsInTransition (0) && players.GetCurrentAnimatorStateInfo (0).IsName ("boyIdle")) {
+		if (warriorBottom) {
 			gameObject.GetComponent<WarriorBottomController> ().enabled = true;
 			gameObject.GetComponent<WarriorTopController> ().enabled = false;
 			gameObject.GetComponent<ArcherBottomController> ().enabled = false;
@@ -296,8 +296,8 @@ public class CentralPlayerController : MonoBehaviour {
 			WarriorTurningBase.SetActive (false);
 			WarriorStraightBase.SetActive (true);
 			//Physically switch the players
-			players.SetInteger ("flip", 1);            
-		} else if (!players.IsInTransition (0) && players.GetCurrentAnimatorStateInfo (0).IsName ("girlIdle")) {
+			//players.SetInteger ("flip", 1);            
+		} else if (!warriorBottom) {
 			gameObject.GetComponent<ArcherBottomController> ().enabled = true;
 			gameObject.GetComponent<ArcherTopController> ().enabled = false;
 			gameObject.GetComponent<WarriorBottomController> ().enabled = false;
@@ -329,8 +329,8 @@ public class CentralPlayerController : MonoBehaviour {
 		disableControls ();
 		yield return new WaitForSeconds (seconds);
 		// Comment and uncomment one of the nest line and view behaviour
-		setPlayerState ();
-//		enableControls ();
+//		setPlayerState ();
+		enableControls ();
 	}
 
 	void OnCollisionEnter(Collision other)
