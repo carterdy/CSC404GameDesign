@@ -12,7 +12,6 @@ public class ResetScores : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         string scene = SceneManager.GetActiveScene().name;
-        Debug.Log(scene);
         if (scene == "TitleScreen" || scene == "Victory" || scene == "GameOver") Scores.totalScore = 0;
 	
 	}
