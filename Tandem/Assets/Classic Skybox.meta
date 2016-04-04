@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: ac51a848a564dea41a79e545e81a8ce6
 folderAsset: yes
 timeCreated: 1459759488
+=======
+guid: 1ec8458287ec5424e9a7357e7c18156c
+folderAsset: yes
+timeCreated: 1459754048
+>>>>>>> WalkingAnim
 licenseType: Free
 DefaultImporter:
   userData: 

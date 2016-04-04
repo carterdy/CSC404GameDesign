@@ -29,10 +29,12 @@ public class runAnimations : MonoBehaviour {
         if (warriorActive && warriorGrounded && warriorMove > 0.0f)
         {
             anim.SetInteger("run", 1);
+            anim.SetFloat("Speed", warriorMove);
         }
         else if (archerActive && archerGrounded && archerMove > 0.0f)
         {
             anim.SetInteger("run", 1);
+            anim.SetFloat("Speed", archerMove);
         }
         else
         {
