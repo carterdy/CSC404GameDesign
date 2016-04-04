@@ -161,7 +161,7 @@ public class customIK : MonoBehaviour {
         //move arm
         target.position = targetStart + upperArm.position;
         pole.position = poleStart + upperArm.position;
-        //upperArm.rotation = upperStart;
+        upperArm.rotation = upperStart;
         lowerArm.rotation = lowerStart;
         hand.rotation = handStart;
 
