@@ -34,6 +34,7 @@ public class runAnimations : MonoBehaviour {
         else if (archerActive && archerGrounded && archerMove > 0.0f)
         {
             anim.SetInteger("run", 1);
+            anim.SetFloat("Speed", archerMove);
         }
         else
         {
