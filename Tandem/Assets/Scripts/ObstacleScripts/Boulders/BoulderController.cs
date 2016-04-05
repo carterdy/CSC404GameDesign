@@ -5,6 +5,7 @@ public class BoulderController : MonoBehaviour {
 
     public float speed = 5f;
     public float destroyTime = 10f;
+    public GameObject BoulderExplosion;
 
     private Vector3 direction;
 
@@ -17,6 +18,8 @@ public class BoulderController : MonoBehaviour {
     void destroyBoulder ()
     {
         Destroy(gameObject);
+        Instantiate(BoulderExplosion, transform.position, BoulderExplosion.transform.rotation);
+
     }
 	
 	// Update is called once per frame
