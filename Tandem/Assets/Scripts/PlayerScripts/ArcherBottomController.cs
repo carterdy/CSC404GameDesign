@@ -4,7 +4,7 @@ using System.Collections;
 public class ArcherBottomController : PlayerBottomScript {
 
     public GameObject ArcherStraightActive;
-    public float onIceSpeedModifier = 5;
+    public float onIceSpeedModifier = 2;
 
     //Set to true when the archer is on the bottom and standing on ice
     private bool onIce = false;
