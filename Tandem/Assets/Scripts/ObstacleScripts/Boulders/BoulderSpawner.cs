@@ -5,11 +5,13 @@ using System.Collections;
 public class BoulderSpawner : MonoBehaviour {
 
     public float secondsBetween = 3f;
+    //A delay to start spawning boulders so all the spawners don't have to spawn at the same time
+    public float delay = 0f;
     public GameObject boulder;
 
     // Use this for initialization
     void Start () {
-        InvokeRepeating("launchBoulder", 1, secondsBetween);
+        InvokeRepeating("launchBoulder", delay, secondsBetween);
 	}
 
     /* Launch a rolling boulder forward from the spawner */
