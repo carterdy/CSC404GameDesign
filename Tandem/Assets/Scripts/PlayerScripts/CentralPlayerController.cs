@@ -176,8 +176,11 @@ public class CentralPlayerController : MonoBehaviour {
         if (!invuln)
         {
 
-            GamePad.SetVibration((PlayerIndex)0, 0.3f, 0.3f);
-            GamePad.SetVibration((PlayerIndex)1, 0.3f, 0.3f);
+            GamePad.SetVibration(PlayerIndex.One, 0.3f, 0.3f);
+            GamePad.SetVibration(PlayerIndex.Two, 0.3f, 0.3f);
+            GamePad.SetVibration(PlayerIndex.Three, 0.3f, 0.3f);
+            GamePad.SetVibration(PlayerIndex.Four, 0.3f, 0.3f);
+
 
 
             hearts[HP - 1].SetActive(false);
@@ -196,8 +199,10 @@ public class CentralPlayerController : MonoBehaviour {
             StartCoroutine(invulnFlicker(1));
 
             yield return new WaitForSeconds(1f);
-            GamePad.SetVibration((PlayerIndex)0, 0.0f, 0.0f);
-            GamePad.SetVibration((PlayerIndex)1, 0.0f, 0.0f);
+            GamePad.SetVibration(PlayerIndex.One, 0.0f, 0.0f);
+            GamePad.SetVibration(PlayerIndex.Two, 0.0f, 0.0f);
+            GamePad.SetVibration(PlayerIndex.Three, 0.0f, 0.0f);
+            GamePad.SetVibration(PlayerIndex.Four, 0.0f, 0.0f);
 
             invuln = false;
         }
