@@ -177,6 +177,8 @@ public class CentralPlayerController : MonoBehaviour {
         {
 
             GamePad.SetVibration((PlayerIndex)0, 0.3f, 0.3f);
+            GamePad.SetVibration((PlayerIndex)1, 0.3f, 0.3f);
+
 
             hearts[HP - 1].SetActive(false);
             deadHearts[HP - 1].SetActive(true);
@@ -195,6 +197,7 @@ public class CentralPlayerController : MonoBehaviour {
 
             yield return new WaitForSeconds(1f);
             GamePad.SetVibration((PlayerIndex)0, 0.0f, 0.0f);
+            GamePad.SetVibration((PlayerIndex)1, 0.0f, 0.0f);
 
             invuln = false;
         }
@@ -471,5 +474,7 @@ public class CentralPlayerController : MonoBehaviour {
     void OnDisable()
     {
         GamePad.SetVibration((PlayerIndex)0, 0.0f, 0.0f);
+        GamePad.SetVibration((PlayerIndex)1, 0.0f, 0.0f);
+
     }
 }
