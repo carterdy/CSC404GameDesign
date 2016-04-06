@@ -46,8 +46,13 @@ public class CentralPlayerController : MonoBehaviour {
     private GameObject ArcherStraightBase;
     private GameObject WarriorTurningBase;
     private GameObject WarriorStraightBase;
+
+	// Respawn Stuff
 	private GameObject startingSpawn;
 	private GameObject respawn;
+	private Vector3 newPos;
+	private Vector3 oldPos;
+	private Vector3 movement;
 
     private Animator players;
 
@@ -379,8 +384,22 @@ public class CentralPlayerController : MonoBehaviour {
 
         // Respawn should follow player, when grounded
         if (gameObject.GetComponent<WarriorBottomController> ().isGrounded ()) {
-			respawn.transform.position = gameObject.transform.position;
-			respawn.transform.position -= gameObject.transform.forward / 2;
+			newPos = transform.position;
+			movement = (newPos - oldPos);
+
+			// Move respawn to the player
+//			respawn.transform.position = gameObject.transform.position;
+
+			// If moving Forward
+			if (Vector3.Dot (gameObject.transform.forward, movement) > 0) {
+				// Offset respawn behind player
+				respawn.transform.position = gameObject.transform.position;
+				respawn.transform.position -= gameObject.transform.forward / 2;
+			} else if (Vector3.Dot (gameObject.transform.forward, movement) < 0) {
+				// Offset respawn in front player
+				respawn.transform.position = gameObject.transform.position;
+				respawn.transform.position += gameObject.transform.forward / 2;
+			}
 		}
 
         // reduce continously hit sound effect
@@ -454,6 +473,10 @@ public class CentralPlayerController : MonoBehaviour {
         {
             StartCoroutine(unpause());
         }
+	}
+
+	void LateUpdate() {
+		oldPos = transform.position;
 	}
 
     void OnEnable()
