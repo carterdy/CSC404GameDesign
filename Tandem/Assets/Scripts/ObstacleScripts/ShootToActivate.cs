@@ -12,7 +12,7 @@ public class ShootToActivate : MonoBehaviour {
     {
         foreach (GameObject obj in objectsToActivate)
         {
-            obj.SetActive(false);
+            if (obj != null ) obj.SetActive(false);
         }
 
         particle = null;
@@ -34,7 +34,7 @@ public class ShootToActivate : MonoBehaviour {
             particle = Instantiate(ArrowHitParticle, contact[0].point, angle) as GameObject;
             foreach (GameObject obj in objectsToActivate)
             {
-                obj.SetActive(true);
+                if (obj !=null) obj.SetActive(true);
             }
         }
     }
