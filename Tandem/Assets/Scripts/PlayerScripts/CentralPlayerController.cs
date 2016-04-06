@@ -2,6 +2,7 @@
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using System.Collections;
+using XInputDotNetPure;
 
 public class CentralPlayerController : MonoBehaviour {
 
@@ -27,6 +28,7 @@ public class CentralPlayerController : MonoBehaviour {
 
     public AudioClip flipSound;
     public AudioClip hitSound;
+    public AudioClip gemSound;
     public int reaction;
 
     public int gemCost = 10;
@@ -46,8 +48,13 @@ public class CentralPlayerController : MonoBehaviour {
     private GameObject ArcherStraightBase;
     private GameObject WarriorTurningBase;
     private GameObject WarriorStraightBase;
+
+	// Respawn Stuff
 	private GameObject startingSpawn;
 	private GameObject respawn;
+	private Vector3 newPos;
+	private Vector3 oldPos;
+	private Vector3 movement;
 
     private Animator players;
 
@@ -174,6 +181,14 @@ public class CentralPlayerController : MonoBehaviour {
     {
         if (!invuln)
         {
+
+            GamePad.SetVibration(PlayerIndex.One, 0.3f, 0.3f);
+            GamePad.SetVibration(PlayerIndex.Two, 0.3f, 0.3f);
+            GamePad.SetVibration(PlayerIndex.Three, 0.3f, 0.3f);
+            GamePad.SetVibration(PlayerIndex.Four, 0.3f, 0.3f);
+
+
+
             hearts[HP - 1].SetActive(false);
             deadHearts[HP - 1].SetActive(true);
             HP--;  //----------------------------------
@@ -188,7 +203,13 @@ public class CentralPlayerController : MonoBehaviour {
             //Now have to make player invulnerable and start the visual effect.  Invulnerabiliy ends 1 second later.
             invuln = true;
             StartCoroutine(invulnFlicker(1));
+
             yield return new WaitForSeconds(1f);
+            GamePad.SetVibration(PlayerIndex.One, 0.0f, 0.0f);
+            GamePad.SetVibration(PlayerIndex.Two, 0.0f, 0.0f);
+            GamePad.SetVibration(PlayerIndex.Three, 0.0f, 0.0f);
+            GamePad.SetVibration(PlayerIndex.Four, 0.0f, 0.0f);
+
             invuln = false;
         }
     }
@@ -368,6 +389,7 @@ public class CentralPlayerController : MonoBehaviour {
         }
         if(other.tag == "Gem")
         {
+            source.PlayOneShot(gemSound, 1F);
             Destroy(other.gameObject);
             Scores.totalScore += gemCost;
         }
@@ -379,8 +401,22 @@ public class CentralPlayerController : MonoBehaviour {
 
         // Respawn should follow player, when grounded
         if (gameObject.GetComponent<WarriorBottomController> ().isGrounded ()) {
-			respawn.transform.position = gameObject.transform.position;
-			respawn.transform.position -= gameObject.transform.forward / 2;
+			newPos = transform.position;
+			movement = (newPos - oldPos);
+
+			// Move respawn to the player
+//			respawn.transform.position = gameObject.transform.position;
+
+			// If moving Forward
+			if (Vector3.Dot (gameObject.transform.forward, movement) > 0) {
+				// Offset respawn behind player
+				respawn.transform.position = gameObject.transform.position;
+				respawn.transform.position -= gameObject.transform.forward / 2;
+			} else if (Vector3.Dot (gameObject.transform.forward, movement) < 0) {
+				// Offset respawn in front player
+				respawn.transform.position = gameObject.transform.position;
+				respawn.transform.position += gameObject.transform.forward / 2;
+			}
 		}
 
         // reduce continously hit sound effect
@@ -456,9 +492,19 @@ public class CentralPlayerController : MonoBehaviour {
         }
 	}
 
+	void LateUpdate() {
+		oldPos = transform.position;
+	}
+
     void OnEnable()
     {
         setPlayerState();
     }
+    
+    void OnDisable()
+    {
+        GamePad.SetVibration((PlayerIndex)0, 0.0f, 0.0f);
+        GamePad.SetVibration((PlayerIndex)1, 0.0f, 0.0f);
 
+    }
 }
