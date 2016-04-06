@@ -15,7 +15,7 @@ public class UIScores : MonoBehaviour {
 	void Update () {
         if (text.text != Scores.totalScore.ToString())
         {
-            text.text = "x " + Scores.totalScore.ToString();
+            text.text = Scores.totalScore.ToString();
         }
 	
 	}

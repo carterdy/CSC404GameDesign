@@ -28,6 +28,7 @@ public class CentralPlayerController : MonoBehaviour {
 
     public AudioClip flipSound;
     public AudioClip hitSound;
+    public AudioClip gemSound;
     public int reaction;
 
     public int gemCost = 10;
@@ -388,6 +389,7 @@ public class CentralPlayerController : MonoBehaviour {
         }
         if(other.tag == "Gem")
         {
+            source.PlayOneShot(gemSound, 1F);
             Destroy(other.gameObject);
             Scores.totalScore += gemCost;
         }
