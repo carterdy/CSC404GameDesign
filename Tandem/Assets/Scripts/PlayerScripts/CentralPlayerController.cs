@@ -2,6 +2,7 @@
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using System.Collections;
+using XInputDotNetPure;
 
 public class CentralPlayerController : MonoBehaviour {
 
@@ -180,6 +181,14 @@ public class CentralPlayerController : MonoBehaviour {
     {
         if (!invuln)
         {
+
+            GamePad.SetVibration(PlayerIndex.One, 0.3f, 0.3f);
+            GamePad.SetVibration(PlayerIndex.Two, 0.3f, 0.3f);
+            GamePad.SetVibration(PlayerIndex.Three, 0.3f, 0.3f);
+            GamePad.SetVibration(PlayerIndex.Four, 0.3f, 0.3f);
+
+
+
             hearts[HP - 1].SetActive(false);
             deadHearts[HP - 1].SetActive(true);
             HP--;  //----------------------------------
@@ -194,7 +203,13 @@ public class CentralPlayerController : MonoBehaviour {
             //Now have to make player invulnerable and start the visual effect.  Invulnerabiliy ends 1 second later.
             invuln = true;
             StartCoroutine(invulnFlicker(1));
+
             yield return new WaitForSeconds(1f);
+            GamePad.SetVibration(PlayerIndex.One, 0.0f, 0.0f);
+            GamePad.SetVibration(PlayerIndex.Two, 0.0f, 0.0f);
+            GamePad.SetVibration(PlayerIndex.Three, 0.0f, 0.0f);
+            GamePad.SetVibration(PlayerIndex.Four, 0.0f, 0.0f);
+
             invuln = false;
         }
     }
@@ -485,5 +500,11 @@ public class CentralPlayerController : MonoBehaviour {
     {
         setPlayerState();
     }
+    
+    void OnDisable()
+    {
+        GamePad.SetVibration((PlayerIndex)0, 0.0f, 0.0f);
+        GamePad.SetVibration((PlayerIndex)1, 0.0f, 0.0f);
 
+    }
 }
