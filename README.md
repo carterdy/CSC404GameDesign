@@ -1,5 +1,5 @@
 # CSC404GameDesign
-Repo for game design course
+Repo for Tandem - https://madrash.itch.io/tandem
 
 What works (as of my initial commit):
 
